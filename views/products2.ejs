@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include("./partials/Head.ejs") %>
+   
+</head>
+<body>
+    <%- include("./partials/Nav.ejs") %>  
+
+            <!-- control pages -->
+            <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
+                <a href="products.html">
+                    <li>All</li>
+                </a>
+                <a href="products1.html">
+                    <li>Shirts</li>
+                </a>
+                <a href="products2.html">
+                    <li  class="active rounded-pill">Pants</li>
+                </a>
+                <a href="products3.html">
+                    <li>Shoes</li>
+                </a>
+            </ul>
+    
+            <div class="row ">
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-4 col-sm-2 me-5 mb-3">
+                    <!-- card 1 -->
+                    <div class="card rounded bg-light border">
+    
+                        <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
+                            <a href="product.html">
+                                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top"
+                                    alt="The Simpsons game poster">
+                            </a>
+                        </div>
+    
+                        <div class="card-body pb-3">
+                            <div class="d-flex justify-content-between mt-3 mb-2">
+    
+                                <h5>Product Name</h5>
+                                <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                            </div>
+    
+                            <div class="mb-2">
+                                <span class="text-dark  ">
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                    <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                </span>
+                            </div>
+    
+                            <div class="mb-2">
+                                <h5 class=" text-muted ">$150</h5>
+                            </div>
+    
+                            <div class="mt-3">
+                                <button class="btn btn-dark  ">Add To Cart </button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </section>    
+
+    <%- include("./partials/Top_Function.ejs") %>  
+    <%- include("./partials/Footer.ejs") %>  
+</body>
+</html>
