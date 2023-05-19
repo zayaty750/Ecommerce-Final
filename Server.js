@@ -1,8 +1,8 @@
 const express = require('express');
-const session = require('express-session')
+// const session = require('express-session')
 // express app
 const app = express();
-app.use(session({ secret: 'Your_Secret_Key' }));
+// app.use(session({ secret: 'Your_Secret_Key' }));
 // listen for requests
 app.listen(8080);
 app.set('view engine', 'ejs');
