@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include("./partials/Head.ejs") %>
 </head>
-<body>
-    <%- include("./partials/Nav.ejs") %>  
 
-    <%- include("./partials/Top_Function.ejs") %>  
-    <%- include("./partials/Footer.ejs") %>  
+<body>
+    <%- include("./partials/Nav.ejs") %>
+        <!-- category -->
+        <section class="container-fluid">
+            <div class="row pb-1 ">
+                <div class="col  advertising" style="background-image: url(used/photo1.jpg);">
+                </div>
+            </div>
+            <div class="row pb-1">
+                <div class=" col-sm col-12 pb-1  ">
+                    <div class="img-hover-zoom img-hover-zoom--quick-zoom">
+                        <img src="used/photo3.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
+                    </div>
+                </div>
+                <div class=" col-sm col-12 pb-1">
+                    <div class="img-hover-zoom img-hover-zoom--quick-zoom">
+                        <img src="used/photo4.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-1">
+                <div class="col advertising" style="background-image: url(used/photo2.jpg);">
+                </div>
+            </div>
+        </section>
+        <!-- end -->
+        <%- include("./partials/Top_Function.ejs") %>
+        <%- include("./partials/Footer.ejs") %>
 </body>
+
 </html>

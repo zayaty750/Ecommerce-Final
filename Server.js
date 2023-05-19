@@ -15,3 +15,19 @@ app.get('/', (req, res) => {
 app.get('/Home', (req, res) => {
     res.render('Home');
 });
+
+app.get('/products', (req, res) => {
+    res.render('products');
+});
+
+app.get('/products1', (req, res) => {
+    res.render('products1');
+});
+
+app.get('/products2', (req, res) => {
+    res.render('products2');
+});
+
+app.get('/products3', (req, res) => {
+    res.render('products3');
+});
