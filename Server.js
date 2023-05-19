@@ -11,3 +11,7 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+app.get('/Home', (req, res) => {
+    res.render('Home');
+});
