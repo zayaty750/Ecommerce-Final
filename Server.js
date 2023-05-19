@@ -31,3 +31,8 @@ app.get('/products2', (req, res) => {
 app.get('/products3', (req, res) => {
     res.render('products3');
 });
+
+
+app.get('/admin', (req, res) => {
+    res.render('admin');
+});
