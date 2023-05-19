@@ -1,6 +1,34 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
 
+
+/*  */
+
+.choose ul .active {
+    background-color: #9a9c9e;
+    color: black;
+}
+
+a {
+    color: #444444;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #444444;
+}
+
+.choose ul li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+
+.choose ul li:not(.active):hover {
+    color: #7e7f80;
+}
+
 @media only screen and (max-width: 600px) 
 {
     .mobile-products_width {
@@ -1155,29 +1183,3 @@ select {
     transform: translateY(-50%);
 }
 
-/*  */
-
-.choose ul .active {
-    background-color: #9a9c9e;
-    color: black;
-}
-
-a {
-    color: #444444;
-    text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    color: #444444;
-}
-
-.choose ul li {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
-
-
-.choose ul li:not(.active):hover {
-    color: #7e7f80;
-}
