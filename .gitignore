@@ -1,2 +1,2 @@
 /node_modules
-/const dbURI = 'mongodb+srv://zayaty:d11o3PfjEAmArBBQ@cluster0.33tbygn.mongodb.net/?retryWrites=true&w=majority';
+.*
