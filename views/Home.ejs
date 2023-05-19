@@ -7,21 +7,27 @@
 
 <body>
     <%- include("./partials/Nav.ejs") %>
+
+        <!-- carousel  -->
+        <section class="container-fluid d-none d-sm-block">
+            <video src="used/D_slide_man_novedades_-1.mp4" alt="" class="w-100" autoplay loop muted>
+        </section>
+        <!-- end -->
         <!-- category -->
         <section class="container-fluid">
             <div class="row pb-1 ">
-                <div class="col  advertising" style="background-image: url(used/photo1.jpg);">
+                <div class="col  advertising" style="background-image: url(../images/photo1.jpg);">
                 </div>
             </div>
             <div class="row pb-1">
                 <div class=" col-sm col-12 pb-1  ">
                     <div class="img-hover-zoom img-hover-zoom--quick-zoom">
-                        <img src="used/photo3.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
+                        <img src="../images/photo3.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
                     </div>
                 </div>
                 <div class=" col-sm col-12 pb-1">
                     <div class="img-hover-zoom img-hover-zoom--quick-zoom">
-                        <img src="used/photo4.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
+                        <img src="../images/photo4.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
                     </div>
                 </div>
             </div>
@@ -83,882 +89,919 @@
         </section>
         <!-- end -->
 
-        
-  <!-- carousel product slider for pc -->
-  <section class="d-none d-lg-block mt-5 mb-5">
-    <div class="container-fluid   mb-1 mt-2 ">
-      <div class="row">
-        <div class="col-2">
-          <h2 class="display-6 text-black text-center">Best Selling</h2>
-        </div>
-      </div>
-    </div>
 
-    <div id="pc_carousel" class="carousel slide ">
-      <div class="carousel-inner ">
-        <!-- carousel 1 -->
-        <div class="carousel-item  active ">
-          <div class="cards-wrapper">
-            <!-- card 1 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper mobile-width img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product3.webp" class="card-img-top" alt="The Simpsons game poster">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+        <!-- carousel product slider for pc -->
+        <section class="d-none d-lg-block mt-5 mb-5">
+            <div class="container-fluid   mb-1 mt-2 ">
+                <div class="row">
+                    <div class="col-2">
+                        <h2 class="display-6 text-black text-center">Best Selling</h2>
+                    </div>
                 </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
             </div>
-            <!-- card 2 -->
-            <div class="card rounded bg-light border">
 
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/pants/product1.webp" class="card-img-top" alt="The Simpsons game poster">
-                </a>
-              </div>
+            <div id="pc_carousel" class="carousel slide ">
+                <div class="carousel-inner ">
+                    <!-- carousel 1 -->
+                    <div class="carousel-item  active ">
+                        <div class="cards-wrapper">
+                            <!-- card 1 -->
+                            <div class="card  rounded bg-light border">
 
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
+                                <div class="image-wrapper mobile-width img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product3.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
 
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/pants/product1.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 4 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product5.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 5 -->
+                            <div class="card  rounded bg-light border">
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product2.jpg" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 6 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product4.jpg" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- carousel 2 -->
+                    <div class="carousel-item ">
+                        <div class="cards-wrapper">
+                            <!-- card 1 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product3.webp" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/pants/product1.webp" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 4 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product5.webp" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 5 -->
+                            <div class="card  rounded bg-light border">
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product2.jpg" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 6 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product4.jpg" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- carousel 3 -->
+                    <div class="carousel-item ">
+                        <div class="cards-wrapper">
+                            <!-- card 1 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product3.webp" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/pants/product1.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 4 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product5.webp" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 5 -->
+                            <div class="card  rounded bg-light border">
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product2.jpg" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 6 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
+                                    <a href="product.html">
+                                        <img src="used/product4.jpg" class="card-img-top" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
+                <!-- control carousel  -->
+                <div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#pc_carousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon btn btn-dark" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#pc_carousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon btn btn-dark" aria-hidden="true"></span>
+                    </button>
                 </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
             </div>
-            <!-- card 4 -->
-            <div class="card  rounded bg-light border">
+        </section>
 
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product5.webp" class="card-img-top" alt="The Simpsons game poster">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+        <!-- carousel product slider for mobile -->
+        <section class=" d-block d-sm-none mt-3 mb-3">
+            <div class="container-fluid  text-center text-black mb-1 mt-2">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Best Selling</h2>
+                    </div>
                 </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
             </div>
-            <!-- card 5 -->
-            <div class="card  rounded bg-light border">
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product2.jpg" class="card-img-top" alt="The Simpsons game poster">
-                </a>
-              </div>
 
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
+            <div id="mobile_carsouel" class="carousel slide">
+                <div class="carousel-inner">
+                    <!-- carousel 1 -->
+                    <div class="carousel-item active">
+                        <div class="mobile-cards-wrapper">
+                            <!-- card 1 -->
+                            <div class="card  rounded bg-light border">
 
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
+                                <div class="mobile-image-wrapper">
+                                    <a href="product.html">
+                                        <img src="used/product3.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card  rounded bg-light border">
+
+                                <div class="mobile-image-wrapper">
+                                    <a href="product.html">
+                                        <img src="used/pants/product1.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- carousel 2 -->
+                    <div class="carousel-item ">
+                        <div class="mobile-cards-wrapper">
+                            <!-- card 1 -->
+                            <div class="card shadow rounded bg-light border">
+                                <div class="mobile-image-wrapper">
+                                    <a href="product.html">
+                                        <img src="used/product2.jpg" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card shadow rounded bg-light border">
+
+                                <div class="mobile-image-wrapper">
+                                    <a href="product.html">
+                                        <img src="used/product4.jpg" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- carousel 3 -->
+                    <div class="carousel-item ">
+                        <div class="mobile-cards-wrapper">
+                            <!-- card 1 -->
+                            <div class="card shadow rounded bg-light border">
+
+                                <div class="mobile-image-wrapper">
+                                    <a href="product.html">
+                                        <img src="used/product3.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- card 2 -->
+                            <div class="card shadow rounded bg-light border">
+
+                                <div class="mobile-image-wrapper">
+                                    <a href="product.html">
+                                        <img src="used/pants/product1.webp" class="card-img-top"
+                                            alt="The Simpsons game poster">
+                                    </a>
+                                </div>
+
+                                <div class="card-body pb-3">
+                                    <div class="d-flex justify-content-between mt-3 mb-2">
+
+                                        <h5>Product Name</h5>
+                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
+                                        </h5>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <span class="text-dark  ">
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
+                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <h5 class=" text-muted ">$150</h5>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
+                <!-- control carousel  -->
+                <div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mobile_carsouel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon btn btn-dark" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mobile_carsouel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon btn btn-dark" aria-hidden="true"></span>
+                    </button>
                 </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
             </div>
-            <!-- card 6 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product4.jpg" class="card-img-top" alt="The Simpsons game poster">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- carousel 2 -->
-        <div class="carousel-item ">
-          <div class="cards-wrapper">
-            <!-- card 1 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product3.webp" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 2 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/pants/product1.webp" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 4 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product5.webp" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 5 -->
-            <div class="card  rounded bg-light border">
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product2.jpg" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 6 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product4.jpg" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- carousel 3 -->
-        <div class="carousel-item ">
-          <div class="cards-wrapper">
-            <!-- card 1 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product3.webp" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 2 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/pants/product1.webp" class="card-img-top" alt="The Simpsons game poster">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 4 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product5.webp" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 5 -->
-            <div class="card  rounded bg-light border">
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product2.jpg" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-            <!-- card 6 -->
-            <div class="card  rounded bg-light border">
-
-              <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                <a href="product.html">
-                  <img src="used/product4.jpg" class="card-img-top" alt="">
-                </a>
-              </div>
-
-              <div class="card-body pb-3">
-                <div class="d-flex justify-content-between mt-3 mb-2">
-
-                  <h5>Product Name</h5>
-                  <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                </div>
-
-                <div class="mb-2">
-                  <span class="text-dark  ">
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                    <i class="fa-sharp fa-regular fa-star"></i> (234)
-                  </span>
-                </div>
-
-                <div class="mb-2">
-                  <h5 class=" text-muted ">$150</h5>
-                </div>
-
-                <div class="mt-3">
-                  <button class="btn btn-dark  ">Add To Cart </button>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- control carousel  -->
-      <div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#pc_carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon btn btn-dark" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#pc_carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon btn btn-dark" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-    <!-- carousel product slider for mobile -->
-    <section class=" d-block d-sm-none mt-3 mb-3"> 
-        <div class="container-fluid  text-center text-black mb-1 mt-2">
-          <div class="row">
-            <div class="col-12">
-              <h2>Best Selling</h2>
-            </div>
-          </div>
-        </div>
-    
-        <div id="mobile_carsouel" class="carousel slide">
-          <div class="carousel-inner">
-            <!-- carousel 1 -->
-            <div class="carousel-item active">
-              <div class="mobile-cards-wrapper">
-                <!-- card 1 -->
-                <div class="card  rounded bg-light border">
-    
-                  <div class="mobile-image-wrapper">
-                    <a href="product.html">
-                      <img src="used/product3.webp" class="card-img-top" alt="The Simpsons game poster">
-                    </a>
-                  </div>
-    
-                  <div class="card-body pb-3">
-                    <div class="d-flex justify-content-between mt-3 mb-2">
-    
-                      <h5>Product Name</h5>
-                      <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                    </div>
-    
-                    <div class="mb-2">
-                      <span class="text-dark  ">
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-sharp fa-regular fa-star"></i> (234)
-                      </span>
-                    </div>
-    
-                    <div class="mb-2">
-                      <h5 class=" text-muted ">$150</h5>
-                    </div>
-    
-                    <div class="mt-3">
-                      <button class="btn btn-dark  ">Add To Cart </button>
-                    </div>
-    
-                  </div>
-                </div>
-                <!-- card 2 -->
-                <div class="card  rounded bg-light border">
-    
-                  <div class="mobile-image-wrapper">
-                    <a href="product.html">
-                      <img src="used/pants/product1.webp" class="card-img-top" alt="The Simpsons game poster">
-                    </a>
-                  </div>
-    
-                  <div class="card-body pb-3">
-                    <div class="d-flex justify-content-between mt-3 mb-2">
-    
-                      <h5>Product Name</h5>
-                      <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                    </div>
-    
-                    <div class="mb-2">
-                      <span class="text-dark  ">
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-sharp fa-regular fa-star"></i> (234)
-                      </span>
-                    </div>
-    
-                    <div class="mb-2">
-                      <h5 class=" text-muted ">$150</h5>
-                    </div>
-    
-                    <div class="mt-3">
-                      <button class="btn btn-dark  ">Add To Cart </button>
-                    </div>
-    
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-            <!-- carousel 2 -->
-            <div class="carousel-item ">
-              <div class="mobile-cards-wrapper">
-                <!-- card 1 -->
-                <div class="card shadow rounded bg-light border">
-                  <div class="mobile-image-wrapper">
-                    <a href="product.html">
-                      <img src="used/product2.jpg" class="card-img-top" alt="The Simpsons game poster">
-                    </a>
-                  </div>
-    
-                  <div class="card-body pb-3">
-                    <div class="d-flex justify-content-between mt-3 mb-2">
-    
-                      <h5>Product Name</h5>
-                      <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                    </div>
-    
-                    <div class="mb-2">
-                      <span class="text-dark  ">
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-sharp fa-regular fa-star"></i> (234)
-                      </span>
-                    </div>
-    
-                    <div class="mb-2">
-                      <h5 class=" text-muted ">$150</h5>
-                    </div>
-    
-                    <div class="mt-3">
-                      <button class="btn btn-dark  ">Add To Cart </button>
-                    </div>
-    
-                  </div>
-                </div>
-                <!-- card 2 -->
-                <div class="card shadow rounded bg-light border">
-    
-                  <div class="mobile-image-wrapper">
-                    <a href="product.html">
-                      <img src="used/product4.jpg" class="card-img-top" alt="The Simpsons game poster">
-                    </a>
-                  </div>
-    
-                  <div class="card-body pb-3">
-                    <div class="d-flex justify-content-between mt-3 mb-2">
-    
-                      <h5>Product Name</h5>
-                      <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                    </div>
-    
-                    <div class="mb-2">
-                      <span class="text-dark  ">
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-sharp fa-regular fa-star"></i> (234)
-                      </span>
-                    </div>
-    
-                    <div class="mb-2">
-                      <h5 class=" text-muted ">$150</h5>
-                    </div>
-    
-                    <div class="mt-3">
-                      <button class="btn btn-dark  ">Add To Cart </button>
-                    </div>
-    
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-            <!-- carousel 3 -->
-            <div class="carousel-item ">
-              <div class="mobile-cards-wrapper">
-                <!-- card 1 -->
-                <div class="card shadow rounded bg-light border">
-    
-                  <div class="mobile-image-wrapper">
-                    <a href="product.html">
-                      <img src="used/product3.webp" class="card-img-top" alt="The Simpsons game poster">
-                    </a>
-                  </div>
-    
-                  <div class="card-body pb-3">
-                    <div class="d-flex justify-content-between mt-3 mb-2">
-    
-                      <h5>Product Name</h5>
-                      <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                    </div>
-    
-                    <div class="mb-2">
-                      <span class="text-dark  ">
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-sharp fa-regular fa-star"></i> (234)
-                      </span>
-                    </div>
-    
-                    <div class="mb-2">
-                      <h5 class=" text-muted ">$150</h5>
-                    </div>
-    
-                    <div class="mt-3">
-                      <button class="btn btn-dark  ">Add To Cart </button>
-                    </div>
-    
-                  </div>
-                </div>
-                <!-- card 2 -->
-                <div class="card shadow rounded bg-light border">
-    
-                  <div class="mobile-image-wrapper">
-                    <a href="product.html">
-                      <img src="used/pants/product1.webp" class="card-img-top" alt="The Simpsons game poster">
-                    </a>
-                  </div>
-    
-                  <div class="card-body pb-3">
-                    <div class="d-flex justify-content-between mt-3 mb-2">
-    
-                      <h5>Product Name</h5>
-                      <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; "></h5>
-                    </div>
-    
-                    <div class="mb-2">
-                      <span class="text-dark  ">
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                        <i class="fa-sharp fa-regular fa-star"></i> (234)
-                      </span>
-                    </div>
-    
-                    <div class="mb-2">
-                      <h5 class=" text-muted ">$150</h5>
-                    </div>
-    
-                    <div class="mt-3">
-                      <button class="btn btn-dark  ">Add To Cart </button>
-                    </div>
-    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <!-- control carousel  -->
-          <div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#mobile_carsouel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon btn btn-dark" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mobile_carsouel" data-bs-slide="next">
-              <span class="carousel-control-next-icon btn btn-dark" aria-hidden="true"></span>
-            </button>
-          </div>
-        </div>
-      </section>
+        </section>
 
         <!-- Contact Us section -->
-  <section class="container-fluid mb-5">
-    <div class=" p-2">
-      <div class="d-flex flex-column flex-md-row shadow">
-        <div class="container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37809421838!2d31.217264617826068!3d30.059482028208137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1680637378497!5m2!1sen!2seg"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="container mt-5">
-          <h3 class="text-center mb-5">Contact Us</h3>
-          <form action="" methode="get">
-            <div class="form-group mb-3">
-              <input id="" type="text" placeholder="Your Name"
-                class="form-control rounded-pill border-0 shadow-sm px-4 text-black">
+        <section class="container-fluid mb-5">
+            <div class=" p-2">
+                <div class="d-flex flex-column flex-md-row shadow">
+                    <div class="container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37809421838!2d31.217264617826068!3d30.059482028208137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1680637378497!5m2!1sen!2seg"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="container mt-5">
+                        <h3 class="text-center mb-5">Contact Us</h3>
+                        <form action="" methode="get">
+                            <div class="form-group mb-3">
+                                <input id="" type="text" placeholder="Your Name"
+                                    class="form-control rounded-pill border-0 shadow-sm px-4 text-black">
+                            </div>
+                            <div class="form-group mb-3">
+                                <input id="" type="text" placeholder="Email Address"
+                                    class="form-control rounded-pill border-0 shadow-sm px-4 text-black">
+                            </div>
+                            <div class="form-group mb-3">
+                                <input id="" type="text" placeholder="Subject"
+                                    class="form-control rounded-pill border-0 shadow-sm px-4 text-black">
+                            </div>
+                            <div class="form-group mb-5">
+                                <textarea id="" type="" placeholder="Description"
+                                    class="form-control border-0 shadow-sm px-4 text-black"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center  ">
+                                <button type="submit" class="btn btn-dark w-100">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group mb-3">
-              <input id="" type="text" placeholder="Email Address"
-                class="form-control rounded-pill border-0 shadow-sm px-4 text-black">
-            </div>
-            <div class="form-group mb-3">
-              <input id="" type="text" placeholder="Subject"
-                class="form-control rounded-pill border-0 shadow-sm px-4 text-black">
-            </div>
-            <div class="form-group mb-5">
-              <textarea id="" type="" placeholder="Description"
-                class="form-control border-0 shadow-sm px-4 text-black"></textarea>
-            </div>
-            <div class="d-flex justify-content-center  ">
-              <button type="submit" class="btn btn-dark w-100">Send</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end -->
+        </section>
+        <!-- end -->
         <%- include("./partials/Top_Function.ejs") %>
-            <%- include("./partials/Footer.ejs") %>
+        <%- include("./partials/Footer.ejs") %>
 </body>
 
 </html>
