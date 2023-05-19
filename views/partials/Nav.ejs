@@ -1,0 +1,121 @@
+  <!-- nav bar -->
+  <div class="text-center bg-black vh-100 w-100 position-fixed " id="preloading" style="z-index: 1000;">
+    <div>
+      <h1 class="bx bxl-bootstrap" style="margin-top: 300px;"></h1>
+    </div>
+    <div>
+      <h1>BLANCOO</h1>
+    </div>
+    <div class="spinner-border text-light" role="status" style="margin-top: 200px;">
+      <span class="visually-hidden ">Loading...</span>
+    </div>
+  </div>
+
+  <nav class="py-2 border-bottom bg-black">
+    <!-- mobile nav -->
+    <div class="container d-block d-md-none ">
+      <div class="row">
+        <div class="col-4">
+          <a href="#" class="bar link-light px-5 " onclick="openNav()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <div class="col-3 z-3 ">
+          <a href="#" class="bar link-light px-5 " onclick="openNav()"><i class="bi-bootstrap"></i></a>
+        </div>
+      </div>
+
+      <div id="mySidenav" class="sidenav ">
+        <a href="#close" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="bar link-light px-5 text-center border-bottom m-3 " onclick="openNav()"><i
+            class="bi-bootstrap"></i></a>
+        <a href="HOME.html">Home</a>
+        <a href="Features.html">Features</a>
+        <a href="#">FAQS</a>
+        <a href="About_Us.html">About Us</a>
+        <a href="Cart.html">Cart</a>
+
+        <div class="d-flex justify-content-center ">
+
+          <button class="btn btn-light w-50 m-5">Signup</button>
+
+          <button class="btn btn-light w-50 m-5">Login</button>
+
+        </div>
+      </div>
+    </div>
+    <!-- pc first nav -->
+    <div class="container d-flex flex-wrap ">
+      <ul class="nav me-auto">
+
+        <div class=" d-none d-md-flex">
+          <li class="nav-item"><a href="HOME.html" class="nav-link link-light px-2 active" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item"><a href="Features.html" class="nav-link link-light px-2">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-light px-2">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-light px-2">FAQs</a></li>
+          <li class="nav-item"><a href="About_Us.html" class="nav-link link-light px-2">About Us</a></li>
+        </div>
+      </ul>
+      <ul class="nav  d-none d-md-flex">
+        <li class="nav-item"><a href="Cart.html" class="nav-link link-light px-2"><i class="bi-basket-fill"></i></a>
+        </li>
+        <li class="nav-item"><a href="loginPage.html" class="nav-link link-light px-2"><i class="bi-person"></i></a>
+        </li>
+        <li class="nav-item"><a href="admin.html" class="nav-link link-light px-2"><i class="bi-bar-chart-line"></i></a>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link link-light px-2"><i class="bi-gear-fill"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- end -->
+
+  <!-- pc second nav -->
+  <header class="py-3 bg-transparent sticky-md-top z-2 shadow pc_second_nav  ">
+    <div class="container d-flex flex-wrap justify-content-center ">
+      <a href=""
+        class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none  d-none d-md-flex  ">
+        <span class="fs-4">BLANKOO</span>
+        <span class="m-3">MEN</span>
+        <span class=" ">WOMEN</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-sm-none d-md-none" role="search">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+      <div class="col-12 col-lg-auto mb-3 mb-lg-0 mt-3 d-none d-sm-block ">
+        <i class="bi bi-search" onclick="open_search()"></i>
+      </div>
+    </div>
+  </header>
+  <!-- end -->
+
+  <!-- search nav for pc -->
+  <div id="search_nav" class="search_nav w-100">
+    <a href="#close" class="closebtn" onclick="close_search()">&times;</a>
+    <input type="text" name="search" placeholder="Write here">
+    <div class="row  container mt-5 ms-5">
+      <div class="col ps-5">
+        <h4>Category</h4>
+        <div class="ps-5">
+          <h5>Men</h5>
+          <div class="ps-5">
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+          </div>
+
+          <h5>Women</h5>
+          <div class="ps-5">
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+            <h6>jackets</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end -->
