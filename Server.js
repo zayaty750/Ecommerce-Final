@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 const Product = require('./model/Product');
 // express app
 const app = express();
-const dbURI = 'mongodb+srv://zayaty:d11o3PfjEAmArBBQ@cluster0.33tbygn.mongodb.net/?retryWrites=true&w=majority';
+
+//bagyb l files l mn file env 3ashan a5fyha
+require('dotenv').config();
+
+const dbURI = process.env.dbURI;
 // app.use(session({ secret: 'Your_Secret_Key' }));
 // listen for requests
 mongoose.connect(dbURI)
