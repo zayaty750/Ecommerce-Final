@@ -51,3 +51,7 @@ app.get('/products3', (req, res) => {
 app.get('/admin', (req, res) => {
     res.render('admin');
 });
+
+app.get('/team', (req, res) => {
+    res.render('team');
+});
