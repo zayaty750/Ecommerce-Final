@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.min.css">
     <%- include("./partials/Head.ejs") %>
 </head>
 
@@ -53,7 +54,7 @@
                     </div>
                 </div>
                 <!-- card 2 -->
-                <div class="rounded border me-2 mb-2">
+                <div class="rounded border me-2 mb-2 ">
                     <div class=" img-hover-zoom img-hover-zoom--quick-zoom">
                         <a href="product.html">
                             <img src="../images/D_slide_man_jeans_-1.jpg" class="img-fluid" alt="">
@@ -110,15 +111,15 @@
 
                                 <div class="image-wrapper mobile-width img-hover-zoom img-hover-zoom--quick-zoom">
                                     <a href="product.html">
-                                        <img src="used/product3.webp" class="card-img-top"
-                                            alt="The Simpsons game poster">
+                                        <img src="../images/product3.webp" class="card-img-top product_img"
+                                            alt="Product">
                                     </a>
                                 </div>
 
                                 <div class="card-body pb-3">
                                     <div class="d-flex justify-content-between mt-3 mb-2">
 
-                                        <h5>Product Name</h5>
+                                        <h5 class="product_name">Product Name</h5>
                                         <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
                                         </h5>
                                     </div>
@@ -133,50 +134,12 @@
                                         </span>
                                     </div>
 
-                                    <div class="mb-2">
-                                        <h5 class=" text-muted ">$150</h5>
+                                    <div class="mb-2 ">
+                                        <h5 class=" text-muted product_price">$150</h5>
                                     </div>
 
                                     <div class="mt-3">
-                                        <button class="btn btn-dark  ">Add To Cart </button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- card 2 -->
-                            <div class="card rounded bg-light border">
-
-                                <div class="image-wrapper img-hover-zoom img-hover-zoom--quick-zoom">
-                                    <a href="product.html">
-                                        <img src="used/pants/product1.webp" class="card-img-top"
-                                            alt="The Simpsons game poster">
-                                    </a>
-                                </div>
-
-                                <div class="card-body pb-3">
-                                    <div class="d-flex justify-content-between mt-3 mb-2">
-
-                                        <h5>Product Name</h5>
-                                        <h5 class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; ">
-                                        </h5>
-                                    </div>
-
-                                    <div class="mb-2">
-                                        <span class="text-dark  ">
-                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                                            <i class="fa-solid fa-star" style="color: #ffea00;"></i>
-                                            <i class="fa-sharp fa-regular fa-star"></i> (234)
-                                        </span>
-                                    </div>
-
-                                    <div class="mb-2">
-                                        <h5 class=" text-muted ">$150</h5>
-                                    </div>
-
-                                    <div class="mt-3">
-                                        <button class="btn btn-dark  ">Add To Cart </button>
+                                        <button class="btn btn-dark" type="button" onclick="addToCartClicked(this)">Add To Cart </button>
                                     </div>
 
                                 </div>
