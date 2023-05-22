@@ -15,6 +15,8 @@ dotenv.config();
 const PORT = process.env.PORT || "8000";
 const HOST = process.env.HOST || "localhost";
 
+
+
 // Get MongoDB connection URI from environment variable 
 const MURI = process.env.dbURI;
 
