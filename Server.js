@@ -5,7 +5,7 @@ import logger from "morgan";
 import cookieParser from "cookie-parser";
 // Import routes
 import indexRouter from "./routes/index.js";
-
+import about_usRouter from "./routes/about_us.js";
 
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes setup
 app.use('/', indexRouter);
-
+app.use('/', about_usRouter);
 
 // Error handling
 app.use(function(err, req, res, next) {
