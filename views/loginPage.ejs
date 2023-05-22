@@ -7,79 +7,91 @@
 
 <body>
     <%- include("./partials/Nav.ejs") %>
-        <div class="container-fluid p-5"  >
+        <div class="container-fluid p-5">
             <div class="row no-gutter">
                 <!-- The image half -->
-                <div class="col-md-6 d-none d-md-flex bg-image" style="background-image: url(used/photo5.jpg);">
+                <div class="col-md-6 d-none d-md-flex bg-image" style="background-image: url(/images/photo5.jpg);">
 
                 </div>
                 <!-- The content half -->
                 <div class="col-md-6 bg-light ">
 
-
-                        <!-- Demo content-->
-                        <div class="container d-none " id="Login">
-                          <div class="row ms-5">
-                              <div class="col-lg-10 col-xl-7 ">
-                                  <h3 class="display-4">Registration!</h3>
-                                  <p class="text-muted mb-4">Create a new account.</p>
-                                  <form>
-                                      <div class="form-group mb-3">
-                                          <input id="" type="email" placeholder="Email address" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
-                                      </div>
-                                      <div class="form-group mb-3">
-                                          <input id="" type="password" placeholder="Password" class="form-control rounded-pill border-0 shadow-sm px-4 ">
-                                      </div>
-                                      <div class="custom-control custom-checkbox mb-3">
-                                          <input id="" type="checkbox" checked class="custom-control-input">
-                                          <label for="" class="custom-control-label">Remember password</label>
-                                      </div>
-                                      <button type="submit" class="btn btn-dark btn-block text-uppercase mb-2 rounded-pill shadow-sm" >Sign in</button>
-                                      <div class="text-center d-flex justify-content-between mt-4"><p>Create a new account?<a class="font-italic text-muted" onclick="show_login()" > 
-                                        click here <u></u></a></p></div>
-                                  </form>
-                              </div>
-                          </div>
-                      </div><!-- End -->
-                        <!-- End -->
-
-                        <div class="container d-block " id="Register">
-                            <div class="row ms-5">
-                                <div class="col-lg-10 col-xl-7">
-                                    <h3 class="display-4">Registration!</h3>
-                                    <p class="text-muted mb-4">Create a new account.</p>
-                                    <form>
-                                        <div class="form-group mb-3 ">
-                                            <input  type="" placeholder="Full Name"  class="form-control rounded-pill border-0 shadow-sm px-4">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <input id="" type="email" placeholder="Email address" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <input id="" type="password" placeholder="Password" class="form-control rounded-pill border-0 shadow-sm px-4 ">
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <input id="" type="password" placeholder="Confirm Password"  class="form-control rounded-pill border-0 shadow-sm px-4 ">
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-3">
-                                            <input id="" type="checkbox" checked class="custom-control-input">
-                                            <label for="" class="custom-control-label">Remember password</label>
-                                        </div>
-                                        <button type="submit" class="btn btn-dark btn-block text-uppercase mb-2 rounded-pill shadow-sm" >Register</button>
-                                        <div class="text-center d-flex justify-content-between mt-4"><p>Already have an account?<a class="font-italic text-muted" onclick="show_login()" > 
-                                          click here <u></u></a></p></div>
-                                    </form>
-                                </div>
+                    <!-- <div class="container d-none " id="Login">
+                        <div class="row ms-5">
+                            <div class="col-lg-10 col-xl-7 ">
+                                <h3 class="display-4">Sign up!</h3>
+                                <p class="text-muted mb-4">Create a new account.</p>
+                                <form>
+                                    <div class="form-group mb-3">
+                                        <input id="email" type="email" placeholder="Email address" autofocus=""
+                                            class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="Password" type="password" placeholder="Password"
+                                            class="form-control rounded-pill border-0 shadow-sm px-4 ">
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input id="" type="checkbox" checked class="custom-control-input">
+                                        <label for="" class="custom-control-label">Remember password</label>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-dark btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign
+                                        in</button>
+                                    <div class="text-center d-flex justify-content-between mt-4">
+                                        <p>Create a new account?<a class="font-italic text-muted">
+                                                click here <u></u></a></p>
+                                    </div>
+                                </form>
                             </div>
-                        </div><!-- End -->
+                        </div>
+                    </div>End -->
+
+
+                    <div class="container d-block " id="Register">
+                        <div class="row ms-5">
+                            <div class="col-lg-10 col-xl-7">
+                                <h3 class="display-4">Sign in!</h3>
+                                <p class="text-muted mb-4">Create a new account.</p>
+
+                                <form action="/loginPage-action" method="post" >
+
+                                    <input name="fn" type="" placeholder="Full Name"
+                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+
+                                    <input name="em" type="email" placeholder="Email address"
+                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+
+                                    <input name="ps" type="password" placeholder="Password"
+                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+
+                                    <input placeholder="Confirm Password"
+                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+
+                                    <input type="hidden" name="type" value="client">
+
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input id="" type="checkbox" checked class="custom-control-input">
+                                        <label for="" class="custom-control-label">Remember password</label>
+                                    </div>
+                                    <button type="submit" name="submit"
+                                        class="btn btn-dark btn-block text-uppercase mb-2 rounded-pill shadow-sm">Register</button>
+                                    <div class="text-center d-flex justify-content-between mt-4">
+                                        <p>Already have an account?<a class="font-italic text-muted">
+                                                click here <u></u></a></p>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div><!-- End -->
 
                 </div><!-- End -->
-        
+
             </div>
         </div>
-              <!-- end -->
-              <%- include("./partials/Top_Function.ejs") %>
-              <%- include("./partials/Footer.ejs") %>
+        <!-- end -->
+        <%- include("./partials/Top_Function.ejs") %>
+        <%- include("./partials/Footer.ejs") %>
 </body>
 
 </html>

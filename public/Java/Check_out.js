@@ -61,9 +61,10 @@
 //         </div>
 //     </td>
 // </tr>`
-//     // cartRow.innerHTML = cartRowContents;
-//     document.getElementById('cart').append(cartRowContents)
+//     // cartRow.innerHTML = cartRowContents
+//     getElementsByClassName("bondo2").innerHTML += cartRowContents;
 // }
+
 
 // function updateCartTotal() {
 //     var cartItemContainer = document.getElementsByClassName('cart-items')[0]

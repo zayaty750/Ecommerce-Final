@@ -146,7 +146,7 @@ function when_scroll() {
 
 function show_login()
 {
-
+    document.getElementById("login").style.display = "block";
     document.getElementById("Register").style.display = "none";
 }
 function show_registration()
