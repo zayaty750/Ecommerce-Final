@@ -16,5 +16,4 @@ const signupSchema = new Schema({
   }
 }, { timestamps: true });
 
-const Client_registration = mongoose.model('Client_registration', signupSchema);
-module.exports = Client_registration;
+module.exports = mongoose.model('Client_registration', signupSchema);
