@@ -1,25 +1,29 @@
 const express = require('express');
+const session = require('express-session')
+// const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
-const session = require('express-session');
-const Clients_info = require('./model/Client');
+const path = require('path')
+const Client_registration = require('./model/Client');
 
 // express app
 const app = express();
-
-
-//bagyb l files l mn file env 3ashan a5fyha
 require('dotenv').config();
 const dbURI = process.env.dbURI;
-// app.use(session({ secret: 'Your_Secret_Key' }));
-// listen for requests
+
 mongoose.connect(dbURI)
-  .then(result => app.listen(8080))
+  .then(result => app.listen(process.env.Port))
   .catch(err => console.log(err));
 
 
 // default options
-app.set('view engine', 'ejs');
+// app.use(fileUpload());
 app.use(express.static('public'));
+// app.use(session({ secret: 'Your_Secret_Key' }))
+// register view engine
+app.set('view engine', 'ejs');
+
+
+
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -49,10 +53,6 @@ app.get('/products3', (req, res) => {
     res.render('products3');
 });
 
-app.get('/loginPage', (req, res) => {
-    res.render('loginPage');
-});
-
 app.get('/admin', (req, res) => {
     res.render('admin');
 });
@@ -65,18 +65,23 @@ app.get('/team', (req, res) => {
     res.render('team');
 });
 
-app.post('/loginPage-action', (req, res) => 
+
+app.get('/Signup', (req, res) => {
+    res.render('Signup');
+  });
+  
+app.post('/Signup-action', (req, res) => 
 {
     
-    const Client = new Clients_info({
-        Full_Name: req.body.fn,
+    const Client = new Client_registration({
+        Name: req.body.fn,
         Email: req.body.em,
         Password: req.body.ps
       });
 
       Client.save()
         .then(result => {
-          res.redirect('/');
+          res.redirect('/Home');
         })
         .catch(err => {
           console.log(err);

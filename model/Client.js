@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const signupSchema = new Schema({
-  Full_Name: {
+  Name: {
     type: String,
     required: true,
   },
-  
+
   Email:{
     type: String,
     required:true,
@@ -16,5 +16,5 @@ const signupSchema = new Schema({
   }
 }, { timestamps: true });
 
-const Clients_info = mongoose.model('Client_registration', signupSchema);
-module.exports = Clients_info;
+const Client_registration = mongoose.model('Client_registration', signupSchema);
+module.exports = Client_registration;
