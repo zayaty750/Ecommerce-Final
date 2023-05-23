@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import indexRouter from "./routes/index.js";
 import about_usRouter from "./routes/about_us.js";
 import HomeRouter from "./routes/Home.js";
+import productRouter from "./routes/product.js";
 // Read the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,8 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes setup
 app.use('/', indexRouter);
-app.use('/aboutus', about_usRouter);
 app.use('/Home',HomeRouter);
+app.use('/product', productRouter);
+app.use('/aboutus', about_usRouter);
+
 
 // Error handling
 app.use(function(err, req, res, next) {
