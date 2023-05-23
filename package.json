@@ -1,9 +1,8 @@
 {
   "name": "final-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express-app\r Initial Project Setup For NodeJs+Express project",
   "main": "index.js",
-
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
@@ -23,6 +22,12 @@
     "mongodb": "^5.5.0",
     "mongoose": "^7.2.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
-  }
+    "nodemon": "^2.0.22",
+    "postman": "^0.2.0"
+  },
+  "bin": {
+    "final-project": "bin/www.js"
+  },
+  "devDependencies": {},
+  "keywords": []
 }
