@@ -25,7 +25,7 @@ app.set("view engine", "ejs");
 
 //Setup middlewares
 
-//setup logger middleware
+// setup logger middleware
 // app.use(
 //   logger("tiny", {
 //     stream: fs.createWriteStream("./logs/access.log", { flags: "a" }),
@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //setup routes
 app.use("/", index_router);
-app.use("/api/products", products_router);
+app.use("/add_product", products_router);
 //app.use('/products', logger('combined'), products_router);
 
 
