@@ -26,7 +26,7 @@ const getProducts = async (req, res, next) => {
 const createProduct = async (req, res, next) => {
   //get the product data from the request body
   const imgPath = req.file.path;
-  const imgURL = req.file.path.substring(req.file.path.indexOf("/") + 1);
+  const imgURL = req.file.path.substring(req.file.path.indexOf("/") + 7);
   const product = {
     //create a new product
     pname: req.body.name,
