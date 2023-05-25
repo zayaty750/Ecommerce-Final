@@ -8,10 +8,11 @@ const createProduct = async (req, res, next) => {
   const imgURL = req.file.path.substring(req.file.path.indexOf("/") + 1);
   const product = {
     //create a new product
-    name: req.body.name,
-    price: req.body.price,
-    description: req.body.description,
-    imageUrl: imgURL //remove public from the path
+    pname: req.body.name,
+    Price: req.body.price,
+    Description: req.body.description,
+    category: req.body.category,
+    Image: imgURL //remove public from the path
   };
   //console.log(product);
   try {
@@ -23,4 +24,5 @@ const createProduct = async (req, res, next) => {
     next(err);
   }
 };
+
 export  {createProduct};
