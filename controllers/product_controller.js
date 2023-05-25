@@ -15,7 +15,7 @@ const getProducts = async (req, res, next) => {
         });
       }
       //res.json(products);
-      res.render("pages/view_product", { products: products });
+      res.render("pages/product_dashboard", { products: products });
     }) //get all products
     .catch((err) => {
       next(err);
@@ -39,7 +39,7 @@ const createProduct = async (req, res, next) => {
   try {
     const newProduct = await Product.create(product);
     //res.status(201).json(newProduct);
-    res.redirect("pages/view_product");
+    res.redirect("/product_dashboard");
   } catch (err) {
     //if there is an error, send it to the error handler
     next(err);

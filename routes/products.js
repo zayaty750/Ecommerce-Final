@@ -31,7 +31,7 @@ router.get("/", getProducts);
 
 // GET add product form
 router.get("/add", (req, res, next) => {
-  res.render("pages/add-product", { product: {pname: '', Price: '', Description: '', category: '',Image:''}  });
+  res.render("pages/add-product");
 });
 // POST a single product: products/
 router.post("/add", upload.single('image'), createProduct);

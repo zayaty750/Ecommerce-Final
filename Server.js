@@ -57,7 +57,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //setup routes
 app.use("/", index_router);
-app.use("/products", products_router);
+app.use("/product_dashboard", products_router);
 //app.use('/products', logger('combined'), products_router);
 app.use("/home",home_router);
 app.use("/about_us",aboutUs_router);
