@@ -1,51 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("./partials/Head.ejs") %>
+    <%- include("../partials/Head.ejs") %>
   </head>
   <body>
     <div class="page d-flex">
-        <div class="sidebar2 bg-white p-20 p-relative">
-          <h3 class="p-relative txt-c mt-0">BLANKOO</h3>
-          <ul>
-            <li>
-              <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="index.html">
-                <i class='bx bxs-dashboard'></i>
-                <span>Dashboard</span>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="settings.html">
-                <i class='bx bxs-cog' ></i>
-                <span>Settings</span>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="profile.html">
-                <i class='bx bx-user'></i>
-                <span>Profile</span>
-              </a>
-            </li>
-            <li>
-              <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="friends.html">
-                <i class='bx bx-user-circle'></i>
-                <span>Team</span>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="files.html">
-                <i class='bx bx-box'></i>
-                <span>Products</span>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="plans.html">
-                <i class='bx bxs-user'></i>
-                <span>Clients</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+      <%- include("../partials/sidebar_admin.ejs") %>
       <div class="content w-full">
         <!-- Start Head -->
         <div class="head bg-white p-15 between-flex">

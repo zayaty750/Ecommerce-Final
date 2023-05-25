@@ -17,6 +17,7 @@ import cart_router from "./routes/cart.js";
 import checkout_router from "./routes/checkout.js";
 import signup_router from "./routes/Signup.js";
 import team_router from "./routes/team.js";
+import view_router from "./routes/products_client.js";
 //Read the current directory name
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = path.dirname(__filename);
@@ -65,6 +66,7 @@ app.use("/cart",cart_router);
 app.use("/checkout",checkout_router);
 app.use("/Signup",signup_router);
 app.use("/team",team_router);
+app.use("/view",view_router);
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development

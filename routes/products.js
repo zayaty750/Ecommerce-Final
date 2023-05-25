@@ -3,7 +3,7 @@ import multer from "multer";
 import {
     createProduct,
     getProducts
-  } from "../controllers/product_controller.js";
+  } from "../controllers/product_controller_admin.js";
 
 
 
@@ -21,6 +21,7 @@ const upload = multer({ storage: storage });
 //const upload = multer({ dest: 'public/images/uploads/' });
 
 const router = Router();
+
 
 // GET products: products/
 router.get("/", getProducts);
