@@ -1,6 +1,27 @@
 import { mongo } from "mongoose";
 import Product from '../models/products_model.js';
 
+
+
+// Get all products
+const getProducts = async (req, res, next) => {
+  const products = Product.find({})
+    .then((products) => {
+      if (products.length > 0) {
+        products.sort((a, b) => {
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
+          return dateA - dateB;
+        });
+      }
+      //res.json(products);
+      res.render("pages/view_product", { products: products });
+    }) //get all products
+    .catch((err) => {
+      next(err);
+    });
+};
+
 // Create a product
 const createProduct = async (req, res, next) => {
   //get the product data from the request body
@@ -18,11 +39,11 @@ const createProduct = async (req, res, next) => {
   try {
     const newProduct = await Product.create(product);
     //res.status(201).json(newProduct);
-    res.redirect("/products");
+    res.redirect("pages/view_product");
   } catch (err) {
     //if there is an error, send it to the error handler
     next(err);
   }
 };
 
-export  {createProduct};
+export  {createProduct,getProducts};

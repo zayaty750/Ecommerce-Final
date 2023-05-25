@@ -1,7 +1,8 @@
 import { Router } from "express";
 import multer from "multer";
 import {
-    createProduct
+    createProduct,
+    getProducts
   } from "../controllers/product_controller.js";
 
 
@@ -22,7 +23,7 @@ const upload = multer({ storage: storage });
 const router = Router();
 
 // GET products: products/
-// router.get("/", getProducts);
+router.get("/", getProducts);
 
 // GET a single product: products/find/:id
 // router.get("/find/:id", getProductById);
