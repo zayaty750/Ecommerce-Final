@@ -1,6 +1,9 @@
 import { Router } from 'express';
 
 const router = Router();
+//nour
+//signup.use(express.urlencoded({extendd: true}));
+
 
 /* GET sign up page. */
 router.get('/', (req, res, next)=> {
@@ -8,4 +11,10 @@ router.get('/', (req, res, next)=> {
   res.render('pages/index');
 });
 
+
+//nour
+router.post('/Signup-action',(req,res)=>{
+ 
+
+  
 export default router;
