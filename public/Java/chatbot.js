@@ -46,3 +46,19 @@ function sendMessage(userMessage){
         chatContainer.appendChild(messageElement);  
         chatContainer.scrollTop = chatContainer.scrollHeight;
     },600)}
+
+    sendBtn.addEventListener('click',function(e){
+        var userMessage = textbox.value;
+    
+        if(userMessage==""){
+            alert('Please type in a message');
+        }else{
+            //btsheel el msafat momken ashelha
+           let userMessageText= userMessage.trim();
+           user.message=userMessageText;
+           textbox.value="";
+           sendMessage(userMessageText);
+           chatbotResponse(userMessageText);
+        }
+        
+    })
