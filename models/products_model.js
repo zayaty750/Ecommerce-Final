@@ -3,19 +3,23 @@ import mongoose, { Schema } from "mongoose";
 const schema = mongoose.Schema;
 
 const productsSchema = new Schema({
-    name:{
+    pname:{
         type: String,
         required: true
     },
-    price:{
+    Price:{
         type: Number,
         required: true
     },
-    description:{
+    Description:{
         type: String,
         required: true
     },
-    imageUrl:{
+    category:{
+        type: String,
+        required: true
+    },
+    Image:{
         type: String,
         required: true
     }

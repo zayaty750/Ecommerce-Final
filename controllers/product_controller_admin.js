@@ -35,10 +35,10 @@ const createProduct = async (req, res, next) => {
     category: req.body.category,
     Image: imgURL //remove public from the path
   };
-  //console.log(product);
+  console.log(product);
   try {
-    const newProduct = await Product.create(product);
-    //res.status(201).json(newProduct);
+     await Product.create(product);
+
     res.redirect("/product_dashboard");
   } catch (err) {
     //if there is an error, send it to the error handler
@@ -100,6 +100,7 @@ const deleteProduct = async ({ params: { id } }, res, next) => {
     //const product = await Product.findById(req.params.id);
     const product = await Product.findOneAndDelete({ _id: id });
     if (product) {
+      console.log('data sent to th')
       // await product.remove();
       //res.json({ message: "Product removed" });
       res.status(200).json({ message: "Product removed" });
