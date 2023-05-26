@@ -15,9 +15,8 @@ import home_router from "./routes/Home.js";
 import aboutUs_router from "./routes/about_us.js";
 import cart_router from "./routes/cart.js";
 import checkout_router from "./routes/checkout.js";
-import signup_router from "./routes/Signup.js";
 import team_router from "./routes/team.js";
-// import view_router from "./routes/products_client.js";
+import User_router from "./routes/user.js";
 // import client_router from "./routes/clients.js";
 
 //Read the current directory name
@@ -66,9 +65,8 @@ app.use("/home",home_router);
 app.use("/about_us",aboutUs_router);
 app.use("/cart",cart_router);
 app.use("/checkout",checkout_router);
-app.use("/Signup",signup_router);
 app.use("/team",team_router);
-// app.use("/view",view_router);
+app.use("/user",User_router);
 // app.use("/clients",client_router);
 // error handler
 app.use(function (err, req, res, next) {

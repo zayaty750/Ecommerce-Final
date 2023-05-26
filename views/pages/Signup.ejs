@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <%- include("./partials/Head.ejs") %>
+    <%- include("../partials/Head.ejs") %>
 </head>
 
 <body>
-    <%- include("./partials/Nav.ejs") %>
+    <%- include("../partials/Nav.ejs") %>
         <div class="container-fluid p-5">
             <div class="row no-gutter">
                 <!-- The image half -->
@@ -16,7 +16,7 @@
                 <!-- The content half -->
                 <div class="col-md-6 bg-light ">
 
-                    <!-- <div class="container d-none " id="Login">
+                    <div class="container d-none " id="Login">
                         <div class="row ms-5">
                             <div class="col-lg-10 col-xl-7 ">
                                 <h3 class="display-4">Sign up!</h3>
@@ -44,7 +44,8 @@
                                 </form>
                             </div>
                         </div>
-                    </div>End -->
+                    </div>
+                    <!-- End -->
 
 
                     <div class="container d-block " id="Register">
@@ -53,21 +54,23 @@
                                 <h3 class="display-4">Sign in!</h3>
                                 <p class="text-muted mb-4">Create a new account.</p>
 
-                                <form action="/Signup-action" method="post" >
+                                <form action="/user/add" method="post" enctype="multipart/form-data" >
 
-                                    <input type="text" name="fn"  placeholder="Full Name"
+                                    <input type="text" name="name"  placeholder="Full Name"
                                         class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
-                                    <input  type="email" name="em" placeholder="Email address"
+                                    <input  type="email" name="email" placeholder="Email address"
                                         class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
-                                    <input type="password"  name="ps" placeholder="Password"
+                                    <input type="password"  name="password" placeholder="Password"
                                         class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
                                     <input placeholder="Confirm Password"
                                         class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
                                     <input type="hidden" name="type" value="client">
+
+                                    <input type="file" class="form-control-file" id="image" name="image" required>
 
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input id="" type="checkbox" checked class="custom-control-input">
@@ -90,8 +93,8 @@
             </div>
         </div>
         <!-- end -->
-        <%- include("./partials/Top_Function.ejs") %>
-        <%- include("./partials/Footer.ejs") %>
+        <%- include("../partials/Top_Function.ejs") %>
+        <%- include("../partials/Footer.ejs") %>
 </body>
 
 </html>
