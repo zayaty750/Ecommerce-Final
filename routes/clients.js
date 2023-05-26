@@ -2,9 +2,10 @@ import { Router } from 'express';
 
 const router = Router();
 
-/* GET Cart page. */
+/* GET Client page. */
 router.get('/', (req, res, next)=> {
-  res.render('pages/cart');
+  console.log('index.js: GET /');
+  res.render('pages/clients');
 });
 
 export default router;

@@ -1,0 +1,28 @@
+<!-- products.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <%- include('../partials/head') %>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%- include('../partials/header') %>
+    <div class="jumbotron">
+        <h1>Products</h1>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="card">
+                <img src="/<%= product.imageUrl %>" class="card-img-top w-25 p-2 rounded mx-auto d-block" alt="<%= product.name %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text"><%= product.description %></p>
+                    <p class="card-text"><%= product.price %> EGP</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>
