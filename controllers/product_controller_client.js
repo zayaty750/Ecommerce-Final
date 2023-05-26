@@ -22,5 +22,10 @@ const getProducts = async (req, res, next) => {
     });
 };
 
+const addtowishlist = async (req,res,next)=>
+{
+  
+};
+
 
 export  {getProducts};

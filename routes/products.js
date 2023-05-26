@@ -2,7 +2,8 @@ import { Router } from "express";
 import multer from "multer";
 import {
     createProduct,
-    getProducts
+    getProducts,
+    deleteProduct
   } from "../controllers/product_controller_admin.js";
 
 
@@ -47,6 +48,6 @@ router.post("/add", upload.single('image'), createProduct);
 // router.patch("/edit/:id", updateProduct);
 
 // DELETE a single product: products/:id
-// router.delete("/:id", deleteProduct);
+router.delete("/:id", deleteProduct);
 
 export default router;

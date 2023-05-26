@@ -30,9 +30,11 @@
             </div>
 
             <div class="mt-3">
-                <button class="btn btn-dark ">Add To Cart</button>
+                <button class="btn btn-dark " id="delete" data-id="<%= product._id %>" > Delete</button>
             </div>
-
+            <div class="mt-3">
+                <button href="/product_dashboard/edit/<%= product._id %>"  > Edit</button>
+            </div>
         </div>
     </div>
 </div>

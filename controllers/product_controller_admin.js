@@ -46,4 +46,25 @@ const createProduct = async (req, res, next) => {
   }
 };
 
-export  {createProduct,getProducts};
+// Delete a product
+const deleteProduct = async ({ params: { id } }, res, next) => {
+
+  try {
+    if (!mongo.ObjectId.isValid(id) ) {
+      return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
+    }
+    //const product = await Product.findById(req.params.id);
+    const product = await Product.findOneAndDelete({ _id: id });
+    if (product) {
+      // await product.remove();
+      //res.json({ message: "Product removed" });
+      res.status(200).json({ message: "Product removed" });
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+export  {createProduct,getProducts,deleteProduct};
