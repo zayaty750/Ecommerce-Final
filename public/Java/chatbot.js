@@ -20,3 +20,29 @@ function sendMessage(userMessage){
  
      chatContainer.appendChild(messageElement);
  }
+
+ function chatbotResponse(userMessage){
+    var chatbotmessage = "";
+
+    if(userMessage.length>5||userMessage=="hi"){
+        var result = arrayOfPossibleMessage.filter(val=>val.message.includes(userMessage.toLowerCase()));
+        if(result.length>0){
+            var response = result[0].response;
+            chatbotmessage = response;
+        }else{
+            chatbotmessage="please send another message";
+        }
+    }else{
+        chatbotmessage="please send a different message !";
+    }
+
+    var messageElement = document.createElement('div');
+    messageElement.innerHTML="<span> Chatbot: </span>"+
+                            "<span>" +chatbotmessage+ "</span>";
+
+
+    setTimeout(()=>{
+        messageElement.animate([{easing:"ease-in",opacity:0.4},{opacity:1}],{duration:500})
+        chatContainer.appendChild(messageElement);  
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    },600)}
