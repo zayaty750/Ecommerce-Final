@@ -22,7 +22,7 @@ import {
 const router = Router();
 
 // GET clients: clients/
-router.get("/view", getclients);
+router.get("/", getclients);
 
 /* GET sign up page. */
 router.get('/add', (req, res, next)=> {
