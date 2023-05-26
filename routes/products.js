@@ -3,7 +3,9 @@ import multer from "multer";
 import {
     createProduct,
     getProducts,
-    deleteProduct
+    deleteProduct,
+    updateProduct,
+    updateProductForm
   } from "../controllers/product_controller_admin.js";
 
 
@@ -40,12 +42,13 @@ router.post("/add", upload.single('image'), createProduct);
 
 
 // GET add product form
-// router.get("/edit/:id", updateProductForm);
+router.get("/edit/:id", updateProductForm);
 
 // Patch a single product: products/:id
 // When a client needs to replace an existing Resource entirely,
 // they can use PUT. When they're doing a partial update, they can use HTTP PATCH
-// router.patch("/edit/:id", updateProduct);
+
+router.patch("/edit/:id", updateProduct);
 
 // DELETE a single product: products/:id
 router.delete("/:id", deleteProduct);

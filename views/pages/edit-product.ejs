@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/Head.ejs") %>
+  </head>
+  <body>
+    <div class="page d-flex">
+      <%- include("../partials/sidebar_admin.ejs") %>
+      <div class="content w-full">
+        <!-- Start Head -->
+        <div class="head bg-white p-15 between-flex">
+          <div class="search p-relative">
+            <input class="p-10" type="search" placeholder="Type A Keyword" />
+          </div>
+          <div class="icons d-flex align-center">
+            <span class="notification p-relative">
+              <i class="fa-regular fa-bell fa-lg"></i>
+            </span>
+            <img src="../images/Admin/avatar.png" alt="" />
+          </div>
+        </div>
+        <!-- End Head -->
+        <h1 class="p-relative">Blankoo Products</h1>
+        <div class = "row m-2 justify-content-center">
+          <form  enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name"  value="<%= product.pname %>"  required>
+              </div>
+              <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" step=".01" class="form-control" id="price" name="price"  value="<%= product.Price %>"  required>
+              </div>
+              <div class="form-group">
+                <label for="category">Catergory:</label>
+                <input class="form-control" id="category" name="category"  rows="3"  value="<%= product.category %>" required></input>
+              </div>
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required  ><%= product.Description %></textarea>
+              </div>
+              <div class="form-group">
+                <label for="image">Image:</label>
+                <div class="container-fluid">
+                    <img src="..\<%= product.Image %>" id="image" class="card-img-top w-25 p-2 rounded mx-auto d-block" alt="<%= product.name %> image">
+                  </div>
+            </div>
+
+              <button type="submit" class="btn btn-primary" id="editBtn">edit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    $(document).ready(function() {
+        $('#editBtn').click(function() {
+          console.log('Edit button clicked');
+            $.ajax({
+                url: `/product_dashboard/edit/<%= product._id %>`,
+                method: 'PATCH',
+                data: {
+                  pname: $('#name').val(),
+                  Price: $('#price').val(),
+                  Description: $('#description').val(),
+                  category: $('#price').val(),
+                  Image: $('#image').val(),
+                },
+
+                success: function(response) {
+                    // Reload the page to show updated product list
+                    window.location.reload();
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+        });
+    });
+    </script>
+  </body>
+</html>
