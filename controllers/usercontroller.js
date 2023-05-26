@@ -44,4 +44,5 @@ const addUser = async (req, res, next) => {
 };
 
 
-export  {addUser};
+
+export  {addUser,getclients};

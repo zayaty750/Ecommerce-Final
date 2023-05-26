@@ -1,9 +1,9 @@
 import { Router } from "express";
 import multer from "multer";
 import {
-    addUser
+    addUser,
+    getclients
   } from "../controllers/usercontroller.js";
-
 
 
   const storage = multer.diskStorage({
@@ -20,6 +20,9 @@ import {
 
   
 const router = Router();
+
+// GET clients: clients/
+router.get("/view", getclients);
 
 /* GET sign up page. */
 router.get('/add', (req, res, next)=> {
