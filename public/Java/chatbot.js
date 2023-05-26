@@ -4,9 +4,12 @@ var chatContainer = document.getElementById('chatContainer');
 var user={message:""};
 
 var arrayOfPossibleMessage = [
+    
     {message:"hi",response:"hello"},
     {message:"how are you?",response:"good"},
-    {message:"what is your name?",response:"I'am a chatbot!"}
+    {message:"what is your name?",response:"I'am a chatbot!"},
+    {message:"What is Blanko?",response:"Bye"}
+
 ]
 
 //the message will displayed in a span and the span will displayed into a div and the div will be displayed in the chat container
