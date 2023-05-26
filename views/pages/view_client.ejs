@@ -22,6 +22,9 @@
           <!-- End Head -->
           <h1 class="p-relative">Blankoo Products</h1>
         <div class = "row m-2 justify-content-center">
+            <% user.forEach((User) => { %>
+                <%- include('../partials/user_card', { User: User }) %>
+            <% }); %>
         </div>
     </div>
 </body>
