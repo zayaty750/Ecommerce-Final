@@ -12,7 +12,7 @@ const getclients = async (req, res, next) => {
           return dateA - dateB;
         });
       }
-      res.render("pages/product_dashboard", { user: user });
+      res.render("pages/view_client", { user: user });
     }) //get all clients
     .catch((err) => {
       next(err);
