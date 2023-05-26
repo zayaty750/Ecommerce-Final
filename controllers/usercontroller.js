@@ -1,11 +1,25 @@
 import { mongo } from "mongoose";
 import User from '../models/user-model.js';
 
+// Get all clients
+const getclients = async (req, res, next) => {
+  const user = User.find({})
+    .then((user) => {
+      if (user.length > 0) {
+        user.sort((a, b) => {
+          const dateA = new Date(a.createdAt);
+          const dateB = new Date(b.createdAt);
+          return dateA - dateB;
+        });
+      }
+      res.render("pages/product_dashboard", { user: user });
+    }) //get all clients
+    .catch((err) => {
+      next(err);
+    });
+};
 
-
-
-
-// Create a product
+// Create a client
 const addUser = async (req, res, next) => {
   //get the user data from the request body
   const imgPath = req.file.path;
