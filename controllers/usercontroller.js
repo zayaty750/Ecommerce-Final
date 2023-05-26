@@ -9,7 +9,7 @@ const getclients = async (req, res, next) => {
         user.sort((a, b) => {
           const dateA = new Date(a.createdAt);
           const dateB = new Date(b.createdAt);
-          return dateA - dateB;
+          return dateA-dateB;
         });
       }
       res.render("pages/view_client", { user: user });
@@ -34,7 +34,7 @@ const addUser = async (req, res, next) => {
   };
   console.log(user);
   try {
-     await User.create(user);
+    await User.create(user);
 
     res.redirect("/");
   } catch (err) {
@@ -45,4 +45,4 @@ const addUser = async (req, res, next) => {
 
 
 
-export  {addUser,getclients};
+export { addUser, getclients };

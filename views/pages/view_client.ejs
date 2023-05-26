@@ -21,11 +21,11 @@
           </div>
           <!-- End Head -->
           <h1 class="p-relative">Blankoo Products</h1>
-        <div class = "row m-2 justify-content-center">
+          <div class="friends-page d-grid m-20 gap-20">
             <% user.forEach((User) => { %>
                 <%- include('../partials/user_card', { User: User }) %>
             <% }); %>
+          </div>
         </div>
-    </div>
 </body>
 </html>
