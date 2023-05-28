@@ -2,6 +2,7 @@ import HttpError from "http-errors";
 import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
+import session from "express-session";
 import logger from "morgan";
 import { fileURLToPath } from "url";
 import fs from "fs";
@@ -28,6 +29,11 @@ const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
+app.use(session({
+  secret: "xa",
+  saveUninitialized: true,
+  resave: true
+}));
 app.set("view engine", "ejs");
 
 //Setup middlewares

@@ -33,9 +33,9 @@ const addUser = async (req, res, next) => {
     Image: imgURL //remove public from the path
   };
   console.log(user);
+  req.session.user = user;
   try {
     await User.create(user);
-
     res.redirect("/");
   } catch (err) {
     //if there is an error, send it to the error handler

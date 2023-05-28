@@ -4,8 +4,9 @@ const router = Router();
 
 /* GET home page. */
 router.get('/', (req, res, next)=> {
-  console.log('index.js: GET /');
-  res.render('pages/index');
+  
+  res.render('pages/index',{user: (req.session.user === undefined ? "" : req.session.user)});
+  console.log(req.session.user);
 });
 
 export default router;

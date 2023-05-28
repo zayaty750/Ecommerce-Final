@@ -25,11 +25,11 @@ const router = Router();
 router.get("/", getclients);
 
 /* GET sign up page. */
-router.get('/add', (req, res, next)=> {
-  res.render('pages/Signup');
+router.get('/Signup', (req, res)=> {
+  res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) });
 });
  
 // POST a single product: products/
-router.post("/add", upload.single('image'), addUser);
+router.post("/Signup", upload.single('image'), addUser);
   
 export default router;
