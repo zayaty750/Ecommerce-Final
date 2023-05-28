@@ -57,16 +57,20 @@
 
           <% if(user==="" ) {%>
             <li class="nav-item"><a href="" class="nav-link btn btn-outline-light px-2 me-2">Login</a></li>
-            <li class="nav-item"><a href="/user/Signup" class="nav-link btn btn-light px-2">Sign up</a></li>
+            <li class="nav-item"><a href="/user/Signin" class="nav-link btn btn-light px-2">Sign in</a></li>
           <% }
           else{%>
             <div class="dropdown text-end">
               <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="<%= user.Image %>" alt="mdo" width="32" height="32" class="rounded-circle">
               </a>
-              <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+              <ul class="dropdown-menu text-small ">
+                <li><a class="dropdown-item" href="#"><%= user.name %></a></li>
                 <li><hr class="dropdown-divider"></li>
+                <% if(user.type == "admin" ) { %>
+                <li><a class="dropdown-item" href="#">DashBoard</a></li>
+                <% } %>
+                <li><a class="dropdown-item" href="#">profile</a></li>
                 <li><a class="dropdown-item" href="/user/Signout">Sign out</a></li>
               </ul>
             </div>

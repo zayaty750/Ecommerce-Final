@@ -25,12 +25,13 @@ const router = Router();
 router.get("/", getclients);
 
 /* GET sign up page. */
-router.get('/Signup', (req, res)=> {
+router.get('/Signin', (req, res)=> {
   res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) });
 });
  
-// POST a single product: products/
-router.post("/Signup", upload.single('image'), addUser);
+// POST a single user: user/
+router.post("/Signin", upload.single('image'), addUser);
+router.post("/Login", addUser);
 
 router.get('/Signout', (req, res) => {
   req.session.destroy();
