@@ -31,6 +31,7 @@ router.get('/Signin', (req, res)=> {
  
 // POST a single user: user/
 router.post("/Signin", upload.single('image'), addUser);
+
 router.post("/Login", addUser);
 
 router.get('/Signout', (req, res) => {
