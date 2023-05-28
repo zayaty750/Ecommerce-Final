@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/Head.ejs") %>
+</head>
+
+<body>
+    <%- include("../partials/Nav.ejs") %>
+        <div class="container-fluid p-5">
+            <div class="row no-gutter">
+                <!-- The image half -->
+                <div class="col-md-6 d-none d-md-flex bg-image" style="background-image: url(/images/photo5.jpg);">
+
+                </div>
+                <!-- The content half -->
+                <div class="col-md-6 bg-light ">
+
+                    <div class="container " id="Signup">
+                        <div class="row ms-5">
+                            <div class="col-lg-10 col-xl-7 ">
+                                <h3 class="display-4">Sign up!</h3>
+                                <p class="text-muted mb-4">Create a new account.</p>
+                                <form action="/user/Login" method="post" enctype="multipart/form-data">
+                                    <div class="form-group mb-3">
+                                        <input id="User" type="text" placeholder="UserName" name="name" autofocus=""
+                                            class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="Password" type="password" name="password" placeholder="Password"
+                                            class="form-control rounded-pill border-0 shadow-sm px-4 ">
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input id="" type="checkbox" checked class="custom-control-input">
+                                        <label for="" class="custom-control-label">Remember password</label>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-dark btn-block text-uppercase mb-2 rounded-pill shadow-sm" >Sign
+                                        in</button>
+                                </form>
+                                <div class="text-center d-flex justify-content-between mt-4">
+                                    <p>Create a new account?<a class="font-italic text-muted" >
+                                            click here <u></u></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+                </div><!-- End -->
+
+            </div>
+        </div>
+        <!-- end -->
+        <%- include("../partials/Top_Function.ejs") %>
+        <%- include("../partials/Footer.ejs") %>
+</body>
+
+</html>

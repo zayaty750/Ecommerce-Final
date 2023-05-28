@@ -2,7 +2,8 @@ import { Router } from "express";
 import multer from "multer";
 import {
     addUser,
-    getclients
+    getclients,
+    GetUser
   } from "../controllers/user_controller.js";
 
 
@@ -32,7 +33,12 @@ router.get('/Signin', (req, res)=> {
 // POST a single user: user/
 router.post("/Signin", upload.single('image'), addUser);
 
-router.post("/Login", addUser);
+
+router.get('/Login', (req, res)=> {
+  res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) });
+});
+ 
+router.post("/Login", GetUser);
 
 router.get('/Signout', (req, res) => {
   req.session.destroy();

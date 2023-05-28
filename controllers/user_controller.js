@@ -43,30 +43,25 @@ const addUser = async (req, res, next) => {
   }
 };
 
-// Create a client
-const deleteUser = async (req, res, next) => {
-  //get the user data from the request body
-  const imgPath = req.file.path;
-  const imgURL = req.file.path.substring(req.file.path.indexOf("/") + 7);
-  const user = {
-    //create a new 
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    type: req.body.type,
-    Image: imgURL //remove public from the path
-  };
-  console.log(user);
-  req.session.user = user;
-  try {
-    await User.create(user);
-    res.redirect("/");
-  } catch (err) {
-    //if there is an error, send it to the error handler
-    next(err);
-  }
+const GetUser = (req, res) => {
+  var query = { name: req.body.name, password: req.body.password };
+  console.log(req.body.name, req.body.password);
+  User.findOne(query)
+      .then(result => {
+          if (!result) {
+              console.log("data not found");
+              res.render('pages/error', { err: 'Invalid Data', user: (req.session.user === undefined ? "" : req.session.user) });
+          }
+          else {
+              req.session.user = result;  
+              res.redirect('/');
+          }
+      })
+      .catch(err => {
+          console.log(err);
+      });
 };
 
 
 
-export { addUser, getclients };
+export { addUser, getclients,GetUser };

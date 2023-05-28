@@ -83,7 +83,7 @@ app.use(function (err, req, res, next) {
   console.log(err.message);
   // render the error page
   res.status(err.status || 500);
-  res.render("pages/error");
+  res.render("pages/error",{ user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
 //connect to mongodb
