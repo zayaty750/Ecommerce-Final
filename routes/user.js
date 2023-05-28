@@ -3,7 +3,7 @@ import multer from "multer";
 import {
     addUser,
     getclients
-  } from "../controllers/usercontroller.js";
+  } from "../controllers/user_controller.js";
 
 
   const storage = multer.diskStorage({
@@ -31,5 +31,9 @@ router.get('/Signup', (req, res)=> {
  
 // POST a single product: products/
 router.post("/Signup", upload.single('image'), addUser);
-  
+
+router.get('/Signout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 export default router;
