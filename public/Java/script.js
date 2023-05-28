@@ -144,13 +144,13 @@ function when_scroll() {
   }
 }
 
-function show_()
+function show_Signup()
 {
-    document.getElementById("login").style.display = "block";
-    document.getElementById("Register").style.display = "none";
+    document.getElementById("Signup").className = " d-block";
+    document.getElementById("Signin").className = " d-none";
 }
 function show_Signin()
 {
-    document.getElementById("Login").style.display = "none";
-    document.getElementById("Register").style.display = "block";
+  document.getElementById("Signup").className = " d-none";
+  document.getElementById("Signin").className = " d-block";
 }
