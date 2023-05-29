@@ -14,6 +14,12 @@ router.get('/Home',function(req,res,next)
     res.render('pages/Home',{ user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
+// chat bot
+router.get('/chatbot',(req,res,next)=>{
+  res.render('pages/chatbot');
+  });
+  
+
 // Aboutus page
 router.get('/About_us',function(req,res,next)
 {
