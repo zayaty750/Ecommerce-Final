@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/Head.ejs") %>
+    </head>
+    <body>
+        <%- include("../partials/Nav.ejs") %>
+      
+        <section class=" choose container-fluid  mt-5 mb-5">
+         
+          <!-- control pages -->
+          <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
+            <a href="/products">
+              <li>All</li>
+            </a>
+            <a href="/products1">
+              <li class="active rounded-pill">Shirts</li>
+            </a>
+            <a href="/products2">
+              <li>Pants</li>
+            </a>
+            <a href="/products3">
+              <li>Shoes</li>
+            </a>
+          </ul>
+      
+          <!-- products -->
+        <div class="row">
+          <% products.forEach((product) => { %>
+            <%- include('../partials/product_card_client', { product: product }) %>
+        <% }); %>
+        </div>
+        </section>
+
+      
+        <%- include("../partials/Top_Function.ejs") %>
+        <%- include("../partials/Footer.ejs") %>
+      
+      
+      </body>
+</html>

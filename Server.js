@@ -2,10 +2,14 @@ import HttpError from "http-errors";
 import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
-import session from "express-session";
+import session, { Cookie } from "express-session";
+import MongoStore from 'connect-mongo';
 import logger from "morgan";
 import { fileURLToPath } from "url";
 import fs from "fs";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 
 //import routes
@@ -15,10 +19,12 @@ import { error } from "console";
 import home_router from "./routes/Home.js";
 import aboutUs_router from "./routes/about_us.js";
 import cart_router from "./routes/cart.js";
-import checkout_router from "./routes/checkout.js";
 import team_router from "./routes/team.js";
 import User_router from "./routes/user.js";
 import chatbot_router from "./routes/chatbot.js";
+import admin_router from "./routes/admin.js";
+import products_testing_router from "./routes/product_test.js";
+import mongoose from "mongoose";
 
 //Read the current directory name
 export const __filename = fileURLToPath(import.meta.url);
@@ -31,9 +37,12 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.use(session({
   secret: "xa",
-  saveUninitialized: true,
-  resave: true
-}));
+  saveUninitialized: false,
+  resave: false,
+  store: MongoStore.create({ 
+    mongoUrl: process.env.dbURI}),
+  Cookie: { maxAge: 180 * 60 * 1000 }
+} ));
 app.set("view engine", "ejs");
 
 //Setup middlewares
@@ -70,10 +79,19 @@ app.use("/product_dashboard", products_router);
 app.use("/home",home_router);
 app.use("/about_us",aboutUs_router);
 app.use("/cart",cart_router);
-app.use("/checkout",checkout_router);
+app.use("/products",products_testing_router);
+app.use("/admin",admin_router);
 app.use("/team",team_router);
 app.use("/user",User_router);
 app.use("/chatbot",chatbot_router);
+
+app.use(function ( req, res, next) {
+
+    res.locals.session = req.session;
+    next();
+});
+
+
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development

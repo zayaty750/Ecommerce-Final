@@ -15,7 +15,7 @@ const getProducts = async (req, res, next) => {
         });
       }
       //res.json(products);
-      res.render("pages/all_products", { products: products });
+      res.render("pages/products",{products: products , user:  (req.session.user === undefined ? "" : req.session.user) });
     }) //get all products
     .catch((err) => {
       next(err);

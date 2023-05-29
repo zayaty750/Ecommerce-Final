@@ -67,8 +67,8 @@
               <ul class="dropdown-menu text-small ">
                 <li><a class="dropdown-item" href="#"><%= user.name %></a></li>
                 <li><hr class="dropdown-divider"></li>
-                <% if(user.type == "admin" ) { %>
-                <li><a class="dropdown-item" href="#">DashBoard</a></li>
+                <% if(user.type === "admin" ) { %>
+                <li><a class="dropdown-item" href="/admin">Dashboard</a></li>
                 <% } %>
                 <li><a class="dropdown-item" href="#">profile</a></li>
                 <li><a class="dropdown-item" href="/user/Signout">Sign out</a></li>
@@ -94,7 +94,8 @@
         <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
       </form>
       <div class="col-12 col-lg-auto mb-3 mb-lg-0 mt-3 d-none d-sm-block ">
-        <i class="bi bi-search" onclick="open_search()"></i>
+        <i class="bi bi-search pe-5" onclick="open_search()"></i>
+        <i class="bi bi-cart " ></i>
       </div>
     </div>
   </header>

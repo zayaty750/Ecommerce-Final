@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <%- include("./partials/Head.ejs") %>
+    <%- include("../partials/Head.ejs") %>
 </head>
 
 <body>
-    <%- include("./partials/Nav.ejs") %>
+    <%- include("../partials/Nav.ejs") %>
 
     
     <div class="bondo2">
@@ -29,9 +29,7 @@
                           </tr>
                       </thead>
                       <tbody>
-                        <% products.forEach((product) => { %>
-                            <%- include('../partials/cart', { product: product }) %>
-                        <% }); %>
+
                       </tbody>
                   </table>
                   <div class="float-right text-right">
@@ -51,8 +49,8 @@
       </div>
       </section>
     
-    <%- include("./partials/Top_Function.ejs") %>
-    <%- include("./partials/Footer.ejs") %>
+    <%- include("../partials/Top_Function.ejs") %>
+    <%- include("../partials/Footer.ejs") %>
 </body>
 
 </html>
