@@ -14,11 +14,8 @@ dotenv.config();
 
 //import routes
 import index_router from "./routes/index.js";
-import products_router from "./routes/products.js";
 import { error } from "console";
-import cart_router from "./routes/cart.js";
-import User_router from "./routes/user.js";
-import admin_router from "./routes/admin.js";
+import admin_router from "./routes/Admin.js";
 import mongoose from "mongoose";
 
 //Read the current directory name
@@ -70,9 +67,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //setup routes
 app.use("/", index_router);
-app.use("/product_dashboard", products_router);
 //app.use('/products', logger('combined'), products_router);
-app.use("/cart",cart_router);
 app.use("/admin",admin_router);
 
 
