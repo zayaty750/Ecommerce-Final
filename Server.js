@@ -68,7 +68,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //setup routes
 app.use("/", index_router);
 //app.use('/products', logger('combined'), products_router);
-app.use("/admin",admin_router);
+app.use("/",admin_router);
 
 
 app.use(function ( req, res, next) {

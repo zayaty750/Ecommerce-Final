@@ -15,7 +15,7 @@ const getProducts = async (req, res, next) => {
         });
       }
       //res.json(products);
-      res.render("pages/product_dashboard", { products: products });
+      res.render("pages/product_dashboard", { products: products ,  user: (req.session.user === undefined ? "" : req.session.user) });
     }) //get all products
     .catch((err) => {
       next(err);
@@ -39,7 +39,7 @@ const createProduct = async (req, res, next) => {
   try {
      await Product.create(product);
 
-    res.redirect("/product_dashboard");
+    res.redirect("/view-products");
   } catch (err) {
     //if there is an error, send it to the error handler
     next(err);

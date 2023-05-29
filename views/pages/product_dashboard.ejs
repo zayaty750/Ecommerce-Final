@@ -8,17 +8,7 @@
       <%- include("../partials/sidebar_admin.ejs") %>
       <div class="content w-full">
         <!-- Start Head -->
-        <div class="head bg-white p-15 between-flex">
-          <div class="search p-relative">
-            <input class="p-10" type="search" placeholder="Type A Keyword" />
-          </div>
-          <div class="icons d-flex align-center">
-            <span class="notification p-relative">
-              <i class="fa-regular fa-bell fa-lg"></i>
-            </span>
-            <img src="../images/Admin/avatar.png" alt="" />
-          </div>
-        </div>
+        <%- include("../partials/Navbar_admin.ejs") %>
         <!-- End Head -->
         <h1 class="p-relative">Blankoo Products</h1>
             <div class="row ">
@@ -37,7 +27,7 @@
               console.log('Delete button clicked');
               const productId = $(this).data('id');
               $.ajax({
-                  url: `admin/${productId}`,
+                  url: `/delete/${productId}`,
                   method: 'DELETE',
                   success: function(response) {
                       // Reload the page to show updated product list

@@ -27,24 +27,29 @@ const router = Router();
 
 
 /* GET team page. */
+router.get('/admin_dashboard', (req, res)=> {
+  res.render('pages/admin_dashboard');
+});
+
+/* GET team page. */
 router.get('/team', (req, res)=> {
   res.render('pages/team');
 });
 
 
 // GET products: products
-router.get("/", getProducts);
+router.get("/view-products", getProducts);
 
 // GET a single product: products/find/:id
 // router.get("/find/:id", getProductById);
 
 
 // GET add product form
-router.get("/add", (req, res, next) => {
+router.get("/add-product", (req, res, next) => {
   res.render("pages/add-product");
 });
 // POST a single product: products
-router.post("/add", upload.single('image'), createProduct);
+router.post("/add-product", upload.single('image'), createProduct);
 
 
 // GET add product form
@@ -58,6 +63,6 @@ router.get("/edit/:id", updateProductForm);
 router.patch( "/edit/:id" , updateProduct);
 
 // DELETE a single product: products/:id
-router.delete("/:id", deleteProduct);
+router.delete("/delete/:id", deleteProduct);
 
 export default router;
