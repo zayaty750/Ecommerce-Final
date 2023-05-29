@@ -7,7 +7,7 @@ var arrayOfPossibleMessage = [
   { message: "hi", response: "hello" },
   { message: "how are you?", response: "good" },
   { message: "what is your name?", response: "I'am a chatbot!" },
-  { message: "what is blankoo", response: "it is a Ecommerce website" },
+  { message: "what is blankoo", response: "Ecommerce website" },
   { message: "who made it?", response: "zeyad ,mark,mervat,nour and robert" },
 ];
 
