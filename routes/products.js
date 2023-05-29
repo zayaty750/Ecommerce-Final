@@ -26,6 +26,12 @@ const upload = multer({ storage: storage });
 const router = Router();
 
 
+/* GET team page. */
+router.get('/team', (req, res)=> {
+  res.render('pages/team');
+});
+
+
 // GET products: products/
 router.get("/", getProducts);
 

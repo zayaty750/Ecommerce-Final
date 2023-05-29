@@ -16,9 +16,7 @@ dotenv.config();
 import index_router from "./routes/index.js";
 import products_router from "./routes/products.js";
 import { error } from "console";
-import aboutUs_router from "./routes/about_us.js";
 import cart_router from "./routes/cart.js";
-import team_router from "./routes/team.js";
 import User_router from "./routes/user.js";
 import chatbot_router from "./routes/chatbot.js";
 import admin_router from "./routes/admin.js";
@@ -41,6 +39,7 @@ app.use(session({
   store: MongoStore.create({ 
     mongoUrl: process.env.dbURI}),
   Cookie: { maxAge: 180 * 60 * 1000 }
+  // 180min in cookies
 } ));
 app.set("view engine", "ejs");
 
@@ -75,11 +74,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", index_router);
 app.use("/product_dashboard", products_router);
 //app.use('/products', logger('combined'), products_router);
-app.use("/about_us",aboutUs_router);
 app.use("/cart",cart_router);
 app.use("/products",products_testing_router);
 app.use("/admin",admin_router);
-app.use("/team",team_router);
 app.use("/user",User_router);
 app.use("/chatbot",chatbot_router);
 
