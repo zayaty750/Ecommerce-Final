@@ -1,10 +1,12 @@
 import { mongo } from "mongoose";
 import Product from '../models/products_model.js';
+import { render } from "ejs";
 
 
 
 // Get all products
 const getProducts = async (req, res, next) => {
+
   const products = Product.find({})
     .then((products) => {
       if (products.length > 0) {
@@ -20,10 +22,14 @@ const getProducts = async (req, res, next) => {
     .catch((err) => {
       next(err);
     });
+  
 };
 
 // Create a product
 const createProduct = async (req, res, next) => {
+
+  if(req.session.user.type === "admin")
+  {
   //get the product data from the request body
   const imgPath = req.file.path;
   const imgURL = req.file.path.substring(req.file.path.indexOf("/") + 7);
@@ -44,10 +50,17 @@ const createProduct = async (req, res, next) => {
     //if there is an error, send it to the error handler
     next(err);
   }
+}
+else
+{
+  res.render('pages/error');
+}
 };
 
 // Update a product form
 const updateProductForm = async ({ params: { id } }, res, next) => {
+  if(req.session.user.type === "admin")
+  {
   try {
     if (!mongo.ObjectId.isValid(id) ) {
       return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
@@ -64,10 +77,17 @@ const updateProductForm = async ({ params: { id } }, res, next) => {
   } catch (err) {
     next(err);
   }
+}
+else
+{
+  res.render('pages/error');
+}
 };
 
 // Update a product
 const updateProduct = async (req, res, next) => {
+  if(req.session.user.type === "admin")
+  {
   try {
     const id = req.params.id;
     console.log(req.body);
@@ -88,11 +108,16 @@ const updateProduct = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
+}
+else{
+  res.render('pages/error');
+}
 };
 
 // Delete a product
 const deleteProduct = async ({ params: { id } }, res, next) => {
-
+  if(req.session.user.type === "admin")
+  {
   try {
     if (!mongo.ObjectId.isValid(id) ) {
       return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
@@ -110,6 +135,10 @@ const deleteProduct = async ({ params: { id } }, res, next) => {
   } catch (err) {
     next(err);
   }
+}
+else{
+  res.render('pages/error');
+}
 };
 
 export  {createProduct,getProducts,deleteProduct,updateProduct,updateProductForm};

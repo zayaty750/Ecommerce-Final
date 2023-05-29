@@ -28,12 +28,27 @@ const router = Router();
 
 /* GET team page. */
 router.get('/admin_dashboard', (req, res)=> {
-  res.render('pages/admin_dashboard',{user: (req.session.user === undefined ? "" : req.session.user) });
+  if(req.session.user.type === "admin")
+  {
+    res.render('pages/admin_dashboard',{user: (req.session.user === undefined ? "" : req.session.user) });
+  }
+  else
+  {
+    res.render('pages/error');
+  }
+
 });
 
 /* GET team page. */
 router.get('/team', (req, res)=> {
-  res.render('pages/team',{user: (req.session.user === undefined ? "" : req.session.user) });
+  if(req.session.user.type === "admin")
+  {
+    res.render('pages/team',{user: (req.session.user === undefined ? "" : req.session.user) });
+  }
+  else
+  {
+    res.render('pages/error');
+  }
 });
 
 
@@ -46,7 +61,14 @@ router.get("/view-products", getProducts);
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
-  res.render("pages/add-product",{user: (req.session.user === undefined ? "" : req.session.user) });
+  if(req.session.user.type === "admin")
+  {
+    res.render("pages/add-product",{user: (req.session.user === undefined ? "" : req.session.user) });
+  }
+  else
+  {
+    res.render('pages/error');
+  }
 });
 
 // POST a single product: products
@@ -62,6 +84,7 @@ router.get("/edit/:id", updateProductForm);
 */
 
 router.patch( "/edit/:id" , updateProduct);
+
 
 // DELETE a single product: products/:id
 router.delete("/delete/:id", deleteProduct);

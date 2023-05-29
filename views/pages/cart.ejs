@@ -15,7 +15,12 @@
               <div class="col-lg-12 col-md-12 col-12">
                   <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
                   <p class="mb-5 text-center">
+                    <% if(products===" "){%>
                       <i class="text-info font-weight-bold"><%= qt%></i> items in your cart</p>
+                      <% } 
+                      else { %>
+                        <i class="text-info font-weight-bold"><%= qt%></i> items in your cart</p>
+                      <% } %>
                   <table id="shoppingCart" class="table table-condensed table-responsive">
                       <thead>
                           <tr>
@@ -26,9 +31,14 @@
                           </tr>
                       </thead>
                       <tbody>
-                        <% products.forEach((product) => { %>
-                            <%- include('../partials/cart_card', { product: product }) %>
-                        <% }); %>
+                        <% if(products==="undefined"){%>
+                            <h4>Cart Is empty</h4>
+                        <% }
+                        else{ %>
+                           <% products.forEach((product) => { %>
+                                <%- include('../partials/cart_card', { product: product }) %>
+                            <% }); %>
+                         <% } %> 
                       </tbody>
                   </table>
                   <div class="float-right text-right">
