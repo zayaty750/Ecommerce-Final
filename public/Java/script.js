@@ -1,7 +1,7 @@
 
 window.addEventListener("load", function(){
     document.getElementById("preloading").style.display = "none";
-    document.body.style.overflow = "none";
+    document.body.style.overflow = "visible";
 })
 
   function change_heart(heart)

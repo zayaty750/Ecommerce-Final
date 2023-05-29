@@ -48,6 +48,7 @@ router.get("/view-products", getProducts);
 router.get("/add-product", (req, res, next) => {
   res.render("pages/add-product",{user: (req.session.user === undefined ? "" : req.session.user) });
 });
+
 // POST a single product: products
 router.post("/add-product", upload.single('image'), createProduct);
 

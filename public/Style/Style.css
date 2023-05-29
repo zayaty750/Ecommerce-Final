@@ -3,7 +3,10 @@
 
 
 /*  */
-
+.preloading
+{
+    overflow: hidden;
+}
 .choose ul .active {
     background-color: #9a9c9e;
     color: black;
