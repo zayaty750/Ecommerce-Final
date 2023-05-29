@@ -1,18 +1,20 @@
+
 <tr>
+    
     <td data-th="Product">
         <div class="row">
             <div class="col-md-3 text-left">
-                <img src="/image/second main3.jpg" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+                <img src="<%= product.item.Image %>" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
             </div>
             <div class="col-md-9 text-left mt-sm-2">
-                <h4>Product Name</h4>
-                <p class="font-weight-light">Brand &amp; Name</p>
+                <h4><%= product.item.pname %></h4>
+                <p class="font-weight-light"></p>
             </div>
         </div>
     </td>
-    <td data-th="Price">$49.00</td>
+    <td data-th="Price"><%= product.item.Price %> EGP</td>
     <td data-th="Quantity">
-        <input type="number" class="form-control form-control-lg text-center" value="1">
+        <input type="number" class="form-control form-control-lg text-center" value="<%= product.qty %>">
     </td>
     <td class="actions" data-th="">
         <div class="text-right">

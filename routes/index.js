@@ -6,7 +6,8 @@ import
 }
  from '../controllers/product_controller_client.js';
  import {
-  addCart
+  addCart,
+  getCart
 }from "../controllers/cart_controller.js";
 import {
     addUser,
@@ -52,6 +53,8 @@ router.get('/products', getProducts);
 
 //  add to cart 
 router.get('/add-to-cart/:id',addCart);
+
+router.get('/cart',getCart);
 
 /*               End                 */
 

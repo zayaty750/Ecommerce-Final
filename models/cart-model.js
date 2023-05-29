@@ -1,6 +1,6 @@
 export class Cart {
     constructor(oldcart) {
-        this.items = oldcart || {};
+        this.items = oldcart.items || {};
         this.totalQty = oldcart.totalQty || 0;
         this.totalPrice = oldcart.totalPrice || 0;
 
@@ -16,8 +16,8 @@ export class Cart {
             this.totalPrice += storedItem.item.Price;
         };
 
-        this.generateArray = function () {
-            let arr = [];
+         this.generateArray = function () {
+            var arr = [];
             for (var id in this.items) {
                 arr.push(this.items[id]);
             }

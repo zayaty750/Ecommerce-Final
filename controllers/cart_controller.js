@@ -15,7 +15,7 @@ const addCart = async (req, res, next) => {
         cart.add(product, product_id);
         req.session.cart = cart;
         console.log(req.session.cart);
-        res.redirect('/');
+        res.redirect('/products');
       }
 
       req.session.cart;
@@ -23,4 +23,13 @@ const addCart = async (req, res, next) => {
   };
 
 
-  export {addCart} ;
+  // Create a client
+const getCart = async (req, res,next) =>
+{
+  let cart = new Cart(req.session.cart);
+  res.render('pages/cart',{ products: cart.generateArray() ,subtotal : cart.totalPrice,qt: cart.totalQty ,user:  (req.session.user === undefined ? "" : req.session.user) });
+  console.log(cart.generateArray());
+};
+
+
+  export {addCart,getCart} ;
