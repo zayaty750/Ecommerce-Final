@@ -57,7 +57,7 @@
         $('#editBtn').click(function() {
           console.log('Edit button clicked');
             $.ajax({
-                url: `/product_dashboard/edit/<%= product._id %>`,
+                url: `/edit/<%= product._id %>`,
                 method: 'PATCH',
                 data: {
                   pname: $('#name').val(),

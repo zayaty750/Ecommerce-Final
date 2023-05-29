@@ -37,7 +37,7 @@
               console.log('Delete button clicked');
               const productId = $(this).data('id');
               $.ajax({
-                  url: `/product_dashboard/${productId}`,
+                  url: `admin/${productId}`,
                   method: 'DELETE',
                   success: function(response) {
                       // Reload the page to show updated product list
