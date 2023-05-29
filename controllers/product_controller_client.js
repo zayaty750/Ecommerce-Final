@@ -1,10 +1,12 @@
 import { mongo } from "mongoose";
 import Product from '../models/products_model.js';
-
+import {Cart}
+from  "../models/cart-model.js";
 
 
 // Get all products
 const getProducts = async (req, res, next) => {
+  let cart = new Cart(req.session.cart ? req.session.cart : {});
   const products = Product.find({})
     .then((products) => {
       if (products.length > 0) {
@@ -15,7 +17,7 @@ const getProducts = async (req, res, next) => {
         });
       }
       //res.json(products);
-      res.render("pages/products",{products: products , user:  (req.session.user === undefined ? "" : req.session.user) });
+      res.render("pages/products",{products: products , user:  (req.session.user === undefined ? "" : req.session.user) ,qt: cart.totalQty});
     }) //get all products
     .catch((err) => {
       next(err);

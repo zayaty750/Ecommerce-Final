@@ -13,6 +13,8 @@ import {
     addUser,
     GetUser
   } from "../controllers/user_controller.js";
+  import {Cart}
+ from  "../models/cart-model.js";
 
 
 const router = Router();
@@ -38,7 +40,8 @@ router.get('/', (req, res)=> {
 // Home page
 router.get('/Home',function(req,res,next)
 {
-    res.render('pages/Home',{ user: (req.session.user === undefined ? "" : req.session.user) });
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+    res.render('pages/Home',{ user: (req.session.user === undefined ? "" : req.session.user) ,qt: cart.totalQty});
 });
 
 // chat bot
@@ -49,7 +52,8 @@ router.get('/chatbot',(req,res,next)=>{
 /*               Products               */
 
 // product page
-router.get('/products', getProducts);
+
+router.get('/products/', getProducts);
 
 //  add to cart 
 router.get('/add-to-cart/:id',addCart);
