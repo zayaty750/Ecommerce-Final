@@ -74,7 +74,7 @@ app.use("/product_dashboard", products_router);
 //app.use('/products', logger('combined'), products_router);
 app.use("/cart",cart_router);
 app.use("/admin",admin_router);
-app.use("/user",User_router);
+
 
 app.use(function ( req, res, next) {
 
