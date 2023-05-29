@@ -28,12 +28,12 @@ const router = Router();
 
 /* GET team page. */
 router.get('/admin_dashboard', (req, res)=> {
-  res.render('pages/admin_dashboard');
+  res.render('pages/admin_dashboard',{user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
 /* GET team page. */
 router.get('/team', (req, res)=> {
-  res.render('pages/team');
+  res.render('pages/team',{user: (req.session.user === undefined ? "" : req.session.user) });
 });
 
 
@@ -46,7 +46,7 @@ router.get("/view-products", getProducts);
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
-  res.render("pages/add-product");
+  res.render("pages/add-product",{user: (req.session.user === undefined ? "" : req.session.user) });
 });
 // POST a single product: products
 router.post("/add-product", upload.single('image'), createProduct);
