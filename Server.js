@@ -19,7 +19,6 @@ import { error } from "console";
 import cart_router from "./routes/cart.js";
 import User_router from "./routes/user.js";
 import admin_router from "./routes/admin.js";
-import products_testing_router from "./routes/product_test.js";
 import mongoose from "mongoose";
 
 //Read the current directory name
@@ -74,7 +73,6 @@ app.use("/", index_router);
 app.use("/product_dashboard", products_router);
 //app.use('/products', logger('combined'), products_router);
 app.use("/cart",cart_router);
-app.use("/products",products_testing_router);
 app.use("/admin",admin_router);
 app.use("/user",User_router);
 

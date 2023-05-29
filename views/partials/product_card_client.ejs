@@ -4,15 +4,15 @@
 
         <div class="mobile-image-wrapper-1 img-hover-zoom img-hover-zoom--quick-zoom">
             <a href="product.ejs">
-                <img src="used/D_slide_man_trousers_-1.jpg" class="card-img-top" alt="The Simpsons game poster">
+                <img src="<%= product.Image %>" class="card-img-top" alt="The Simpsons game poster">
             </a>
         </div>
 
         <div class="card-body pb-3">
             <div class="d-flex justify-content-between mt-3 mb-2">
 
-                <h5>Product Name</h5>
-                <a class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; " href="/products/add-to-cart/<%= product._id %>"></a>
+                <h5><%= product.pname %></h5>
+                <a class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; " href="/add-to-cart/<%= product._id %>"></a>
             </div>
 
             <div class="mb-2">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="mb-2">
-                <h5 class=" text-muted ">$150</h5>
+                <h5 class=" text-muted "><%= product.Price %> EGP</h5>
             </div>
 
             <div class="mt-3">
