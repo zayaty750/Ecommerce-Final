@@ -22,13 +22,14 @@ const register = asyncHandler(async (req, res) => {
     const { error } = validateRegisterUser(req.body);
 
     if (error) {
-      return res.status(400).json({ message: error.details[0].message });
+        return res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) , message: error.details[0].message});
     }
 
     // lw el mail mawgood fl data base a2olo eno mawgood
     let user = await User.findOne({ email: req.body.email });
     if (user) {
-      return res.status(400).json({ message: "This User already registered" });
+        return res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) , message: "This User already registered"});
+      
     }
 
     //hashing ll password 

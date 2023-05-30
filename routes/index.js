@@ -76,7 +76,7 @@ router.get('/Signin', (req, res)=> {
   let cart = new Cart(req.session.cart ? req.session.cart : {});
   if(req.session.user === undefined)
   {
-    res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty });
+    res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty , message: undefined});
   }
   else
   {
@@ -86,7 +86,7 @@ router.get('/Signin', (req, res)=> {
 });
  
 // POST a single user: user/
-router.post("/Signin-add", register);
+router.post("/Signin", register);
 
 
 router.get('/Login', (req, res)=> {
