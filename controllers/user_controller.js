@@ -1,5 +1,9 @@
 import { mongo } from "mongoose";
-import User from '../models/user-model.js';
+import 
+    {User,
+    validateRegisterUser,
+    validateLoginUser}
+   from "../models/user-model.js";
 
 // Get all clients
 const getclients = async (req, res, next) => {

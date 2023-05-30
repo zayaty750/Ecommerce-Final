@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import multer from "multer";
+import jwt from "jsonwebtoken";
+import {register,login} from "../controllers/authController.js"
 import 
 {
   getProducts
@@ -84,7 +86,7 @@ router.get('/Signin', (req, res)=> {
 });
  
 // POST a single user: user/
-router.post("/Signin", upload.single('image'), addUser);
+router.post("/Signin-add", register);
 
 
 router.get('/Login', (req, res)=> {
@@ -101,7 +103,11 @@ router.get('/Login', (req, res)=> {
 
 });
  
-router.post("/Login", GetUser);
+
+
+
+
+router.post("/Login", login);
 
 router.get('/Signout', (req, res) => {
   req.session.destroy();
