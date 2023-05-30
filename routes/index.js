@@ -105,8 +105,6 @@ router.get('/Login', (req, res)=> {
  
 
 
-
-
 router.post("/Login", login);
 
 router.get('/Signout', (req, res) => {

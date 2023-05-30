@@ -74,15 +74,15 @@ const register = asyncHandler(async (req, res) => {
     }
 
     // lw el user msh mawgood, byb3t query ll database yshof el user mawgood wla la
-    let user = await User.findOne({ email: req.body.email });
+    let user = await User.findOne({ username: req.body.username });
     if (!user) {
-      return res.status(400).json({ message: "invalid email or password" });
+      return res.status(400).json({ message: "invalid username or password" });
     }
     //hnshoof el password s7 wla la              mn el client       mn el database
     const isPasswordMatch = await bcrypt.compare(req.body.password,user.password);
     //lw el password 8alat
     if (!isPasswordMatch) {
-      return res.status(400).json({ message: "invalid email or password" });
+      return res.status(400).json({ message: "invalid username or password" });
     }
     //abl ma a3ml function fl user model 3shan makarrsh el goz2 bta3 el jwt dh
     // el methos sign gowa el jwt bt3ml new token awl param el payload tany param secret key talet param e5tyary el expire date 4d 4 days lw mktbtsh hayb2a sale7 ll abd
@@ -94,7 +94,9 @@ const register = asyncHandler(async (req, res) => {
     //deh kant btb3t el pass ll user //res.status(201).json(result);
     //lakn e7na la2 hanb3tlo el ...other w el token w msh hnb3t el pass b3d el hashing
     //lw el mail w el password s7 kda 5las
-    res.status(200).json({...other,token});
+    //res.status(200).json({...other,token});
+    req.session.user = user;
+    res.redirect("/");
   })
 
 
