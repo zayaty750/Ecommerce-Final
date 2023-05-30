@@ -70,19 +70,20 @@ const register = asyncHandler(async (req, res) => {
     const { error } = validateLoginUser(req.body);
 
     if (error) {
-      return res.status(400).json({ message: error.details[0].message });
+        return res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) , message: error.details[0].message});
+      
     }
 
     // lw el user msh mawgood, byb3t query ll database yshof el user mawgood wla la
     let user = await User.findOne({ username: req.body.username });
     if (!user) {
-      return res.status(400).json({ message: "invalid username or password" });
+      return res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) , message: "invalid username or password"});
     }
     //hnshoof el password s7 wla la              mn el client       mn el database
     const isPasswordMatch = await bcrypt.compare(req.body.password,user.password);
     //lw el password 8alat
     if (!isPasswordMatch) {
-      return res.status(400).json({ message: "invalid username or password" });
+        return res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) , message: "invalid username or password"});
     }
     //abl ma a3ml function fl user model 3shan makarrsh el goz2 bta3 el jwt dh
     // el methos sign gowa el jwt bt3ml new token awl param el payload tany param secret key talet param e5tyary el expire date 4d 4 days lw mktbtsh hayb2a sale7 ll abd

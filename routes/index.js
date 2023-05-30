@@ -94,7 +94,7 @@ router.get('/Login', (req, res)=> {
   let cart = new Cart(req.session.cart ? req.session.cart : {});
   if(req.session.user === undefined)
   {
-    res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty });
+    res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty , message: undefined});
   }
   else
   {
