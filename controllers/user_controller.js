@@ -20,13 +20,21 @@ const getclients = async (req, res, next) => {
 };
 
 // Create a client
+function generateUsername(fullName) {
+  let firstName = fullName.split(' ')[0];
+  let randomNumber = Math.floor(Math.random() * 1000);
+return firstName+randomNumber;
+}
+
 const addUser = async (req, res, next) => {
+  let username= generateUsername(req.body.name);
+  
   //get the user data from the request body
   const imgPath = req.file.path;
   const imgURL = req.file.path.substring(req.file.path.indexOf("/") + 7);
   const user = {
     //create a new 
-    name: req.body.name,
+    name: username,
     email: req.body.email,
     password: req.body.password,
     type: req.body.type,
