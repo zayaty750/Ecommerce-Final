@@ -3,27 +3,27 @@ import mongoose, { Schema } from "mongoose";
 const schema = mongoose.Schema;
 
 const userschema = new Schema({
-    name:{
+    name: {
         type: String,
         required: true
     },
-    email:{
+    email: {
         type: String,
         required: true
     },
-    password:{
+    password: {
         type: String,
         required: true
     },
-    type:{
+    type: {
         type: String,
         required: true
     },
-    Image:{
+    Image: {
         type: String,
         required: true
     }
-}, {timestamps: true});
+}, { timestamps: true });
 
 const User = mongoose.model('User', userschema);
 
