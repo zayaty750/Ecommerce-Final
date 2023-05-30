@@ -71,7 +71,17 @@ router.get('/About_us',function(req,res,next)
 
 /* GET sign up page. */
 router.get('/Signin', (req, res)=> {
-  res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) });
+
+  if(req.session.user === "  ")
+  {
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+    res.render('pages/Signup',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty });
+  }
+  else
+  {
+    res.render('pages/error');
+  }
+
 });
  
 // POST a single user: user/
@@ -79,7 +89,17 @@ router.post("/Signin", upload.single('image'), addUser);
 
 
 router.get('/Login', (req, res)=> {
-  res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) });
+
+  if(req.session.user === " ")
+  {
+    let cart = new Cart(req.session.cart ? req.session.cart : {});
+    res.render('pages/login',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty });
+  }
+  else
+  {
+    res.render('pages/error');
+  }
+
 });
  
 router.post("/Login", GetUser);

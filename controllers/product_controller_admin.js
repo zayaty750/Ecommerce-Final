@@ -9,6 +9,7 @@ const getProducts = async (req, res, next) => {
 
   const products = Product.find({})
     .then((products) => {
+      
       if (products.length > 0) {
         products.sort((a, b) => {
           const dateA = new Date(a.createdAt);
@@ -16,6 +17,8 @@ const getProducts = async (req, res, next) => {
           return dateA - dateB;
         });
       }
+
+      
       //res.json(products);
       res.render("pages/product_dashboard", { products: products ,  user: (req.session.user === undefined ? "" : req.session.user) });
     }) //get all products
