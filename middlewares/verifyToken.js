@@ -16,3 +16,17 @@ function verifyToken(req,res,next){
     }
 }
 
+// Verify Token & Authorize the user
+function verifyTokenAndAuthorization(req,res,next){
+    //hanndh el function eli fo2 3ady
+    verifyToken(req,res,()=> {
+        if(req.user.id === req.params.id || req.user.isAdmin){
+            next();
+        }else{
+            return res.status(403) //forbidden
+            .json({message: "You Are Not Allowed"});
+        }
+    });
+
+}
+
