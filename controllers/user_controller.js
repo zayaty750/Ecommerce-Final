@@ -23,12 +23,7 @@ const getclients = async (req, res, next) => {
     });
 };
 
-// Create a client
-function generateUsername(fullName) {
-  let firstName = fullName.split(' ')[0];
-  let randomNumber = Math.floor(Math.random() * 1000);
-return firstName+randomNumber;
-}
+
 
 const addUser = async (req, res, next) => {
   let username= generateUsername(req.body.name);

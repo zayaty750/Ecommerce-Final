@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
 //imprt l package el hashing
 import bcrypt from "bcryptjs";
-
+import nodemailer from "nodemailer";
 //n7tag ll user w el validation functions
 import {
 User,
@@ -10,6 +10,13 @@ validateLoginUser
 }
     from "../models/user-model.js";
 
+
+// Create a client
+function generateUsername(fullName) {
+    let firstName = fullName.split(' ')[0];
+    let randomNumber = Math.floor(Math.random() * 1000);
+    return firstName+randomNumber;
+  }
 
 /**
  * @desc  Register New User
@@ -33,6 +40,7 @@ const register = asyncHandler(async (req, res) => {
 
     }
 
+    const new_username = generateUsername(req.body.username); 
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -53,13 +61,13 @@ const register = asyncHandler(async (req, res) => {
 </head>
 <body>
     <div>
-    Hi ${req.body.name},
+    Hi ${new_username},
     </div>
     <div>
     We received your request for your username to Blankoo website.
     </div>
     <div>
-    Your username is : ${req.body.name} 
+    Your username is : ${new_username} 
     </div>
     <div>
     Thanks,
@@ -76,11 +84,10 @@ const salt = await bcrypt.genSalt(10);
 req.body.password = await bcrypt.hash(req.body.password, salt);
 req.body.confirmPassword = await bcrypt.hash(req.body.confirmPassword, salt);
 
-const isPasswordMatch = await bcrypt.compare(req.body.password, req.body.confirmPassword);
 
 
 user = new User({
-    username: req.body.username,
+    username: new_username,
     email: req.body.email,
     password: req.body.password,
     //confirmPassword: req.body.confirmPassword
