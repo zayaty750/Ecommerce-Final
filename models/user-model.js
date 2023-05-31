@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-
+import passwordComplexity  from "joi-password-complexity";
 import Joi from "joi";
 import jwt from "jsonwebtoken";
 // User Schema
@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true,
         trim:true,
-        minlength:6,
+        minlength:8,
     },
     isAdmin:{
         type:Boolean,
@@ -48,7 +48,7 @@ function validateRegisterUser(obj){
     const schema = Joi.object({
         username: Joi.string().trim().min(2).max(200).required(),
         email: Joi.string().trim().min(5).max(100).required().email(),
-        password: Joi.string().trim().min(6).required(),
+        password: passwordComplexity().required(),
         //isAdmin: Joi.bool(),
     });
     return schema.validate(obj);
