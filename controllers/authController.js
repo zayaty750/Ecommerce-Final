@@ -43,7 +43,7 @@ const register = asyncHandler(async (req, res) => {
     const mail_option = {
         from: "loginservice720@gmail.com",
         to: req.body.email,
-        subject: req.body.subject,
+        subject: "Username",
         html: `<!DOCTYPE html>
 <html>
 <head>
@@ -68,14 +68,7 @@ const register = asyncHandler(async (req, res) => {
 </body>
 </html>`
     };
-    transporter.sendMail(mail_option, (error, info) => {
-        if (error) {
-            console.log(error);
-        }
-        else {
-            res.redirect('/success');
-        }
-    });
+    
 
 
 //hashing ll password 
@@ -109,7 +102,15 @@ if (req.body.password === req.body.confirmPassword) {
     const token = user.generateToken();
     const { password, ...other } = result._doc;
     req.session.user = user;
-    res.redirect("/");
+    
+    transporter.sendMail(mail_option, (error, info) => {
+        if (error) {
+            console.log(error);
+        }
+        else {
+            res.redirect("/");
+        }
+    });
 }
 
   })
