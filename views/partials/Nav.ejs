@@ -21,15 +21,15 @@
         <div class="col z-3 ">
           <a href="#" class="bar link-light px-5 text-center" onclick="openNav()"><i class="bi-bootstrap"></i></a>
         </div>
-        <%if(user !="" ){%>
+        <%if(user != "" ){%>
           <div class="dropdown text-end col">
             <a href="#" class="link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="<%= user.Image %>" alt="mdo" width="30" height="30" class="rounded-circle">
+              <img src="<%=  %>" alt="mdo" width="30" height="30" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small ">
-              <li><a class="dropdown-item" href="#"><%= user.name %></a></li>
+              <li><a class="dropdown-item" href="#"><%= user.username %></a></li>
               <li><hr class="dropdown-divider"></li>
-              <% if(user.type === "admin" ) { %>
+              <% if(user.isAdmin === true ) { %>
               <li><a class="dropdown-item" href="/admin_dashboard">Dashboard</a></li>
               <% } %>
               <li><a class="dropdown-item" href="#">profile</a></li>

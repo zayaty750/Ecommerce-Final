@@ -1,7 +1,10 @@
 import { Router } from 'express';
 import multer from "multer";
 import jwt from "jsonwebtoken";
-import {register,login} from "../controllers/authController.js"
+import {
+  register,
+  login
+} from "../controllers/authController.js"
 import 
 {
   getProducts
@@ -11,10 +14,7 @@ import
   addCart,
   getCart
 }from "../controllers/cart_controller.js";
-import {
-    addUser,
-    GetUser
-  } from "../controllers/user_controller.js";
+
   import {Cart}
  from  "../models/cart-model.js";
 
@@ -55,7 +55,7 @@ router.get('/chatbot',(req,res,next)=>{
 
 // product page
 
-router.get('/products/', getProducts);
+router.get('/products', getProducts);
 
 //  add to cart 
 router.get('/add-to-cart/:id',addCart);

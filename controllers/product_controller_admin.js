@@ -31,7 +31,7 @@ const getProducts = async (req, res, next) => {
 // Create a product
 const createProduct = async (req, res, next) => {
 
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
   //get the product data from the request body
   const imgPath = req.file.path;
@@ -62,7 +62,7 @@ else
 
 // Update a product form
 const updateProductForm = async ({ params: { id } }, res, next) => {
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
   try {
     if (!mongo.ObjectId.isValid(id) ) {
@@ -89,7 +89,7 @@ else
 
 // Update a product
 const updateProduct = async (req, res, next) => {
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
   try {
     const id = req.params.id;
@@ -119,7 +119,7 @@ else{
 
 // Delete a product
 const deleteProduct = async ({ params: { id } }, res, next) => {
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
   try {
     if (!mongo.ObjectId.isValid(id) ) {

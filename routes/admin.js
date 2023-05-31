@@ -28,7 +28,7 @@ const router = Router();
 
 /* GET team page. */
 router.get('/admin_dashboard', (req, res)=> {
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
     res.render('pages/admin_dashboard',{user: (req.session.user === undefined ? "" : req.session.user) });
   }
@@ -41,7 +41,7 @@ router.get('/admin_dashboard', (req, res)=> {
 
 /* GET team page. */
 router.get('/team', (req, res)=> {
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
     res.render('pages/team',{user: (req.session.user === undefined ? "" : req.session.user) });
   }
@@ -61,7 +61,7 @@ router.get("/view-products", getProducts);
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
-  if(req.session.user.type === "admin")
+  if(req.session.user.isAdmin === true)
   {
     res.render("pages/add-product",{user: (req.session.user === undefined ? "" : req.session.user) });
   }

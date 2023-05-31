@@ -35,15 +35,33 @@
 
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#" name="p" >0</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
+
+            <% if(page > 1){ %>
+              <li class="page-item">
+                <a class="page-link  text-bg-dark " href="?page=<%=page-1%>" aria-label="Previous">
+                  <span aria-hidden="true">Previous</span>
+                </a>
+              </li>
+              <% } %>
+            <% let counter = page;%>
+            <% for(let i = iterator ; i <= endingLink ; i++){ %>
+              <% if(page == i){%>
+                <li class="page-item"><a class="page-link text-bg-dark " href="?page=<%=i%>"><%=i%></a></li>  
+                <%  counter ++;  %>
+                <%  continue; %>
+              <% }
+              else { %>
+                <li class="page-item"><a class="page-link text-bg-light  link-dark" href="?page=<%=i%>"><%=i%></a></li>
+                <%}%>
+                
+            <% } %>
+            <% if(page <= numberofPages ){ %>
+              <li class="page-item">
+                <a class="page-link text-bg-dark link-dark" href="?page=<%=counter%>" aria-label="Next">
+                  <span aria-hidden="true">Next</span>
+                </a>
+              </li> 
+            <% } %>
           </ul>
         </nav>
         <%- include("../partials/Top_Function.ejs") %>
