@@ -61,7 +61,7 @@ const register = asyncHandler(async (req, res) => {
 </head>
 <body>
     <div>
-    Hi ${new_username},
+    Hi ${req.body.username},
     </div>
     <div>
     We received your request for your username to Blankoo website.
