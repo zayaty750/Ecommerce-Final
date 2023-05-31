@@ -1,12 +1,14 @@
 import { mongo } from "mongoose";
 import Product from '../models/products_model.js';
 import { render } from "ejs";
-
+import fs from 'fs';
 
 
 // Get all products
 const getProducts = async (req, res, next) => {
 
+  if(req.session.user.isAdmin == true)
+  {
   const products = Product.find({})
     .then((products) => {
       
@@ -25,13 +27,18 @@ const getProducts = async (req, res, next) => {
     .catch((err) => {
       next(err);
     });
+  }
+  else
+  {
+
+  }
   
 };
 
 // Create a product
 const createProduct = async (req, res, next) => {
 
-  if(req.session.user.isAdmin === true)
+  if(req.session.user.isAdmin == true)
   {
   //get the product data from the request body
   const imgPath = req.file.path;
@@ -62,7 +69,7 @@ else
 
 // Update a product form
 const updateProductForm = async ({ params: { id } }, res, next) => {
-  if(req.session.user.isAdmin === true)
+  if(req.session.user.isAdmin == true)
   {
   try {
     if (!mongo.ObjectId.isValid(id) ) {
@@ -89,7 +96,7 @@ else
 
 // Update a product
 const updateProduct = async (req, res, next) => {
-  if(req.session.user.isAdmin === true)
+  if(req.session.user.isAdmin == true)
   {
   try {
     const id = req.params.id;
@@ -119,16 +126,20 @@ else{
 
 // Delete a product
 const deleteProduct = async ({ params: { id } }, res, next) => {
-  if(req.session.user.isAdmin === true)
-  {
+
   try {
     if (!mongo.ObjectId.isValid(id) ) {
       return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
     }
     //const product = await Product.findById(req.params.id);
     const product = await Product.findOneAndDelete({ _id: id });
+    // fs.unlink(path.join(__dirname, '/images' + req.params.Image), (err) => {
+    //   if (err) {
+    //     throw err;
+    //   }
+    // });
     if (product) {
-      console.log('data sent to th')
+      console.log('data deleted to th')
       // await product.remove();
       //res.json({ message: "Product removed" });
       res.status(200).json({ message: "Product removed" });
@@ -138,10 +149,8 @@ const deleteProduct = async ({ params: { id } }, res, next) => {
   } catch (err) {
     next(err);
   }
-}
-else{
-  res.render('pages/error');
-}
+
+
 };
 
 export  {createProduct,getProducts,deleteProduct,updateProduct,updateProductForm};
