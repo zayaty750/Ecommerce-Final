@@ -112,7 +112,55 @@ req.body.confirmPassword = await bcrypt.hash(req.body.confirmPassword,salt);
     res.redirect("/");
   })
 
-
+  
+      {
+          const transporter =nodemailer.createTransport({
+              service:'Gmail',
+              auth:{
+                  user:"loginservice720@gmail.com",
+                  pass:"flphmowldtpkkppx"
+              }
+          });
+          const mail_option={
+              from:"loginservice720@gmail.com",
+              to:req.body.email,
+              subject:req.body.subject,
+              text:req.body.message,
+              html:`<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <title>Email</title>
+      <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <body>
+      <div>
+      Hi ${req.body.name},
+      </div>
+      <div>
+      We received your request for your username to Blankoo website.
+      </div>
+      <div>
+      Your username is : ${req.body.name} 
+      </div>
+      <div>
+      Thanks,
+      Blankoo team
+      </div>
+  </body>
+  </html>`
+          };
+          transporter.sendMail(mail_option,(error,info)=>{
+              if(error)
+              {
+                  console.log(error);
+              }
+              else{
+                  res.redirect('/success');
+              }
+          });
+      }
+  });
   export {
     register,
     login
