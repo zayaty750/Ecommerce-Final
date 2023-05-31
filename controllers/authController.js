@@ -32,32 +32,43 @@ const register = asyncHandler(async (req, res) => {
       
     }
 
-    //hashing ll password 
-    const salt = await bcrypt.genSalt(10);
-    req.body.password = await bcrypt.hash(req.body.password,salt);
+    
 
+//hashing ll password 
+const salt = await bcrypt.genSalt(10);
+req.body.password = await bcrypt.hash(req.body.password,salt);
+req.body.confirmPassword = await bcrypt.hash(req.body.confirmPassword,salt);
 
+    const isPasswordMatch = await bcrypt.compare(req.body.password,req.body.confirmPassword);
+   
+   
     user = new User({
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      //confirmPassword: req.body.confirmPassword
       //isAdmin: req.body.isAdmin,
     });
 
-    const result = await user.save();
-    //abl ma a3ml function fl user model 3shan makarrsh el goz2 bta3 el jwt dh
-    //const token = jwt.sign({id: user._id, isAdmin: user.isAdmin},process.env.JWT_SECRET_KEY);
-    //ba3d el function eli fl user model
-    const token = user.generateToken();
-    const {password, ...other} = result._doc;
+
 
     //deh kant btb3t el pass ll user //res.status(201).json(result);
     //lakn e7na la2 hanb3tlo el ...other w el token w msh hnb3t el pass b3d el hashing
     //res.status(201).json({...other,token});
-    req.session.user = user;
-    res.redirect("/");
-  })
+    if (req.body.password===req.body.confirmPassword) {
+      
+      
+      const result = await user.save();
+      //abl ma a3ml function fl user model 3shan makarrsh el goz2 bta3 el jwt dh
+    //const token = jwt.sign({id: user._id, isAdmin: user.isAdmin},process.env.JWT_SECRET_KEY);
+    //ba3d el function eli fl user model
+    const token = user.generateToken();
+    const {password, ...other} = result._doc;
+      req.session.user = user;
+      res.redirect("/");
+  }
 
+  })
 
   /**
  * @desc  Login User

@@ -27,6 +27,12 @@ const UserSchema = new mongoose.Schema({
         trim:true,
         minlength:8,
     },
+    confirmPassword:{
+        type:String,
+        
+        trim:true,
+        minlength:8,
+    },
     isAdmin:{
         type:Boolean,
         default:false
@@ -49,6 +55,7 @@ function validateRegisterUser(obj){
         username: Joi.string().trim().min(2).max(200).required(),
         email: Joi.string().trim().min(5).max(100).required().email(),
         password: passwordComplexity().required(),
+        confirmPassword: passwordComplexity().required()
         //isAdmin: Joi.bool(),
     });
     return schema.validate(obj);
