@@ -49,8 +49,14 @@ router.get('/Home',function(req,res,next)
 
 /* GET home page. */
 router.get('/checkout', (req, res)=> {
-  
-  res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user)});
+  if(req.session.user)
+  {
+    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user)});
+  }
+  else
+  {
+    res.render('pages/Signup',{user: (req.session.user === undefined ? "" : req.session.user),message : undefined});
+  }
 });
 
 // chat bot
