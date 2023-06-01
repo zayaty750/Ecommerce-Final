@@ -21,30 +21,33 @@
                                 <% if(message===undefined){ }else{ %>
 
                                     <div class="alert alert-warning alert-dismissible show" role="alert">
-                                        <strong>ERROR</strong> <%= message %>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                            aria-label="Close"></button>
+                                        <strong>ERROR</strong>
+                                        <%= message %>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
                                     </div>
-                                       
+
                                     <% } %>
-                                <h3 class="display-4">Sign up!</h3>
-                                <p class="text-muted mb-4">Create a new account.</p>
 
-                                <form action="/Signin" method="post">
 
-                                    <input type="text" name="username" placeholder="Full Name"
-                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+                                        <h3 class="display-4">Sign up!</h3>
+                                        <p class="text-muted mb-4">Create a new account.</p>
 
-                                    <input type="email" name="email" placeholder="Email address"
-                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
-                                    <input type="password" name="password" placeholder="Password"
-                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+                                        <form action="/Signin" method="post">
+                                            <input type="text" name="username" placeholder="Full Name"
+                                                class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
-                                    <input type="password" name="confirmPassword" placeholder="Confirm Password"
-                                        class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+                                            <input type="email" name="email" placeholder="Email address"
+                                                class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
 
-                                    <!-- <input type="hidden" name="type" value="client">
+                                            <input type="password" name="password" placeholder="Password"
+                                                class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+
+                                            <input type="password" name="confirmPassword" placeholder="Confirm Password"
+                                                class="form-control rounded-pill border-0 shadow-sm px-4 mb-3">
+
+                                            <!-- <input type="hidden" name="type" value="client">
 
                                     <input type="file" class="form-control-file" id="image" name="image" required> -->
 
@@ -54,11 +57,11 @@
                                             </div>
                                             <button type="submit"
                                                 class="btn btn-dark btn-block text-uppercase mb-2 rounded-pill shadow-sm">Register</button>
-                                </form>
-                                <div class="text-center d-flex justify-content-between mt-4">
-                                    <p>Already have an account?<a class="font-italic text-muted">
-                                            click here <u></u></a></p>
-                                </div>
+                                        </form>
+                                        <div class="text-center d-flex justify-content-between mt-4">
+                                            <p>Already have an account?<a class="font-italic text-muted">
+                                                    click here <u></u></a></p>
+                                        </div>
                             </div>
                         </div>
                     </div><!-- End -->

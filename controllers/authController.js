@@ -426,12 +426,13 @@ if (req.body.password === req.body.confirmPassword) {
 
 
     const result = await user.save();
+    req.session.user = result;
     //abl ma a3ml function fl user model 3shan makarrsh el goz2 bta3 el jwt dh
     //const token = jwt.sign({id: user._id, isAdmin: user.isAdmin},process.env.JWT_SECRET_KEY);
     //ba3d el function eli fl user model
     const token = user.generateToken();
     const { password, ...other } = result._doc;
-    req.session.user = user;
+ 
     
     transporter.sendMail(mail_option, (error, info) => {
         if (error) {
@@ -476,6 +477,8 @@ const login = asyncHandler(async (req, res) => {
     // el methos sign gowa el jwt bt3ml new token awl param el payload tany param secret key talet param e5tyary el expire date 4d 4 days lw mktbtsh hayb2a sale7 ll abd
     //const token = jwt.sign({id: user._id, isAdmin: user.isAdmin},process.env.JWT_SECRET_KEY);
     //ba3d el function eli esmaha generate token fl user model
+    req.session.user = user;
+    
     const token = user.generateToken();
     const { password, ...other } = user._doc;
 
@@ -483,7 +486,7 @@ const login = asyncHandler(async (req, res) => {
     //lakn e7na la2 hanb3tlo el ...other w el token w msh hnb3t el pass b3d el hashing
     //lw el mail w el password s7 kda 5las
     //res.status(200).json({...other,token});
-    req.session.user = user;
+   
     res.redirect("/");
 })
 

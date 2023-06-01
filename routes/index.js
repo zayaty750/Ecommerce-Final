@@ -36,7 +36,7 @@ const upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', (req, res)=> {
   
-  res.render('pages/index');
+  res.render('pages/index',{user: (req.session.user === undefined ? "" : req.session.user)});
 });
 
 // Home page
