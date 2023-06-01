@@ -83,7 +83,7 @@ router.get("/edit/:id", updateProductForm);
   they can use PUT. When they're doing a partial update, they can use HTTP PATCH
 */
 
-router.patch( "/edit/:id" , updateProduct);
+router.patch( "/edit/:id", updateProduct);
 
 
 // DELETE a single product: products/:id

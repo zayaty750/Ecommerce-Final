@@ -23,18 +23,14 @@
               </div>
               <div class="form-group">
                 <label for="category">Catergory:</label>
-                <input class="form-control" id="category" name="category"  rows="3"  value="<%= product.category %>" required></input>
+                <input class="form-control" id="category" name="category"  rows="3"  value="<%= product.category %>" required>
               </div>
               <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea class="form-control" id="description" name="description" rows="3" required  ><%= product.Description %></textarea>
               </div>
-              <div class="form-group">
-                <label for="image">Image:</label>
-                <div class="container-fluid">
-                    <img src="<%= product.Image %>" id="image" class="card-img-top w-25 p-2 rounded mx-auto d-block" alt="<%= product.name %> image">
-                  </div>
-            </div>
+                
+              <input class="form-control" id="image" name="image"  type="file" value="<%= product.Image %>" required>
 
               <button type="submit" class="btn btn-primary" id="editBtn">edit</button>
             </form>
@@ -53,7 +49,7 @@
                   pname: $('#name').val(),
                   Price: $('#price').val(),
                   Description: $('#description').val(),
-                  category: $('#price').val(),
+                  category: $('#category').val(),
                   Image: $('#image').val(),
                 },
 
