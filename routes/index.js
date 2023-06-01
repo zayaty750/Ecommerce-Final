@@ -46,6 +46,13 @@ router.get('/Home',function(req,res,next)
     res.render('pages/Home',{ user: (req.session.user === undefined ? "" : req.session.user) ,qt: cart.totalQty});
 });
 
+
+/* GET home page. */
+router.get('/checkout', (req, res)=> {
+  
+  res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user)});
+});
+
 // chat bot
 router.get('/chatbot',(req,res,next)=>{
   res.render('pages/chatbot');

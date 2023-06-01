@@ -2,8 +2,34 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.js"
+        charset="utf-8"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.4/dist/L.Control.Locate.min.css" />4
+
+        
     <%- include("../partials/Head.ejs") %>
 </head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        width: 100%;
+        height: 50vh;
+    }
+</style>
 
 <body>
     <%- include("../partials/Nav.ejs") %>
@@ -19,10 +45,9 @@
                     </h4>
                     <!-- map -->
                     <div class="container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37809421838!2d31.217264617826068!3d30.059482028208137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1680637378497!5m2!1sen!2seg"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div id="map">
+
+                        </div>
                     </div>
                     <!-- info -->
                     <div class="row mb-3">
@@ -39,12 +64,12 @@
                         </div>
                         <div class="col-6 mt-4">
                             <div class="form-group">
-                                <input id="" type="text" required="" placeholder="Building" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="first" type="text" required="" placeholder="Building" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
                         <div class="col-6 mt-4 ">
                             <div class="form-group">
-                                <input id="" type="text" required="" placeholder="Floor" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="second" type="text" required="" placeholder="Floor" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
                         <div class="col-6 mt-4 mb-5">
@@ -194,9 +219,46 @@
 
 
     </section>
+    <script>
+        // Map initialization 
+        let latit ;
+        let longit;
+        navigator.geolocation.getCurrentPosition(function (position) 
+        {
+            console.log('--- Your Position: ---');
+    
+            console.log('Lat: ' + position.coords.latitude);
+            latit = position.coords.latitude;
+            
+            console.log('Long: ' + position.coords.longitude);
+            longit = position.coords.longitude;
+            
+            // map //
+            var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 13);
+            // map style //
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            // locator control //
+            L.control.locate().addTo(map);
+            document.getElementById('first').value = longit ;
+        });
+    
+        
+    
+    </script>
 
     <%- include("../partials/Top_Function.ejs") %>
     <%- include("../partials/Footer.ejs") %>
+    <!-- leaflet js  -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
+    charset="utf-8"></script>
 </body>
 
 </html>
+
+
+
+
+
