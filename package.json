@@ -38,5 +38,6 @@
   "bin": {
     "final-project": "bin/www.js"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }
