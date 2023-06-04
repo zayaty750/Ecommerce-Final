@@ -18,7 +18,7 @@ import
   import {Cart}
  from  "../models/cart-model.js";
 
- const stripe = require('stripe')(SECRET_KEY)
+import stripe from 'stripe';
 
 const router = Router();
 
@@ -67,7 +67,7 @@ router.get('/Profile', (req, res)=> {
 router.get('/checkout', (req, res)=> {
   if(req.session.user)
   {
-    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user)});
+    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user),key: PUBLISHABLE_KEY});
   }
   else
   {
