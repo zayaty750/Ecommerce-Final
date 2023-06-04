@@ -53,6 +53,24 @@ const addUser = async (req, res, next) => {
   }
 };
 
+//user profile edit and update
+
+const updateprofile=async(req,res)=>{
+  try{
+    if(req.file){
+      const userdata=await user.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
+  
+    }else{
+      const userdata=await user.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
+  
+    }
+  res.redirect('/home')
+  }catch(error)
+  {
+    console.log(error);
+  }
+  
+  }
 const GetUser = (req, res) => {
   var query = { name: req.body.name, password: req.body.password };
   console.log(req.body.name, req.body.password);
