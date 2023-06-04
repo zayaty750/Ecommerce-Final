@@ -72,6 +72,7 @@ const updateProductForm = async (req, res, next) => {
       return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
     }
 
+    
     const product = await Product.findById(id);
     console.log(product);
     if (product) {
@@ -93,15 +94,13 @@ const updateProduct = async (req, res, next) => {
         return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
       }
 
-
-      
       const product = await Product.findOneAndUpdate({ _id: id }, req.body, {
         new: true,
         runValidators: true,
       });
       console.log(product);
       if (product) {
-         console.log('edited');
+        res.redirect("/view-products");
       } else {
         res.status(404).json({ message: "Product not found" });
       }

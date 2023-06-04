@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+
 // verify Token
 function verifyToken(req,res,next){
     const token = req.headers.token;
