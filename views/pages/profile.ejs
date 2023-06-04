@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include("../partials/Head.ejs") %>
 </head>
-<body>
-    <%- include("../partials/sidebar_user.ejs") %>
 
-    <section class="container-fluid mt-5" >
+<body>
+    <section class="container-fluid ">
         <div class="row ">
-            <div class="">
-                <!-- Profile picture card-->
-                <div class="card mb-4 mb-xl-0" style="width: 500px;">
-                    <div class="card-header">view you account</div>
-                    <div class="card-body text-center">
-                        <img class="img-account-profile  circle mb-2"
-                            src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                        <!-- Profile picture button-->
-                        <button class="btn btn-primary" type="button">Upload new image</button>
+            <div class="bottom-0 col-3 flex-shrink-0 p-3 text-white bg-black" style="width: 280px;">
+                <a href="/" class="d-flex align-items-center mb-5 me-md-auto text-white text-decoration-none">
+                  <svg class="bi me-2" width="40" height="32"></svg>
+                  <span class="fs-4">Profile</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="nav-item ">
+                    <a href="/Home" class="nav-link active" aria-current="page">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link text-white">Orders</a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link text-white"> Customers</a>
+                  </li>
+                </ul>
+                <hr>
+              </div>
+
+
+              <div class="col-6 p-3">
+                <div >
+                    <!-- Profile picture card-->
+                    <div class="card mb-4 mb-xl-0" style="width: 1100px;">
+                        <div class="card-header">view you account</div>
+                        <div class="card-body text-center">
+                            <img class="img-account-profile  circle mb-2"
+                                src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="">
-                <!-- Account details card-->
-                <div class="card mb-4 " style="width: 500px;">
-                    <div class="card-header">Account Details</div>
-                    <div class="card-body">
-    
-                        
-                           
+                <div >
+                    <!-- Account details card-->
+                    <div class="card mb-4 " style="width: 1100px;">
+                        <div class="card-header">Account Details</div>
+                        <div class="card-body">
                             <div class="mb-3">
-                                <label class="small mb-1 p-3" for="inputUsername">Username (how your name will appear to other
-                                    users on the site)</label>
+                                <label class="small mb-1 p-1" for="inputUsername">Username </label>
                                 <input class="form-control" name="name" type="text" value="<%= user.username%>">
                             </div>
-    
-                    </div>
-                   
-                    <!--   (email address)-->
-                    <div class="mb-3 p-3">
-                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                        <input class="form-control" id="inputEmailAddress" type="email"
-                         placeholder="name@gmail.com" name="email" value="<%= user.email %>">
-                    </div>
-                
+                        </div>
+                        <!--   (email address)-->
+                        <div class="mb-3 p-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="name@gmail.com"
+                                name="email" value="<%= user.email %>">
+                        </div>
                         <div class="col-md-6 p-3">
                             <label class="small mb-1" for="inputpassword">password</label>
                             <input class="form-control" id="inputpassword" type="password" name="password"
-                                value="<%= user.password %>" name="password">
+                            value="<%= user.password %>" name="password">
                         </div>
                     </div>
                     <!-- Save changes button-->
-                    <input class="btn btn-primary" type="submit" value="update profile"> 
-                    
+                    <input class="btn btn-primary" type="submit" value="update profile">
                 </div>
-            </div>
+              </div>
         </div>
     </section>
-     
+    <!-- end -->
+    <%- include("../partials/Top_Function.ejs") %>
 
-
-     <!-- end -->
-     <%- include("../partials/Top_Function.ejs") %>
-    
 </body>
+
 </html>
