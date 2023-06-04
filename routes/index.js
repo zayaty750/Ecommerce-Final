@@ -18,6 +18,7 @@ import
   import {Cart}
  from  "../models/cart-model.js";
 
+ const stripe = require('stripe')(SECRET_KEY)
 
 const router = Router();
 

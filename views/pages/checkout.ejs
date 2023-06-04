@@ -162,58 +162,20 @@
 
 
                 </div>
-                <div class="">
-
-                    <h4 class="mb-4">
-                        Payment Method
-                    </h4>
-
-                    <div class="border-bottom mb-4">
-                        <h6>
-                            Cash
-                        </h6>
-                        <h6>
-                            Credit Card
-                        </h6>
-                    </div>
-
-                    <div class="mb-4">
-                        <h6>
-                            Card Number
-                        </h6>
-                        <div class="form-group">
-                            <input id="" type="text" placeholder="0000 0000 0000 0000" required=""
-                                class="form-control  border-0 shadow-sm  text-primary">
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-6">
-                            <h6>
-                                Expiry Date
-                            </h6>
-                            <div class="form-group">
-                                <input id="" type="date" required=""
-                                    class="form-control  border-0 shadow-sm  text-black">
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <h6>
-                                CVV
-                            </h6>
-                            <div class="form-group">
-                                <input id="" type="text" placeholder="000" required=""
-                                    class="form-control  border-0 shadow-sm  text-primary">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <h6 class="text-muted">Your transaction is secured with ssl certificate</h6>
-
+                <div>
+                    <form action="payment" method="post">
+                        <script
+                        src="//checkout.stripe.com/v2/checkout.js"
+                        class="stripe-button"
+                        data-key="<%= key %>"
+                        data-amount="7000"
+                        data-currency="usd"
+                        data-name="Blankoo"
+                        data-description="Buy Blankoo Product"
+                        data-locale="auto">
+                    </script>
+                    </form>
                 </div>
-
             </div>
         </div>
 
