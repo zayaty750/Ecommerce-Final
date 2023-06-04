@@ -5,6 +5,9 @@ import
     validateLoginUser}
    from "../models/user-model.js";
 
+   import stripe from 'stripe';
+   const Stripe = new stripe(process.env.SECRET_KEY);
+
 // Get all clients
 const getclients = async (req, res, next) => {
   const user = User.find({})
@@ -69,6 +72,35 @@ const GetUser = (req, res) => {
       });
 };
 
+const payment = (req,res)=>{
+  stripe.customers.create({
+    email: req.body.stripeEmail,
+    source: req.body.stripeToken,
+    name: 'Blankoo',
+    address: {
+        line1: '23 Mountain Valley',
+        postal_code: '110092',
+        city: 'New Delhi',
+        state: 'Delhi',
+        country: 'India'
+    }
+})
+    .then((customer) => {
+        return stripe.charges.create({
+            amount: 7000,
+            description: 'Web Development Product',
+            currency: 'USD',
+            customer: customer.id
+        })
+    })
+    .then((charge) => {
+        console.log(charge)
+        res.send("Success")
+    })
+    .catch((err) => {
+        res.send(err)
+    })
+}
 
 
-export { addUser, getclients,GetUser };
+export { addUser, getclients,GetUser, payment };

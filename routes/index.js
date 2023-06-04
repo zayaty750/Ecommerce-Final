@@ -76,6 +76,8 @@ router.get('/checkout', (req, res)=> {
   }
 });
 
+router.post('/payment',payment)
+
 // chat bot
 router.get('/chatbot',(req,res,next)=>{
   res.render('pages/chatbot');
