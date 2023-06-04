@@ -72,19 +72,26 @@ catch(error){
 
 
 const updateprofile=async(req,res)=>{
-  try{
-    if(req.body){
-    const userdata=await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
-  
-    }else{
-     const userdata=await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
-  
+
+
+    const id = req.params.id;
+    if (!mongo.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
     }
-  res.redirect('/home')
-  }catch(error)
-  {
-    console.log(error);
-  }
+    console.log(req.body);
+    const user = await User.findOneAndUpdate({ _id: id }, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    console.log(user);
+    req.session.user = user;
+    if (user) {
+      res.redirect("/profile");
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+
+
   
   }
 const GetUser = (req, res) => {
