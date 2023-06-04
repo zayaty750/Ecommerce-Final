@@ -53,17 +53,31 @@ const addUser = async (req, res, next) => {
   }
 };
 
-//user profile edit and update
-
+//user profileview , edit and update
+const edituserprofile=async(req,res)=>{
+try{
+  const id=req.query.id;
+  const userdata =await user.findById({_id:id});
+  if(userdata){
+    res.redirect('/editprofile',{user:userdata});
+  }else{
+    res.redirect('/home');
+  }
+}
+catch(error){
+  console.log(error);
+}
+}
+ 
 
 
 const updateprofile=async(req,res)=>{
   try{
-    if(req.file){
-      const userdata=await user.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
+    if(req.body){
+    const userdata=await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
   
     }else{
-      const userdata=await user.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
+     const userdata=await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,password:req.body.password}})
   
     }
   res.redirect('/home')
@@ -123,4 +137,4 @@ const payment = (req,res)=>{
 }
 
 
-export { addUser, getclients,GetUser, payment };
+export { addUser, getclients,GetUser, payment,edituserprofile,updateprofile };

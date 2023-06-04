@@ -18,7 +18,7 @@ import
   import {Cart}
  from  "../models/cart-model.js";
 
-import {payment} from '../controllers/user_controller.js'
+import {payment,updateprofile} from '../controllers/user_controller.js'
 
 import stripe from 'stripe';
 const Stripe = new stripe(process.env.SECRET_KEY);
@@ -136,22 +136,20 @@ router.get('/Profile', (req, res)=> {
   }
 
 });
+router.get('/editprofile', (req, res)=> {
+  let cart = new Cart(req.session.cart ? req.session.cart : {});
+  if(req.session.user)
+  {
+    res.render('pages/editprofile',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty , message: undefined});
+  }
+  else
+  {
+    res.render('pages/error', { user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty } );
+  }
 
-//to edit data 
-// router.get('/editprofile', (req, res)=> {
-
-//   let cart = new Cart(req.session.cart ? req.session.cart : {});
-//   if(req.session.user === undefined)
-//   {
-//     res.render('pages/profile',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty , message: undefined});
-//   }
-//   else
-//   {
-//     res.render('pages/error', { user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty } );
-//   }
-
-// });
-
+});
+ 
+router.patch('/editprofile/:id',updateprofile)
 router.get('/Login', (req, res)=> {
 
   let cart = new Cart(req.session.cart ? req.session.cart : {});
