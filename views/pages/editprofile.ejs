@@ -56,13 +56,13 @@
                         <!--   (email address)-->
                         <div class="mb-3 p-3">
                             <label class="small mb-1" for="inputEmailAddress">New Email address</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="name@gmail.com"
+                            <input class="form-control" type="email" placeholder="name@gmail.com"
                                 name="email" value="<%=user.email %>" id="email">
                         </div>
                         <!--   ( password)-->
                         <div class="col-md-6 p-3">
                             <label class="small mb-1" for="inputpassword">New password</label>
-                            <input class="form-control" id="inputpassword" type="password" name="password"
+                            <input class="form-control" type="password" name="password"
                             value="<%= user.password %>" name="password" id="password">
                         </div>
                     </div>
@@ -77,7 +77,7 @@
             $('#editBtn').click(function() {
               console.log('Edit button clicked');
                 $.ajax({
-                    url: `/editprofile/<%=  user._id %>`,
+                    url: `/editprofile/<%=user._id%>`,
                     method: 'PATCH',
                     data: {
                       username: $('#username').val(),
