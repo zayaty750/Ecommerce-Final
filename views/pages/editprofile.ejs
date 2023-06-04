@@ -34,7 +34,7 @@
                 <div >
                     <!-- Profile picture card-->
                     <div class="card mb-4 mb-xl-0" style="width: 1100px;">
-                        <div class="card-header">view you account</div>
+                        <div class="card-header">edit you account</div>
                         <div class="card-body text-center">
                             <img class="img-account-profile  circle mb-2"
                                 src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
@@ -47,24 +47,24 @@
                         <div class="card-header">Account Details</div>
                         <div class="card-body">
                             <div class="mb-3">
-                                <label class="small mb-1 p-1" for="inputUsername">Username </label>
-                                <input class="form-control" name="name" type="text" value="<%= user.username%>">
+                                <label class="small mb-1 p-1" for="inputUsername">New Username </label>
+                                <input class="form-control" name="name" type="text" value="<% user.username%>">
                             </div>
                         </div>
                         <!--   (email address)-->
                         <div class="mb-3 p-3">
-                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <label class="small mb-1" for="inputEmailAddress">New Email address</label>
                             <input class="form-control" id="inputEmailAddress" type="email" placeholder="name@gmail.com"
-                                name="email" value="<%= user.email %>">
+                                name="email" value="<% user.email %>">
                         </div>
                         <div class="col-md-6 p-3">
-                            <label class="small mb-1" for="inputpassword">password</label>
+                            <label class="small mb-1" for="inputpassword">New password</label>
                             <input class="form-control" id="inputpassword" type="password" name="password"
-                            value="<%= user.password %>" name="password">
+                            value="<% user.password %>" name="password">
                         </div>
                     </div>
                     <!-- Save changes button-->
-                    <input class="btn btn-primary" type="submit" value="tap to edit profile">
+                    <input class="btn btn-primary" type="submit" value="update data">
                 </div>
               </div>
         </div>

@@ -122,6 +122,7 @@ router.get('/Signin', (req, res)=> {
 // POST a single user: user/
 router.post("/Signin", register);
 
+//to view data
 router.get('/Profile', (req, res)=> {
 
   let cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -135,6 +136,21 @@ router.get('/Profile', (req, res)=> {
   }
 
 });
+
+//to edit data 
+// router.get('/editprofile', (req, res)=> {
+
+//   let cart = new Cart(req.session.cart ? req.session.cart : {});
+//   if(req.session.user === undefined)
+//   {
+//     res.render('pages/profile',{ user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty , message: undefined});
+//   }
+//   else
+//   {
+//     res.render('pages/error', { user: (req.session.user === undefined ? "" : req.session.user) , qt: cart.totalQty } );
+//   }
+
+// });
 
 router.get('/Login', (req, res)=> {
 
