@@ -47,6 +47,21 @@ router.get('/Home',function(req,res,next)
 });
 
 
+router.get('/Profile', (req, res)=> {
+
+  let cart = new Cart(req.session.cart ? req.session.cart : {});
+  if(req.session.user === undefined)
+  {
+    res.render('pages/profile',{ user: (req.session.user === undefined ? "" : req.session.user) });
+  }
+  else
+  {
+    res.render('pages/profile', { user: (req.session.user === undefined ? "" : req.session.user) } );
+  }
+
+});
+
+
 /* GET home page. */
 router.get('/checkout', (req, res)=> {
   if(req.session.user)
