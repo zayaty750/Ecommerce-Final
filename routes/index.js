@@ -18,6 +18,8 @@ import
   import {Cart}
  from  "../models/cart-model.js";
 
+import {payment} from '../controllers/user_controller.js'
+
 import stripe from 'stripe';
 const Stripe = new stripe(process.env.SECRET_KEY);
 
