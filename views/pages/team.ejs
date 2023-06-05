@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/Head.ejs") %>
-  </head>
-  <body>
-    <div class="page d-flex">
-      <%- include("../partials/sidebar_admin.ejs") %>
+
+<head>
+  <%- include("../partials/Head.ejs") %>
+</head>
+
+<body>
+  <div class="page d-flex">
+    <%- include("../partials/sidebar_admin.ejs") %>
       <div class="content w-full">
         <!-- Start Head -->
         <%- include("../partials/Navbar_admin.ejs") %>
-        <!-- End Head -->
-        <h1 class="p-relative">Blankoo Team</h1>
-        <% user.forEach((User)=> { %>
-          <%- include('../partials/user_card', { User: User }) %>
-            <% }); %>
+          <!-- End Head -->
+          <h1 class="p-relative">Blankoo Team</h1>
+          <div class="friends-page d-grid m-20 gap-20">
+            <% user.forEach((User)=> { %>
+              <% if(User.isAdmin==true){ %>
+                <%- include('../partials/user_card', { User: User }) %>
+                  <% } %>
+                    <% }); %>
+          </div>
       </div>
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
