@@ -173,4 +173,10 @@ router.get('/Signout', (req, res) => {
   res.redirect('/');
 });
 
+router.get("/forgot-password",(req, res) => {
+  res.render('pages/forgot-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
+});
+
+
+
 export default router;
