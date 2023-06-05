@@ -4,6 +4,8 @@ import
     validateRegisterUser,
     validateLoginUser}
    from "../models/user-model.js";
+   import {Cart}
+   from  "../models/cart-model.js";
 
    import stripe from 'stripe';
    const Stripe = new stripe(process.env.SECRET_KEY);
@@ -42,7 +44,7 @@ const addUser = async (req, res, next) => {
     type: req.body.type,
     Image: imgURL //remove public from the path
   };
-  console.log(user);
+
   req.session.user = user;
   try {
     await User.create(user);
@@ -114,7 +116,8 @@ const GetUser = (req, res) => {
 };
 
 const payment = (req,res)=>{
-  stripe.customers.create({
+  let cart = new Cart(req.session.cart ? req.session.cart : {});
+  Stripe.customers.create({
     email: req.body.stripeEmail,
     source: req.body.stripeToken,
     name: 'Blankoo',
@@ -128,9 +131,9 @@ const payment = (req,res)=>{
 })
     .then((customer) => {
         return stripe.charges.create({
-            amount: 7000,
+            amount:  cart.totalPrice * 100,
             description: 'Web Development Product',
-            currency: 'USD',
+            currency: 'EGP',
             customer: customer.id
         })
     })

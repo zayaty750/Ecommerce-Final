@@ -88,7 +88,7 @@ app.use(function (err, req, res, next) {
   console.log(err.message);
   // render the error page
   res.status(err.status || 500);
-  res.render("pages/error",{ user: (req.session.user === undefined ? "" : req.session.user) });
+  res.send("Error");
 });
 
 //connect to mongodb
