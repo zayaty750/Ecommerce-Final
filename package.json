@@ -38,6 +38,5 @@
   },
   "bin": {
     "final-project": "bin/www.js"
-  },
-  "keywords": []
+  }
 }
