@@ -149,6 +149,8 @@ const payment = (req,res)=>{
           Building: req.body.Building,
           Floor: req.body.Floor,
           Apartment :req.body.Apartment,
+          latit: req.body.latit,
+          longit :req.body.longit,
         };
         Orders.create(orders);
         res.redirect("/");

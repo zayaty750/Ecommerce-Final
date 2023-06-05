@@ -32,6 +32,14 @@ const orderSchema = new Schema({
         type: String,
         required: true
     },
+    latit:{
+        type: Number,
+        required: true
+    },
+    longit:{
+        type: Number,
+        required: true
+    },
 }, {timestamps: true});
 
 const Orders = mongoose.model('Orders', orderSchema);
