@@ -9,7 +9,8 @@ import {
 } from "../controllers/product_controller_admin.js";
 
 import {
-  getTeam
+  getTeam,
+  addAdmin
 } from "../controllers/admin_controller.js";
 
 
@@ -39,9 +40,8 @@ router.get('/admin_dashboard', (req, res) => {
   }
 
 });
-
-/* GET team page. */
 router.get("/team", getTeam);
+
 
 // GET add admin form
 router.get("/add-admin", (req, res, next) => {
@@ -52,6 +52,8 @@ router.get("/add-admin", (req, res, next) => {
     res.render('pages/error');
   }
 });
+router.post("/add-admin", addAdmin);
+
 
 
 // GET products: products

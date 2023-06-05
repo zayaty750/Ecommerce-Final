@@ -29,7 +29,6 @@ const UserSchema = new mongoose.Schema({
     },
     confirmPassword:{
         type:String,
-        
         trim:true,
         minlength:8,
     },

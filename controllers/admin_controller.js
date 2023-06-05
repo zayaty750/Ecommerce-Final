@@ -37,7 +37,7 @@ const addAdmin = async (req, res, next) => {
         username: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        
+        isAdmin:true
       };
       console.log(admin);
       try {
@@ -54,4 +54,4 @@ const addAdmin = async (req, res, next) => {
     }
   };
 
-export { getTeam };
+export { getTeam, addAdmin };
