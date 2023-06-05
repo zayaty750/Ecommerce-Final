@@ -43,7 +43,15 @@ router.get('/admin_dashboard', (req, res) => {
 /* GET team page. */
 router.get("/team", getTeam);
 
-
+// GET add admin form
+router.get("/add-admin", (req, res, next) => {
+  if (req.session.user.isAdmin === true) {
+    res.render("pages/add-admin", { user: (req.session.user === undefined ? "" : req.session.user) });
+  }
+  else {
+    res.render('pages/error');
+  }
+});
 // GET products: products
 router.get("/view-products", getProducts);
 
