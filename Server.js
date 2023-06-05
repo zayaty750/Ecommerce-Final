@@ -4,6 +4,7 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import session, { Cookie } from "express-session";
 import MongoStore from 'connect-mongo';
+import reload from 'reload';
 import logger from "morgan";
 import { fileURLToPath } from "url";
 import fs from "fs";
@@ -78,6 +79,7 @@ app.use(function ( req, res, next) {
     next();
 });
 
+reload(app);
 
 // error handler
 app.use(function (err, req, res, next) {
