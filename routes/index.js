@@ -173,8 +173,14 @@ router.get('/Signout', (req, res) => {
   res.redirect('/');
 });
 
+//ResetPassword
+//get forgot password
 router.get("/forgot-password",(req, res) => {
   res.render('pages/forgot-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
+});
+// get link send
+router.get("/link-send",(req, res) => {
+  res.render('pages/link-send',{ user: (req.session.user === undefined ? "" : req.session.user)});
 });
 
 
