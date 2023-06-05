@@ -28,4 +28,30 @@ const getTeam = async (req, res, next) => {
     }
 };
 
+const addAdmin = async (req, res, next) => {
+
+    if (req.session.user.isAdmin == true) {
+      //get the admin data from the request body
+      const admin = {
+        //create a new admin
+        username: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        
+      };
+      console.log(admin);
+      try {
+        await User.create(admin);
+  
+        res.redirect("/team");
+      } catch (err) {
+        //if there is an error, send it to the error handler
+        next(err);
+      }
+    }
+    else {
+      res.render('pages/error');
+    }
+  };
+
 export { getTeam };

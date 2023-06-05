@@ -52,6 +52,8 @@ router.get("/add-admin", (req, res, next) => {
     res.render('pages/error');
   }
 });
+
+
 // GET products: products
 router.get("/view-products", getProducts);
 
