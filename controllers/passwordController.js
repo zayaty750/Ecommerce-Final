@@ -97,8 +97,45 @@ const getResetPasswordView = asyncHandler(async(req,res)=>{
       
 })
 
+/**
+ * @desc  Reset The Password View
+ * @route  /password/reset-password/:userId/:token
+ * @method  POST
+ * @access  public
+ */
+
+const resetThePassword = asyncHandler(async(req,res)=>{
+    const {error}= validateChangePassword(req.body);
+    if(error){
+      return res.status(400).json({ message: error.details[0].message});
+    }
+    //console.log(req.body.email);
+    const user = await User.findById(req.params.userId);
+    if (!user) {
+        return res.status(404).json({ message: "user not found" });
+      }
+      const secret = process.env.JWT_SECRET_KEY + user.password;
+      try {
+        jwt.verify(req.params.token, secret);
+        const salt = await bcrypt.genSalt(10);
+    req.body.password = await bcrypt.hash(req.body.password, salt);
+    user.password = req.body.password;
+
+    await user.save();
+    res.render("success-password");
+      } catch (error) {
+        console.log(error);
+        res.json({ message: "Error" });
+      }
+
+      
+})
+
+
+
 export{
     getForgotPasswordView,
     sendForgotPasswordLink,
-    getResetPasswordView
+    getResetPasswordView,
+    resetThePassword
 };
