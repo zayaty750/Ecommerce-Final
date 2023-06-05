@@ -11,6 +11,9 @@
         <%- include("../partials/Navbar_admin.ejs") %>
         <!-- End Head -->
         <h1 class="p-relative">Blankoo Team</h1>
+        <% user.forEach((User)=> { %>
+          <%- include('../partials/user_card', { User: User }) %>
+            <% }); %>
       </div>
     </div>
   </body>

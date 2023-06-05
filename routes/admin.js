@@ -40,16 +40,7 @@ router.get('/admin_dashboard', (req, res)=> {
 });
 
 /* GET team page. */
-router.get('/team', (req, res)=> {
-  if(req.session.user.isAdmin === true)
-  {
-    res.render('pages/team',{user: (req.session.user === undefined ? "" : req.session.user) });
-  }
-  else
-  {
-    res.render('pages/error');
-  }
-});
+router.get("/team", getTeam);
 
 
 // GET products: products
