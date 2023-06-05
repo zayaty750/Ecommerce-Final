@@ -13,23 +13,23 @@ const orderSchema = new Schema({
         required: true
     },
     Address:{
-        type: string,
+        type: String,
         required: true
     },
     Street_name:{
-        type: string,
+        type: String,
         required: true
     },
     Building:{
-        type: string,
+        type: String,
         required: true
     },
     Floor:{
-        type: string,
+        type: String,
         required: true
     },
     Apartment:{
-        type: string,
+        type: String,
         required: true
     },
 }, {timestamps: true});

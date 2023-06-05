@@ -6,6 +6,8 @@ import
    from "../models/user-model.js";
    import {Cart}
    from  "../models/cart-model.js";
+   import Orders
+   from  "../models/order-model.js";
 
    import stripe from 'stripe';
    const Stripe = new stripe(process.env.SECRET_KEY);
@@ -59,7 +61,7 @@ const addUser = async (req, res, next) => {
 const edituserprofile=async(req,res)=>{
 try{
   const id=req.query.id;
-  const userdata =await user.findById({_id:id});
+  const userdata =await User.findById({_id:id});
   if(userdata){
     res.redirect('/editprofile',{user:userdata});
   }else{
@@ -138,8 +140,18 @@ const payment = (req,res)=>{
         })
     })
     .then((charge) => {
-        console.log(charge)
-        res.send("Success")
+        const orders = 
+        {
+          client_id: req.session.user,
+          product_id: cart,
+          Address: req.body.Address,
+          Street_name: req.body.Street_name,
+          Building: req.body.Building,
+          Floor: req.body.Floor,
+          Apartment :req.body.Apartment,
+        };
+        Orders.create(orders);
+        res.redirect("/");
     })
     .catch((err) => {
         res.send(err)
