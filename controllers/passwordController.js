@@ -4,12 +4,20 @@ import jwt from"jsonwebtoken";
 import bcrypt from"bcryptjs";
 import nodemailer from"nodemailer";
 
+/**
+ * @desc  Get Forgot Password View
+ * @route  /password/forgot-password
+ * @method  GET
+ * @access  public
+ */
 
-// Get Forgot Password View
+
 const getForgotPasswordView = asyncHandler((req,res)=>{
     //hna haya5d el page eli esmaha forgot-password mn el views
     res.render('forgot-password');
 })
+
+
 
 /**
  * @desc  Send Forgot Password Link
@@ -29,7 +37,7 @@ const sendForgotPasswordLink = asyncHandler(async(req,res)=>{
         expiresIn: "10m",
       });
 
-      const link = `http://localhost:5000/password/reset-password/${user._id}/${token}`;
+      const link = `http://${HOST}:${Port}/password/reset-password/${user._id}/${token}`;
 
      res.json({message: "click on the link ",resetPasswordLink: link});
     
@@ -64,9 +72,33 @@ const sendForgotPasswordLink = asyncHandler(async(req,res)=>{
     
 });
 
+/**
+ * @desc  Get Reset Password View
+ * @route  /password/reset-password/:userId/:token
+ * @method  GET
+ * @access  public
+ */
 
+const getResetPasswordView = asyncHandler(async(req,res)=>{
+    //console.log(req.body.email);
+    const user = await User.findById(req.params.userId);
+    if (!user) {
+        return res.status(404).json({ message: "user not found" });
+      }
+      const secret = process.env.JWT_SECRET_KEY + user.password;
+      try {
+        jwt.verify(req.params.token, secret);
+        res.render("reset-password", { email: user.email });
+      } catch (error) {
+        console.log(error);
+        res.json({ message: "Error" });
+      }
+
+      
+})
 
 export{
     getForgotPasswordView,
-    sendForgotPasswordLink
+    sendForgotPasswordLink,
+    getResetPasswordView
 };
