@@ -61,7 +61,7 @@ router.get('/Home',function(req,res,next)
 router.get('/Homewoman',function(req,res,next)
 {
     let cart = new Cart(req.session.cart ? req.session.cart : {});
-    res.render('pages/Home',{ user: (req.session.user === undefined ? "" : req.session.user) ,qt: cart.totalQty});
+    res.render('pages/Homewoman',{ user: (req.session.user === undefined ? "" : req.session.user) ,qt: cart.totalQty});
 });
 
 
