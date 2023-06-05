@@ -17,7 +17,7 @@ const getTeam = async (req, res, next) => {
                     });
                 }
                 //res.json(products);
-                res.render('pages/team', { user: (req.session.user === undefined ? "" : req.session.user) });
+                res.render('pages/team', { user: (req.session.user === undefined ? "" : req.session.user), user: user });
             }) //get all products
             .catch((err) => {
                 next(err);
@@ -27,3 +27,5 @@ const getTeam = async (req, res, next) => {
         res.render('pages/error');
     }
 };
+
+export { getTeam };

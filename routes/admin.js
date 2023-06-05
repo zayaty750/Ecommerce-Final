@@ -1,13 +1,16 @@
 import { Router } from "express";
 import multer from "multer";
 import {
-    createProduct,
-    getProducts,
-    deleteProduct,
-    updateProduct,
-    updateProductForm
-  } from "../controllers/product_controller_admin.js";
+  createProduct,
+  getProducts,
+  deleteProduct,
+  updateProduct,
+  updateProductForm
+} from "../controllers/product_controller_admin.js";
 
+import {
+  getTeam
+} from "../controllers/admin_controller.js";
 
 
 const storage = multer.diskStorage({
@@ -27,13 +30,11 @@ const router = Router();
 
 
 /* GET team page. */
-router.get('/admin_dashboard', (req, res)=> {
-  if(req.session.user.isAdmin === true)
-  {
-    res.render('pages/admin_dashboard',{user: (req.session.user === undefined ? "" : req.session.user) });
+router.get('/admin_dashboard', (req, res) => {
+  if (req.session.user.isAdmin === true) {
+    res.render('pages/admin_dashboard', { user: (req.session.user === undefined ? "" : req.session.user) });
   }
-  else
-  {
+  else {
     res.render('pages/error');
   }
 
@@ -52,12 +53,10 @@ router.get("/view-products", getProducts);
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
-  if(req.session.user.isAdmin === true)
-  {
-    res.render("pages/add-product",{user: (req.session.user === undefined ? "" : req.session.user) });
+  if (req.session.user.isAdmin === true) {
+    res.render("pages/add-product", { user: (req.session.user === undefined ? "" : req.session.user) });
   }
-  else
-  {
+  else {
     res.render('pages/error');
   }
 });
@@ -74,7 +73,7 @@ router.get("/edit/:id", updateProductForm);
   they can use PUT. When they're doing a partial update, they can use HTTP PATCH
 */
 
-router.patch( "/edit/:id", updateProduct);
+router.patch("/edit/:id", updateProduct);
 
 
 // DELETE a single product: products/:id
