@@ -84,10 +84,20 @@ function validateUpdateUser(obj){
     return schema.validate(obj);
 }
 
+//Validate change Password
+function validateChangePassword(obj){
+    const schema = Joi.object({
+        
+        password: passwordComplexity().required(),
+        
+    });
+    return schema.validate(obj);
+}
 
 export  {
     User,
     validateRegisterUser,
     validateLoginUser,
-    validateUpdateUser
+    validateUpdateUser,
+    validateChangePassword
 }
