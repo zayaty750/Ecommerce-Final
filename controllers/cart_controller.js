@@ -29,14 +29,15 @@ const addCart = async (req, res, next) => {
 const getCart = async (req, res,next) =>
 {
   let cart = new Cart(req.session.cart ? req.session.cart : {});
-  if(cart)
+  if(cart.totalQty != 0)
   {
+    console.log(cart);
     res.render('pages/cart',{ products: cart.generateArray() ,subtotal : cart.totalPrice,qt: cart.totalQty ,user:  (req.session.user === undefined ? "" : req.session.user) });
-    console.log(cart.generateArray());
   }
   else
   {
-    res.render('pages/cart',{ products: 'undefined' ,subtotal : cart.totalPrice , qt: cart.totalQty , user:  (req.session.user === undefined ? "" : req.session.user) });
+    console.log("done");
+    res.render('pages/cart',{ products: undefined ,subtotal : cart.totalPrice , qt: cart.totalQty , user:  (req.session.user === undefined ? "" : req.session.user) });
   }
 };
 
