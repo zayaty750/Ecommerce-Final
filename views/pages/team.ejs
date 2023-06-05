@@ -14,19 +14,38 @@
           <!-- End Head -->
           <h1 class="p-relative">Blankoo Team</h1>
           <div class="row ">
-            <div class="btn-group d-flex justify-content-center  col-12 mb-5" role="group" aria-label="Basic outlined example">
-              <a type="button" class="btn btn-outline-dark" href="/add-admin" >Add Admin</a>
+            <div class="btn-group d-flex justify-content-center  col-12 mb-5" role="group"
+              aria-label="Basic outlined example">
+              <a type="button" class="btn btn-outline-dark" href="/add-admin">Add Admin</a>
               <a type="button" class="btn btn-outline-dark active" href="/team">View Team</a>
             </div>
-          <div class="friends-page d-grid m-20 gap-20">
-            <% user.forEach((User)=> { %>
-              <% if(User.isAdmin==true){ %>
-                <%- include('../partials/user_card', { User: User }) %>
-                  <% } %>
-                    <% }); %>
+            <div class="friends-page d-grid m-20 gap-20">
+              <% user.forEach((User)=> { %>
+                <% if(User.isAdmin==true){ %>
+                  <%- include('../partials/user_card', { User: User }) %>
+                    <% } %>
+                      <% }); %>
+            </div>
           </div>
       </div>
-  </div>
+      <script>
+        $(document).ready(function () {
+          $('#delete').click(function () {
+            console.log('Delete button clicked');
+            const adminID = $(this).data('id');
+            $.ajax({
+              url: `/delete/${adminID}`,
+              method: 'DELETE',
+              success: function (response) {
+                window.location.reload();
+              },
+              error: function (err) {
+                console.log(err);
+              }
+            });
+          });
+        });
+      </script>
 </body>
 
 </html>
