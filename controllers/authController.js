@@ -44,12 +44,12 @@ const register = asyncHandler(async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: "loginservice720@gmail.com",
-            pass: "flphmowldtpkkppx"
+            user: process.env.USER_EMAIL,
+            pass: user.email
         }
     });
     const mail_option = {
-        from: "loginservice720@gmail.com",
+        from: process.env.USER_EMAIL,
         to: req.body.email,
         html: `
         <!DOCTYPE html>

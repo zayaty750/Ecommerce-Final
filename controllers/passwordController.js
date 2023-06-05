@@ -17,8 +17,6 @@ const getForgotPasswordView = asyncHandler((req,res)=>{
     res.render('pages/forgot-password',{user: (req.session.user === undefined ? "" : req.session.user)});
 })
 
-
-
 /**
  * @desc  Send Forgot Password Link
  * @route  /password/forgot-password
