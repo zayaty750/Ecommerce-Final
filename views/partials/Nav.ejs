@@ -21,7 +21,7 @@
         <div class="col-4 z-3 ">
           <a href="#" class="bar link-light px-5 text-center" onclick="openNav()"><i class="bi-bootstrap"></i></a>
         </div>
-        <%if(user != undefined ){%>
+        <%if(user != "" ){%>
           <div class="dropdown text-end col-4">
             <a href="#" class="link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="<%=  %>" alt="mdo" width="30" height="30" class="rounded-circle">
@@ -71,7 +71,7 @@
         </ul>
         <ul class="nav">
 
-          <% if(user === undefined ) {%>
+          <% if(user === "" ) {%>
             <li class="nav-item"><a href="/login" class="nav-link btn btn-outline-light px-2 me-2">Login</a></li>
             <li class="nav-item"><a href="/Signin" class="nav-link btn btn-light px-2">Sign up</a></li>
           <% }
