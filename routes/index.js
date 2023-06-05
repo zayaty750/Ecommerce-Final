@@ -174,13 +174,17 @@ router.get('/Signout', (req, res) => {
 });
 
 //ResetPassword
-//get forgot password
+//get forgot password page
 router.get("/forgot-password",(req, res) => {
   res.render('pages/forgot-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
 });
-// get link send
+// get link send page
 router.get("/link-send",(req, res) => {
   res.render('pages/link-send',{ user: (req.session.user === undefined ? "" : req.session.user)});
+});
+// get reset password page
+router.get("/reset-password",(req, res) => {
+  res.render('pages/reset-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
 });
 
 
