@@ -42,7 +42,7 @@ const addAdmin = async (req, res, next) => {
       console.log(admin);
       try {
         await User.create(admin);
-  
+        
         res.redirect("/team");
       } catch (err) {
         //if there is an error, send it to the error handler

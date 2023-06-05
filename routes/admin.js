@@ -29,8 +29,8 @@ const upload = multer({ storage: storage });
 
 const router = Router();
 
-
-/* GET team page. */
+// Team
+// GET team page
 router.get('/admin_dashboard', (req, res) => {
   if (req.session.user.isAdmin === true) {
     res.render('pages/admin_dashboard', { user: (req.session.user === undefined ? "" : req.session.user) });
@@ -38,11 +38,8 @@ router.get('/admin_dashboard', (req, res) => {
   else {
     res.render('pages/error');
   }
-
 });
 router.get("/team", getTeam);
-
-
 // GET add admin form
 router.get("/add-admin", (req, res, next) => {
   if (req.session.user.isAdmin === true) {
@@ -52,16 +49,16 @@ router.get("/add-admin", (req, res, next) => {
     res.render('pages/error');
   }
 });
+// POST a single User: admin
 router.post("/add-admin", addAdmin);
 
 
-
+// Products
 // GET products: products
 router.get("/view-products", getProducts);
 
 // GET a single product: products/find/:id
 // router.get("/find/:id", getProductById);
-
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
@@ -72,12 +69,10 @@ router.get("/add-product", (req, res, next) => {
     res.render('pages/error');
   }
 });
-
 // POST a single product: products
 router.post("/add-product", upload.single('image'), createProduct);
 
-
-// GET add product form
+// GET edit product form
 router.get("/edit/:id", updateProductForm);
 
 /* Patch a single product: products/:id
