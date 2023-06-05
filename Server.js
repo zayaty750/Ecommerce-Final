@@ -59,7 +59,8 @@ app.use(express.json());
 // When extended property is set to false, the URL-encoded data will instead be parsed with the query-string library.
 // query-string library does not support creating a nested object from your query string.
 
-app.use(express.urlencoded({ extended: true }));
+//app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended:false}));
 //setup cookie parser middleware
 app.use(cookieParser());
 //setup static folder for serving static files in Express

@@ -5,6 +5,15 @@ import {
   register,
   login
 } from "../controllers/authController.js"
+
+import {
+  getForgotPasswordView,
+    sendForgotPasswordLink,
+    getResetPasswordView,
+    resetThePassword
+} from "../controllers/passwordController.js"
+
+
 import 
 {
   getProducts
@@ -175,22 +184,32 @@ router.get('/Signout', (req, res) => {
 
 //ResetPassword
 //get forgot password page
-router.get("/forgot-password",(req, res) => {
-  res.render('pages/forgot-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
-});
-// get link send page
-router.get("/link-send",(req, res) => {
-  res.render('pages/link-send',{ user: (req.session.user === undefined ? "" : req.session.user)});
-});
-// get reset password page
-router.get("/reset-password",(req, res) => {
-  res.render('pages/reset-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
-});
-// get success password page
-router.get("/success-password",(req, res) => {
-  res.render('pages/success-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
-});
+// router.get("/forgot-password",(req, res) => {
+//   res.render('pages/forgot-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
+// });
+// // get link send page
+// router.get("/link-send",(req, res) => {
+//   res.render('pages/link-send',{ user: (req.session.user === undefined ? "" : req.session.user)});
+// });
+// // get reset password page
+// router.get("/reset-password",(req, res) => {
+//   res.render('pages/reset-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
+// });
+// // get success password page
+// router.get("/success-password",(req, res) => {
+//   res.render('pages/success-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
+// });
 
+// /password/forgot-password
+router.route("/forgot-password")
+.get(getForgotPasswordView)
+.post(sendForgotPasswordLink);
+
+// /password/reset-password/:userId/:token
+router.route("/reset-password/:userId/:token")
+  .get(getResetPasswordView)
+  .post(resetThePassword)
 
 
 export default router;
+
