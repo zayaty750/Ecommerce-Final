@@ -3,7 +3,7 @@ import { User } from "../models/user-model.js";
 import { render } from "ejs";
 import fs from 'fs';
 
-
+// View team
 const getTeam = async (req, res, next) => {
     if (req.session.user.isAdmin === true) {
         const user = User.find({})
@@ -28,21 +28,22 @@ const getTeam = async (req, res, next) => {
     }
 };
 
+// Add admin
 const addAdmin = async (req, res, next) => {
-
+    console.log(req.body)
     if (req.session.user.isAdmin == true) {
       //get the admin data from the request body
       const admin = {
         //create a new admin
-        username: req.body.name,
-        email: req.body.Email,
-        password: req.body.Password,
-        isAdmin:true
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+        isAdmin: true
       };
       console.log(admin);
       try {
         await User.create(admin);
-        
+
         res.redirect("/team");
       } catch (err) {
         //if there is an error, send it to the error handler

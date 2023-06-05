@@ -16,18 +16,18 @@
           <a type="button" class="btn btn-outline-dark " href="/team">View Team</a>
         </div>
         <div class = "row m-2 justify-content-center">
-          <form action="add-admin" method="post" enctype="multipart/form-data">
+          <form action="/add-admin" method="post">
               <div class="form-group">
                 <label for="name">Username:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="username" name="username">
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="text" class="form-control" id="Email" name="Email"  required>
+                <input type="text" class="form-control" id="email" name="email">
               </div>
               <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" id="Password" name="Password"  required>
+                <input type="password" class="form-control" id="password" name="password">
               </div>
               <button type="submit" class="btn btn-primary">Add</button>
             </form>
