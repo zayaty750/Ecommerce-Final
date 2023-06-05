@@ -68,7 +68,6 @@ const addAdmin = async (req, res, next) => {
 
 // Delete admin
 const deleteAdmin = async ({ params: { id } }, res, next) => {
-
     try {
       if (!mongo.ObjectId.isValid(id)) {
         return res.status(400).json({ message: `Error: Invalid Admin ID ${id}` });
