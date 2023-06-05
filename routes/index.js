@@ -186,6 +186,10 @@ router.get("/link-send",(req, res) => {
 router.get("/reset-password",(req, res) => {
   res.render('pages/reset-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
 });
+// get success password page
+router.get("/success-password",(req, res) => {
+  res.render('pages/success-password',{ user: (req.session.user === undefined ? "" : req.session.user)});
+});
 
 
 
