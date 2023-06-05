@@ -2,7 +2,7 @@ import { mongo } from "mongoose";
 import { User } from "../models/user-model.js";
 import { render } from "ejs";
 import fs from 'fs';
-
+import bcrypt from "bcryptjs";
 // View team
 const getTeam = async (req, res, next) => {
     if (req.session.user.isAdmin === true) {
@@ -33,6 +33,11 @@ const addAdmin = async (req, res, next) => {
     console.log(req.body)
     if (req.session.user.isAdmin == true) {
       //get the admin data from the request body
+
+
+      const salt = await bcrypt.genSalt(10);
+      req.body.password = await bcrypt.hash(req.body.password, salt);
+      
       const admin = {
         //create a new admin
         username: req.body.username,
@@ -41,6 +46,11 @@ const addAdmin = async (req, res, next) => {
         isAdmin: true
       };
       console.log(admin);
+
+  
+   
+
+
       try {
         await User.create(admin);
 
