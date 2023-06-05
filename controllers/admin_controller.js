@@ -35,8 +35,8 @@ const addAdmin = async (req, res, next) => {
       const admin = {
         //create a new admin
         username: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
+        email: req.body.Email,
+        password: req.body.Password,
         isAdmin:true
       };
       console.log(admin);
