@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include("../partials/Head.ejs") %>
-</head>
-<body>
-    <div class="page d-flex">
-        <%- include("../partials/sidebar_admin.ejs") %>
-        <div class="content w-full">
-          <!-- Start Head -->
-          <div class="head bg-white p-15 between-flex">
-            <div class="search p-relative">
-              <input class="p-10" type="search" placeholder="Type A Keyword" />
-            </div>
-            <div class="icons d-flex align-center">
-              <span class="notification p-relative">
-                <i class="fa-regular fa-bell fa-lg"></i>
-              </span>
-              <img src="../images/Admin/avatar.png" alt="" />
-            </div>
-          </div>
-          <!-- End Head -->
-          <h1 class="p-relative">Blankoo Clients</h1>
-              <div class="row ">
 
-            </div>
-          </div>
+<head>
+  <%- include("../partials/Head.ejs") %>
+</head>
+
+<body>
+  <div class="page d-flex">
+    <%- include("../partials/sidebar_admin.ejs") %>
+      <div class="content w-full">
+        <!-- Start Head -->
+        <%- include("../partials/Navbar_admin.ejs") %>
+        <!-- End Head -->
+        <h1 class="p-relative">Blankoo Clients</h1>
+        <div class="friends-page d-grid m-20 gap-20">
+          <% user.forEach((User)=> { %>
+            <%- include('../partials/user_card', { User: User }) %>
+              <% }); %>
         </div>
       </div>
+  </div>
 </body>
+
 </html>

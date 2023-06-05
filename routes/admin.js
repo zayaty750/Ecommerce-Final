@@ -10,7 +10,8 @@ import {
 
 import {
   getTeam,
-  addAdmin
+  addAdmin,
+  deleteAdmin
 } from "../controllers/admin_controller.js";
 
 
@@ -49,8 +50,11 @@ router.get("/add-admin", (req, res, next) => {
     res.render('pages/error');
   }
 });
-// POST a single User: admin
+// POST a single admin: User
 router.post("/add-admin", addAdmin);
+// DELETE a single admin: User/:id
+router.delete("/delete/:id", deleteAdmin);
+
 
 
 // Products

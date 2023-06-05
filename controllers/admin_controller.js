@@ -3,6 +3,7 @@ import { User } from "../models/user-model.js";
 import { render } from "ejs";
 import fs from 'fs';
 import bcrypt from "bcryptjs";
+
 // View team
 const getTeam = async (req, res, next) => {
     if (req.session.user.isAdmin === true) {
@@ -65,4 +66,22 @@ const addAdmin = async (req, res, next) => {
     }
   };
 
-export { getTeam, addAdmin };
+// Delete admin
+const deleteAdmin = async ({ params: { id } }, res, next) => {
+    try {
+      if (!mongo.ObjectId.isValid(id)) {
+        return res.status(400).json({ message: `Error: Invalid Admin ID ${id}` });
+      }
+      const admin = await User.findOneAndDelete({ _id: id });
+      if (admin) {
+        console.log('data deleted')
+        res.status(200).json({ message: "Admin removed" });
+      } else {
+        res.status(404).json({ message: "Admin not found" });
+      }
+    } catch (err) {
+      next(err);
+    }
+  };
+
+export { getTeam, addAdmin, deleteAdmin };

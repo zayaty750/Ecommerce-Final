@@ -136,8 +136,6 @@ const deleteProduct = async ({ params: { id } }, res, next) => {
   } catch (err) {
     next(err);
   }
-
-
 };
 
 export { createProduct, getProducts, deleteProduct, updateProduct, updateProductForm };
