@@ -132,7 +132,12 @@
   <!-- search nav for pc -->
   <div id="search_nav" class="search_nav w-100">
     <a href="#close" class="closebtn" onclick="close_search()">&times;</a>
-    <input type="text" name="search" placeholder="Write here">
+
+    <form action="/user/search" method="post">
+      <input type="text" name="search" placeholder="Write here" >
+      <button type="submit" >Search</button>
+    </form>
+    
     <div class="row  container mt-5 ms-5">
       <div class="col ps-5">
         <h4>Category</h4>

@@ -29,6 +29,8 @@ import
 
 import {payment,updateprofile} from '../controllers/user_controller.js'
 
+import Product from "../models/products_model.js";
+
 
 const router = Router();
 
@@ -155,6 +157,24 @@ router.route("/forgot-password")
 router.route("/reset-password/:userId/:token")
   .get(getResetPasswordView)
   .post(resetThePassword)
+
+  //document.getElementById(search).value()
+// Search for products
+router.post("/search",async (req,res)=>{
+  let data = await Product.find(
+      {
+          "$or":[
+              {pname:{$regex:req.body.search}},
+              {category:{$regex:req.body.search}},
+          ]
+      }
+  )
+  res.send(data);
+
+})
+
+
+
 
 
 export default router;

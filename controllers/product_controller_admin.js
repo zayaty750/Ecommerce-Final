@@ -52,7 +52,7 @@ const createProduct = async (req, res, next) => {
     try {
       await Product.create(product);
 
-      res.redirect("/view-products");
+      res.redirect("/admin/view-products");
     } catch (err) {
       //if there is an error, send it to the error handler
       next(err);

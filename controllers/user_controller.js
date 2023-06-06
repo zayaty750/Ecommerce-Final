@@ -159,6 +159,7 @@ const payment = (req,res)=>{
           longit :req.body.longit
         };
         // cart.delete_All function 
+        
         Orders.create(orders);
         res.redirect('/');
     })

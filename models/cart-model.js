@@ -16,7 +16,12 @@ export class Cart {
             this.totalPrice += storedItem.item.Price;
         };
             // delete All --> user controller
-
+        // this.reduceByOne = function(id){
+        //     this.items[id].qty--;
+        //     this.items[id].price-=this.items[id].item.price;
+        //     this.totalQty--;
+        //     this.totalPrice-=this.items[id].item.price;
+        // }
             // 
          this.generateArray = function () {
             var arr = [];
