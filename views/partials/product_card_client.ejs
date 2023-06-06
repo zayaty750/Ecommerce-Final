@@ -12,7 +12,7 @@
             <div class="d-flex justify-content-between mt-3 mb-2">
 
                 <h5><%= product.pname %></h5>
-                <a class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; " href="/add-to-cart/<%= product._id %>"></a>
+                <a class="bi-heart" onclick="change_heart(this)" style=" cursor: pointer; " href="/add-to-wishlist/<%= product._id %>"></a>
             </div>
 
             <div class="mb-2">
@@ -30,7 +30,8 @@
             </div>
 
             <div class="mt-3">
-                <button class="btn btn-dark  ">Add To Cart </button>
+                <!-- <button class="btn btn-dark ">Add To Cart </button> -->
+                <a class="bi-cart btn btn-dark" style=" cursor: pointer; " href="/add-to-cart/<%= product._id %>"></a>
             </div>
 
         </div>

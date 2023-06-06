@@ -12,8 +12,6 @@ import {
     getResetPasswordView,
     resetThePassword
 } from "../controllers/passwordController.js"
-
-
 import 
 {
   getProducts
@@ -116,7 +114,7 @@ router.get('/add-to-cart/:id',addCart);
 
 router.get('/cart',getCart);
 
-router.get('/',addWishlist);
+router.get('/add-to-wishlist/:id',addWishlist);
 
 router.get('/wishlist',getWishlist);
 
