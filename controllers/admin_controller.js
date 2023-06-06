@@ -3,9 +3,41 @@ import { User } from "../models/user-model.js";
 import { render } from "ejs";
 import fs from 'fs';
 import bcrypt from "bcryptjs";
+import Orders from "../models/order-model.js";
+import {Cart}
+ from  "../models/cart-model.js";
+
+const getOrders = async (req,res)=>{
+  let cart;
+  let data = await Orders.find({client_id:req.params.id});
+
+  data.forEach((products) => {
+
+    cart = new Cart(products.product_id);
+    products.items = cart.generateArray();
+    console.log(products.items)
+
+    res.render("pages/orders" ,{products:products , user: (req.session.user === undefined ? "" : req.session.user) });
+
+    // const t = products.items;
+    // t.forEach((products) => {
+   
+    //    console.log(products.Price)
+    //  });
+  });
+
+
+
+
+  
+
+}
+
+
+
 
 // View team
-const getTeam = async (req, res, next) => {
+const getAdmin = async (req, res, next) => {
     if (req.session.user.isAdmin == true) {
         const user = User.find({})
             .then((user) => {
@@ -27,6 +59,30 @@ const getTeam = async (req, res, next) => {
     else {
         res.render('pages/error');
     }
+};
+
+const getUsers = async (req, res, next) => {
+  if (req.session.user.isAdmin == true) {
+      const user = User.find({})
+          .then((user) => {
+
+              if (user.length > 0) {
+                  user.sort((a, b) => {
+                      const dateA = new Date(a.createdAt);
+                      const dateB = new Date(b.createdAt);
+                      return dateA - dateB;
+                  });
+              }
+              //res.json(products);
+              res.render('pages/clients', { user: (req.session.user === undefined ? "" : req.session.user), user: user });
+          }) //get all products
+          .catch((err) => {
+              next(err);
+          });
+  }
+  else {
+      res.render('pages/error');
+  }
 };
 
 // Add admin
@@ -78,4 +134,4 @@ const deleteAdmin = async ({ params: { id } }, res, next) => {
   }
 };
 
-export { getTeam, addAdmin, deleteAdmin };
+export { getUsers, addAdmin, deleteAdmin ,getAdmin ,getOrders};

@@ -9,8 +9,10 @@ import {
 } from "../controllers/product_controller_admin.js";
 
 import {
-  getTeam,
-  addAdmin
+  getUsers,
+  addAdmin,
+  getAdmin,
+  getOrders
 } from "../controllers/admin_controller.js";
 
 
@@ -29,8 +31,7 @@ const upload = multer({ storage: storage });
 
 const router = Router();
 
-// Team
-// GET team page
+// GET Admin dashboard page
 router.get('/admin_dashboard', (req, res) => {
   if (req.session.user.isAdmin === true) {
     res.render('pages/admin_dashboard', { user: (req.session.user === undefined ? "" : req.session.user) });
@@ -38,8 +39,19 @@ router.get('/admin_dashboard', (req, res) => {
   else {
     res.render('pages/error');
   }
+
+
 });
-router.get("/team", getTeam);
+
+// get clients page
+router.get("/Clients", getUsers);
+
+// get clients page
+router.get("/orders/:id", getOrders);
+
+// get Team page
+router.get("/team", getAdmin);
+
 // GET add admin form
 router.get("/add-admin", (req, res, next) => {
   if (req.session.user.isAdmin === true) {
@@ -49,6 +61,7 @@ router.get("/add-admin", (req, res, next) => {
     res.render('pages/error');
   }
 });
+
 // POST a single User: admin
 router.post("/add-admin", addAdmin);
 

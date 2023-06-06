@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.74.0/dist/L.Control.Locate.min.js"
+        charset="utf-8"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.4/dist/L.Control.Locate.min.css" />
+
+
+    <%- include("../partials/Head.ejs") %>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        width: 100%;
+        height: 50vh;
+    }
+</style>
+
+<body>
+    <%- include("../partials/Top_Function.ejs") %>
+
+            <div class="page d-flex">
+                <%- include("../partials/sidebar_admin.ejs") %>
+                    <div class="content w-full">
+                        <!-- Start Head -->
+                        <%- include("../partials/Navbar_admin.ejs") %>
+                            <!-- End Head -->
+                            <h1 class="p-relative">Blankoo Products</h1>
+                            <div class="row ">
+
+
+                                <!-- left row -->
+                                <div class="col-12 col-sm-6">
+                                    <div class="container-fluid">
+                                        <!-- title -->
+                                        <h4 class="mb-4">
+                                            Shipping
+                                        </h4>
+                                        <!-- map -->
+                                        <div class="container">
+                                            <div id="map">
+
+                                            </div>
+                                        </div>
+                                        <!-- info -->
+
+                                        <div class="row mb-3">
+                                            <div class="col-6 mt-4">
+                                                <div class="form-group">
+                                                    <input id="" type="text" required placeholder="Address"
+                                                        value="<%= products.Address %>" name="Address"
+                                                        class="form-control  border-0 shadow-sm  text-black" readonly>
+                                                </div>
+                                            </div>
+
+                                            <input type="text" placeholder="longit" name="longit" id="longit"
+                                                class="form-control  border-0 shadow-sm  text-black d-none"
+                                                value="<%= products.longit %>">
+                                            <input type="text" placeholder="latit" name="latit" id="latit"
+                                                class="form-control  border-0 shadow-sm  text-black d-none"
+                                                value="<%= products.latit %>">
+
+
+                                            <div class="col-6 mt-4">
+                                                <div class="form-group">
+                                                    <input id="" type="text" required placeholder="Street name"
+                                                        name="Street_name" value="<%= products.Street_name %>"
+                                                        class="form-control  border-0 shadow-sm  text-black" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 mt-4">
+                                                <div class="form-group">
+                                                    <input id="first" type="text" required placeholder="Building"
+                                                        name="Building" value="<%= products.Building %>"
+                                                        class="form-control  border-0 shadow-sm  text-black" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 mt-4 ">
+                                                <div class="form-group">
+                                                    <input id="second" type="text" required placeholder="Floor"
+                                                        name="Floor" value="<%= products.Floor %>"
+                                                        class="form-control  border-0 shadow-sm  text-black" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 mt-4 mb-5">
+                                                <div class="form-group">
+                                                    <input id="" type="text" required placeholder="Apartment"
+                                                        name="Apartment" value="<%= products.Apartment %>"
+                                                        class="form-control  border-0 shadow-sm  text-black" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end -->
+
+                                <!-- left border!!! -->
+                                <div class="col-12 col-sm-6">
+                                    <div class="container-fluid mb-5 ">
+                                        <h4 class="mb-4">
+                                            Summary
+                                        </h4>
+
+                                        <div class="border-bottom mb-3">
+
+                                            <div class="d-flex justify-content-between  pb-4">
+                                                <h5>
+                                                    Items
+                                                </h5>
+                                                <h5 class="">
+                                                    Price
+                                                </h5>
+                                                <h5>
+                                                    Quantity
+                                                </h5>
+
+                                            </div>
+
+                                            <div>
+                                                <% products.items.forEach((product)=> { %>
+                                                    <%- include('../partials/order_card', { product: product }) %>
+                                                        <% }); %>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="d-flex justify-content-between pb-2">
+                                            <h5>
+                                                Total
+                                            </h5>
+
+                                            <h5 class="text-muted pe-3">
+                                                <% products.items.forEach((product)=> { %>
+                                                    <%= product.Price %>
+                                                        <% }); %>
+
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <script>
+            // Map initialization 
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log('--- Your Position: ---');
+
+                console.log('Lat: ' + document.getElementById("latit").value);
+                latit = document.getElementById("latit").value;
+
+                console.log('Long: ' + document.getElementById("longit").value);
+                longit = document.getElementById("longit").value;
+
+                // map //
+                var map = L.map('map').setView([latit, longit], 13);
+                // map style //
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                L.marker([latit, longit]).addTo(map)
+                    .bindPopup('Delivery Here')
+                    .openPopup();
+                // locator control //
+            });
+
+
+
+        </script>
+
+        <%- include("../partials/Top_Function.ejs") %>
+
+            <!-- leaflet js  -->
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
+                charset="utf-8"></script>
+</body>
+
+</html>
