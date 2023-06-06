@@ -34,8 +34,6 @@ const addAdmin = async (req, res, next) => {
     console.log(req.body)
     if (req.session.user.isAdmin == true) {
       //get the admin data from the request body
-
-
       const salt = await bcrypt.genSalt(10);
       req.body.password = await bcrypt.hash(req.body.password, salt);
       
@@ -47,11 +45,6 @@ const addAdmin = async (req, res, next) => {
         isAdmin: true
       };
       console.log(admin);
-
-  
-   
-
-
       try {
         await User.create(admin);
 
@@ -68,20 +61,21 @@ const addAdmin = async (req, res, next) => {
 
 // Delete admin
 const deleteAdmin = async ({ params: { id } }, res, next) => {
-    try {
-      if (!mongo.ObjectId.isValid(id)) {
-        return res.status(400).json({ message: `Error: Invalid Admin ID ${id}` });
-      }
-      const admin = await User.findOneAndDelete({ _id: id });
-      if (admin) {
-        console.log('data deleted')
-        res.status(200).json({ message: "Admin removed" });
-      } else {
-        res.status(404).json({ message: "Admin not found" });
-      }
-    } catch (err) {
-      next(err);
+
+  try {
+    if (!mongo.ObjectId.isValid(id)) {
+      return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
     }
-  };
+    const user = await User.findOneAndDelete({ _id: id });
+    if (user) {
+      console.log('data deleted to th')
+      res.status(200).json({ message: "Admin removed" });
+    } else {
+      res.status(404).json({ message: "Admin not found" });
+    }
+  } catch (err) {
+    next(err);
+  }
+};
 
 export { getTeam, addAdmin, deleteAdmin };
