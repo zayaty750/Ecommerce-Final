@@ -60,7 +60,7 @@ router.delete("/delete/:id", deleteAdmin);
 
 // Products
 // // GET products: products
-// router.get("/view-products", getProducts);
+router.get("/view-products", getProducts);
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
@@ -71,15 +71,7 @@ router.get("/add-product", (req, res, next) => {
     res.render('pages/error');
   }
 });
-//view product
-router.get("/view-products",(req, res, next) => {
-  if (req.session.user.isAdmin === true) {
-    res.render("pages/view-products", { user: (req.session.user === undefined ? "" : req.session.user) });
-  }
-  else {
-    res.render('pages/error');
-  }
-});
+
 //editproduct
 router.get("/edit-product", (req, res, next) => {
   if (req.session.user.isAdmin === true) {
