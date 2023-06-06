@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 
 // View team
 const getTeam = async (req, res, next) => {
-    if (req.session.user.isAdmin === true) {
+    if (req.session.user.isAdmin == true) {
         const user = User.find({})
             .then((user) => {
 
