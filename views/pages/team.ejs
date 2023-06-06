@@ -28,24 +28,6 @@
             </div>
           </div>
       </div>
-      <script>
-        $(document).ready(function () {
-          $('#delete').click(function () {
-            console.log('Delete button clicked');
-            const adminID = $(this).data('id');
-            $.ajax({
-              url: `/delete/${adminID}`,
-              method: 'DELETE',
-              success: function (response) {
-                window.location.reload();
-              },
-              error: function (err) {
-                console.log(err);
-              }
-            });
-          });
-        });
-      </script>
 </body>
 
 </html>
