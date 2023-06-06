@@ -31,10 +31,14 @@ const UserSchema = new mongoose.Schema({
     },
     gender:{
         type:String,
+        required:true,
     },
     isAdmin:{
         type:Boolean,
-        default:false
+        default:false,
+    },
+    Image:{
+        type:String
     },
 },{timestamps:true});
 

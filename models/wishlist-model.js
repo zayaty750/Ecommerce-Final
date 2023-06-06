@@ -1,4 +1,4 @@
-export class Cart {
+export class wishlist {
     constructor(oldcart) {
         this.items = oldcart.items || {};
         this.totalQty = oldcart.totalQty || 0;
@@ -15,9 +15,7 @@ export class Cart {
             this.totalQty++;
             this.totalPrice += storedItem.item.Price;
         };
-            // delete All --> user controller
 
-            // 
          this.generateArray = function () {
             var arr = [];
             for (var id in this.items) {

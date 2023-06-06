@@ -12,8 +12,6 @@ import {
     getResetPasswordView,
     resetThePassword
 } from "../controllers/passwordController.js"
-
-
 import 
 {
   getProducts
@@ -29,8 +27,10 @@ import
 
 import {payment,updateprofile} from '../controllers/user_controller.js'
 
-import stripe from 'stripe';
-const Stripe = new stripe(process.env.SECRET_KEY);
+import{
+  addWishlist,
+  getWishlist
+} from "../controllers/wishlist_controller.js"
 
 const router = Router();
 
@@ -88,7 +88,7 @@ router.get('/checkout', (req, res)=> {
   let cart = new Cart(req.session.cart ? req.session.cart : {});
   if(req.session.user)
   {
-    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user),key: process.env.PUBLISHABLE_KEY, products: cart.generateArray() , subtotal : cart.totalPrice , qt: cart.totalQty});
+    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user),key: process.env.PUBLISHABLE_KEY, products: cart.generateArray() , subtotal : cart.totalPrice , qt: cart.totalQty, key: process.env.PUBLISHABLE_KEY});
   }
   else
   {
@@ -113,6 +113,10 @@ router.get('/products', getProducts);
 router.get('/add-to-cart/:id',addCart);
 
 router.get('/cart',getCart);
+
+router.get('/add-to-wishlist/:id',addWishlist);
+
+router.get('/wishlist',getWishlist);
 
 /*               End                 */
 

@@ -21,24 +21,22 @@ const orderSchema = new Schema({
         required: true
     },
     Building:{
-        type: String,
+        type: Number,
         required: true
     },
     Floor:{
-        type: String,
+        type: Number,
         required: true
     },
     Apartment:{
-        type: String,
+        type: Number,
         required: true
     },
     latit:{
         type: Number,
-        required: true
     },
     longit:{
         type: Number,
-        required: true
     },
 }, {timestamps: true});
 

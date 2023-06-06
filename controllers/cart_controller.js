@@ -3,7 +3,7 @@ import Product from '../models/products_model.js';
 import {Cart}
  from  "../models/cart-model.js";
 
-// Create a client
+
 const addCart = async (req, res, next) => {
 
     const product_id = req.params.id;
@@ -25,7 +25,6 @@ const addCart = async (req, res, next) => {
   };
 
 
-  // Create a client
 const getCart = async (req, res,next) =>
 {
   let cart = new Cart(req.session.cart ? req.session.cart : {});
