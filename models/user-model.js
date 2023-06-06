@@ -1,7 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 import passwordComplexity  from "joi-password-complexity";
-import Joi from "joi";
-import jwt from "jsonwebtoken";
 // User Schema
 
 const UserSchema = new mongoose.Schema({
@@ -30,6 +28,9 @@ const UserSchema = new mongoose.Schema({
         type:String,
         trim:true,
         minlength:8,
+    },
+    gender:{
+        type:String,
     },
     isAdmin:{
         type:Boolean,

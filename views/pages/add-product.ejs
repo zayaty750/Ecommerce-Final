@@ -3,6 +3,77 @@
 
 <head>
   <%- include("../partials/Head.ejs") %>
+  <!-- <script defer src="/public/Java/addscript.js"></script> -->
+  <style>
+    .err {
+    color: red;
+    font-size: smaller;
+}
+  </style>
+  <script>
+    function validatename(field){
+    if(field==' '){
+        document.getElementById('nameErr').innerHTML="You Must Enter Name";
+   return false;
+      }else if(field.length<5) {
+        document.getElementById('nameErr').innerHTML="You Must Enter a valid Name";
+   return false;
+        }
+      else{
+					document.getElementById('nameErr').innerHTML='';
+					return true;
+				}
+      }
+
+function validprice(field){
+    if(field==' '){
+        document.getElementById('priceErr').innerHTML="You Must Enter price";
+   return false;
+      
+  }else if (field == 0){
+    document.getElementById('priceErr').innerHTML="You Must Enter price Greater Than 0";
+   return false;
+  }
+  else{
+					document.getElementById('priceErr').innerHTML='';
+					return true;
+				}
+}
+function validcat(field){
+    if(field==' '){
+        document.getElementById('catErr').innerHTML="You Must Enter  Category";
+   return false;
+      }else{
+					document.getElementById('catErr').innerHTML='';
+					return true;
+				}
+}
+function validdes(field){
+    if(field==' '){
+        document.getElementById('desErr').innerHTML="You Must Enter Description";
+   return false;
+      }else if (field.length <10){
+        document.getElementById('desErr').innerHTML="You Must Enter Description greater than 10";
+   return false;
+      }
+      else{
+					document.getElementById('desErr').innerHTML='';
+					return true;
+				}
+}
+function validate(form){
+				let fail='';
+				fail&= validatename(form.name.value);
+				fail&= validprice(form.price.value);
+				fail&=  validcat(form.category.value)
+        fail&= validdes(form.dedescription. value)
+				if(fail)
+					return true;
+				else{
+					return false;
+				}
+			}
+  </script>
 </head>
 
 <body>
@@ -19,22 +90,26 @@
             <a type="button" class="btn btn-outline-dark " href="/view-products">View Product</a>
           </div>
           <div class="row m-2 justify-content-center">
-            <form action="add-product" method="post" enctype="multipart/form-data">
+            <form action="add-product" method="post" enctype="multipart/form-data" onsubmit="return validate(this)" >
               <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name"  >
+                 <div id="nameErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="price">Price:</label>
                 <input type="number" step=".01" class="form-control" id="price" name="price" required>
+                <div id="priceErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="category">Catergory:</label>
                 <input class="form-control" id="category" name="category" rows="3" required></input>
+                <div id="catErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                <div id="desErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="image">Image:</label>

@@ -63,6 +63,7 @@ router.get('/Homewoman',function(req,res,next)
 
 
 
+
 router.get('/Profile', (req, res)=> {
 
   let cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -116,6 +117,11 @@ router.get('/cart',getCart);
 router.get('/About_us',function(req,res,next)
 {
     res.render('pages/aboutus',{ user: (req.session.user === undefined ? "" : req.session.user) });
+});
+// Aboutus page
+router.get('/Features',function(req,res,next)
+{
+    res.render('pages/features',{ user: (req.session.user === undefined ? "" : req.session.user) });
 });
   
 
