@@ -13,6 +13,7 @@ const addCart = async (req, res, next) => {
       {
         let cart = new Cart(req.session.cart ? req.session.cart : {});
         cart.add(product, product_id);
+        console.log()
         req.session.cart = cart;
         console.log(req.session.cart);
         res.redirect('/user/products');
