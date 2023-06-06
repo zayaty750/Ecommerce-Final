@@ -16,15 +16,15 @@
         document.getElementById('nameErr').innerHTML="You Must Enter Name";
    return false;
       }else if(field.length<5) {
-        if(field==' '){
         document.getElementById('nameErr').innerHTML="You Must Enter a valid Name";
-   return false
-        }}
+   return false;
+        }
       else{
 					document.getElementById('nameErr').innerHTML='';
 					return true;
 				}
-}
+      }
+
 function validprice(field){
     if(field==' '){
         document.getElementById('priceErr').innerHTML="You Must Enter price";
@@ -94,22 +94,22 @@ function validate(form){
               <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name"  >
-                 <div id="nameErr" class="err">You Must Enter a UserName.</div>
+                 <div id="nameErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="price">Price:</label>
                 <input type="number" step=".01" class="form-control" id="price" name="price" required>
-                <div id="priceErr" class="err">You Must Enter Price Greater Than 10.</div>
+                <div id="priceErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="category">Catergory:</label>
                 <input class="form-control" id="category" name="category" rows="3" required></input>
-                <div id="catErr" class="err">You Must Enter Data </div>
+                <div id="catErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="description">Description:</label>
                 <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-                <div id="desErr" class="err">You Must Enter Data </div>
+                <div id="desErr" class="err"> </div>
               </div>
               <div class="form-group">
                 <label for="image">Image:</label>
