@@ -30,10 +30,10 @@
               <li><a class="dropdown-item" href="#"><%= user.username %></a></li>
               <li><hr class="dropdown-divider"></li>
               <% if(user.isAdmin === true ) { %>
-              <li><a class="dropdown-item" href="/admin_dashboard">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/admin/admin_dashboard">Dashboard</a></li>
               <% } %>
               <li><a class="dropdown-item" href="#">profile</a></li>
-              <li><a class="dropdown-item" href="/Signout">Sign out</a></li>
+              <li><a class="dropdown-item" href="user/Signout">Sign out</a></li>
             </ul>
           </div>
         <% }%>
@@ -47,7 +47,7 @@
         <a href="Features.html">Features</a>
         <a href="#">FAQS</a>
         <a href="About_Us.html">About Us</a>
-        <a href="/Cart">Cart</a>
+        <a href="user/Cart">Cart</a>
 
         <div class="d-flex justify-content-center ">
 
@@ -72,8 +72,8 @@
         <ul class="nav">
 
           <% if(user === "" ) {%>
-            <li class="nav-item"><a href="/login" class="nav-link btn btn-outline-light px-2 me-2">Login</a></li>
-            <li class="nav-item"><a href="/Signin" class="nav-link btn btn-light px-2">Sign up</a></li>
+            <li class="nav-item"><a href="/user/login" class="nav-link btn btn-outline-light px-2 me-2">Login</a></li>
+            <li class="nav-item"><a href="/user/Signin" class="nav-link btn btn-light px-2">Sign up</a></li>
           <% }
           else{%>
             <div class="dropdown text-end">
@@ -84,10 +84,10 @@
                 <li><a class="dropdown-item" href="#"><%= user.username %></a></li>
                 <li><hr class="dropdown-divider"></li>
                 <% if(user.isAdmin == true ) { %>
-                <li><a class="dropdown-item" href="/admin_dashboard">Dashboard</a></li>
+                <li><a class="dropdown-item" href="/admin/admin_dashboard">Dashboard</a></li>
                 <% } %>
-                <li><a class="dropdown-item" href="/Profile">profile</a></li>
-                <li><a class="dropdown-item" href="/Signout">Sign out</a></li>
+                <li><a class="dropdown-item" href="/user/Profile">profile</a></li>
+                <li><a class="dropdown-item" href="/user/Signout">Sign out</a></li>
               </ul>
             </div>
           <% }%>
@@ -113,13 +113,13 @@
         <i class="bi bi-search pe-5" onclick="open_search()"></i>
       </div>
    
-      <a  class="btn position-relative pt-3" href="/cart">
+      <a  class="btn position-relative pt-3" href="/user/cart">
         <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
         <span class="position-absolute top-0  mt-3 start-100 translate-middle badge rounded-pill bg-danger">
           <span class="visually-hidden">unread messages</span>
         </span>
       </a>
-      <a  class="btn position-relative pt-3" href="/wishlist">
+      <a  class="btn position-relative pt-3" href="/user/wishlist">
         <i class="fa-solid fa-heart" style="color: #000000;"></i>
         <span class="position-absolute top-0  mt-3 start-100 translate-middle badge rounded-pill bg-danger">
         <span class="visually-hidden">unread messages</span>

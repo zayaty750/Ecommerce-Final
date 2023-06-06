@@ -12,7 +12,7 @@
         <!-- End Head -->
         <h1 class="p-relative">Blankoo Products</h1>
         <div class = "row m-2 justify-content-center">
-          <form action="/edit-product"  enctype="multipart/form-data">
+          <form  enctype="multipart/form-data">
               <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name"  value="<%= product.pname %>"  required>
@@ -43,7 +43,7 @@
         $('#editBtn').click(function() {
           console.log('Edit button clicked');
             $.ajax({
-                url: `/edit/<%= product._id %>`,
+                url: `/admin/edit/<%= product._id %>`,
                 method: 'PATCH',
                 data: {
                   pname: $('#name').val(),

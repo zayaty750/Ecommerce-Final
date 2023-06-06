@@ -15,11 +15,11 @@ const addCart = async (req, res, next) => {
         cart.add(product, product_id);
         req.session.cart = cart;
         console.log(req.session.cart);
-        res.redirect('/products');
+        res.redirect('/user/products');
       }
       else
       {
-        res.redirect('/products',);
+        res.redirect('/user/products',);
       }
       
   };

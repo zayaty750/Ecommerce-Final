@@ -14,8 +14,9 @@ dotenv.config();
 
 //import routes
 import index_router from "./routes/index.js";
+import user_router from "./routes/user.js";
 // import { error } from "console";
-import admin_router from "./routes/Admin.js";
+import admin_router from "./routes/admin.js";
 // import mongoose from "mongoose";
 
 //Read the current directory name
@@ -67,9 +68,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //setup routes
-app.use("/", index_router);
+app.use("/"  , index_router);
+app.use("/admin",admin_router);
+app.use("/user",user_router);
 //app.use('/products', logger('combined'), products_router);
-app.use("/",admin_router);
+
 
 
 app.use(function ( req, res, next) {

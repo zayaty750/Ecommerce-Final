@@ -31,16 +31,9 @@ const UserSchema = new mongoose.Schema({
         trim:true,
         minlength:8,
     },
-    gender:{
-        type:String,
-        required:true,
-    },
     isAdmin:{
         type:Boolean,
         default:false,
-    },
-    Image:{
-        type:String
     },
 },{timestamps:true});
 

@@ -10,8 +10,7 @@ import {
 
 import {
   getTeam,
-  addAdmin,
-  deleteAdmin
+  addAdmin
 } from "../controllers/admin_controller.js";
 
 
@@ -50,17 +49,16 @@ router.get("/add-admin", (req, res, next) => {
     res.render('pages/error');
   }
 });
-// POST a single admin: User
+// POST a single User: admin
 router.post("/add-admin", addAdmin);
-
-// DELETE a single admin: User/:id
-router.delete("/delete/:id", deleteAdmin);
-
 
 
 // Products
-// // GET products: products
+// GET products: products
 router.get("/view-products", getProducts);
+
+// GET a single product: products/find/:id
+// router.get("/find/:id", getProductById);
 
 // GET add product form
 router.get("/add-product", (req, res, next) => {
@@ -71,8 +69,6 @@ router.get("/add-product", (req, res, next) => {
     res.render('pages/error');
   }
 });
-
-
 // POST a single product: products
 router.post("/add-product", upload.single('image'), createProduct);
 
@@ -88,12 +84,6 @@ router.patch("/edit/:id", updateProduct);
 
 
 // DELETE a single product: products/:id
-// router.delete("/delete/:id", deleteProduct);
-// router.get("/delete/:id", async(req,res)=>{
-//   console.log(req.params.id)
-//   const data = await dbconnect();
-//   const result=await data.deleteOne({_id:new MongoDBNamespace.ObjectId(req.params.id)})
-//   res.send(result)
-// })
+router.delete("/delete/:id", deleteProduct);
 
 export default router;
