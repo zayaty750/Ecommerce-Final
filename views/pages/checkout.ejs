@@ -46,38 +46,43 @@
                     <!-- map -->
                     <div class="container">
                         <div id="map">
-
+                            <div class="form-group d-none">
+                                <input id="" type="text" required="" placeholder="longit" name="longit" id="longit" class="form-control  border-0 shadow-sm  text-black">
+                            </div>
+                            <div class="form-group d-none">
+                                <input id="" type="text" required="" placeholder="latit" name="latit" id="latit" class="form-control  border-0 shadow-sm  text-black">
+                            </div>
                         </div>
                     </div>
                     <!-- info -->
                     <div class="row mb-3">
                         <div class="col-6 mt-4">
                             <div class="form-group">
-                                <input id="" type="text" required="" placeholder="Address" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="" type="text" required="" placeholder="Address" name="Address" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
 
                         <div class="col-6 mt-4">
                             <div class="form-group">
-                                <input id="" type="text" required="" placeholder="Street name" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="" type="text" required="" placeholder="Street name" name="Street_name" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
                         <div class="col-6 mt-4">
                             <div class="form-group">
-                                <input id="first" type="text" required="" placeholder="Building" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="first" type="text" required="" placeholder="Building" name="Building" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
                         <div class="col-6 mt-4 ">
                             <div class="form-group">
-                                <input id="second" type="text" required="" placeholder="Floor" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="second" type="text" required="" placeholder="Floor" name="Floor" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
                         <div class="col-6 mt-4 mb-5">
                             <div class="form-group">
-                                <input id="" type="text" required="" placeholder="Apartement" class="form-control  border-0 shadow-sm  text-black">
+                                <input id="" type="text" required="" placeholder="Apartement" name="Apartment" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
-                        <button class="btn btn-dark"> Checkout</button>
+                        <!-- <button class="btn btn-dark"> Checkout</button> -->
                     </div>
 
                     
@@ -96,11 +101,11 @@
 
                     <div class="border-bottom mb-3">
 
-                        <div class="d-flex justify-content-between ps-4 pb-4">
+                        <div class="d-flex justify-content-between  pb-4">
                             <h5>
                                 Items
                             </h5>
-                            <h5 class="ps-4">
+                            <h5 class="">
                                 Price
                             </h5>
                             <h5>
@@ -110,42 +115,9 @@
                         </div>
 
                         <div>
-                            <div class="d-flex justify-content-between pb-1 pe-4 text-muted">
-                                <h5>
-                                    Product name
-                                </h5>
-                                <h5 class="pe-5">
-                                    30$
-                                </h5>
-                                <h5>
-                                    2
-                                </h5>
-                            </div>
-
-                            <div class="d-flex justify-content-between pb-1 pe-4 text-muted">
-                                <h5>
-                                    Product name
-                                </h5>
-                                <h5 class="pe-5">
-                                    10$
-                                </h5>
-                                <h5>
-                                    1
-                                </h5>
-                            </div>
-
-                            <div class="d-flex justify-content-between pb-1 pe-4 text-muted">
-                                <h5>
-                                    Product name
-                                </h5>
-                                <h5 class="pe-5">
-                                    15$
-                                </h5>
-                                <h5>
-                                    1
-                                </h5>
-                            </div>
-
+                            <% products.forEach((product)=> { %>
+                                <%- include('../partials/check_out', { product: product }) %>
+                                    <% }); %>
                         </div>
 
                     </div>
@@ -156,7 +128,7 @@
                         </h5>
 
                         <h5 class="text-muted pe-3">
-                            45$
+                            <%= subtotal %>EGP
                         </h5>
                     </div>
 
@@ -168,7 +140,7 @@
                         src="//checkout.stripe.com/v2/checkout.js"
                         class="stripe-button"
                         data-key="<%= key %>"
-                        data-amount= "<%= pr*100 %>"
+                        data-amount= "<%= subtotal*100 %>"
                         data-currency="EGP"
                         data-name="Blankoo"
                         data-description="Buy Blankoo Product"
