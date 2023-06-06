@@ -29,6 +29,11 @@ import
 
 import {payment,updateprofile} from '../controllers/user_controller.js'
 
+import{
+  addWishlist,
+  getWishlist
+} from "../controllers/wishlist_controller.js"
+
 const router = Router();
 
 
@@ -110,6 +115,10 @@ router.get('/products', getProducts);
 router.get('/add-to-cart/:id',addCart);
 
 router.get('/cart',getCart);
+
+router.get('/',addWishlist);
+
+router.get('/wishlist',getWishlist);
 
 /*               End                 */
 
