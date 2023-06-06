@@ -5,7 +5,7 @@ import passwordComplexity  from "joi-password-complexity";
 const UserSchema = new mongoose.Schema({
     email:{
         type:String,
-        required:true,
+         required:true,
         trim:true,
         minlength:5,
         maxlength:100,

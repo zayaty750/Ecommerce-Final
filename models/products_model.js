@@ -5,19 +5,19 @@ const schema = mongoose.Schema;
 const productsSchema = new Schema({
     pname:{
         type: String,
-        required: true
+       
     },
     Price:{
         type: Number,
-        required: true
+        
     },
     Description:{
         type: String,
-        required: true
+        
     },
     category:{
         type: String,
-        required: true
+         
     },
     Image:{
         type: String,
