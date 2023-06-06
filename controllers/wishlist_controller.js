@@ -10,10 +10,10 @@ const addWishlist = async (req, res, next) => {
     const product = await Product.findById(product_id);
       if(product)
       {
-        let cart = new Cart(req.session.cart ? req.session.cart : {});
-        cart.add(product, product_id);
-        req.session.cart = cart;
-        console.log(req.session.cart);
+        let wish = new wishlist(req.session.wish ? req.session.wish : {});
+        wish.add(product, product_id);
+        req.session.wish = wish;
+        console.log(req.session.wish);
         res.redirect('/products');
       }
       else
@@ -26,18 +26,18 @@ const addWishlist = async (req, res, next) => {
 
 const getWishlist = async (req, res,next) =>
 {
-  let wish = new wishlist(req.session.cart ? req.session.cart : {});
-  if(cart.totalQty != 0)
+  let wish = new wishlist(req.session.wish ? req.session.wish : {});
+  if(wish.totalQty != 0)
   {
-    console.log(cart);
-    res.render('pages/cart',{ products: cart.generateArray() ,subtotal : cart.totalPrice,qt: cart.totalQty ,user:  (req.session.user === undefined ? "" : req.session.user) });
+    console.log(wish);
+    res.render('pages/wishlist',{ products: wish.generateArray() ,subtotal : wish.totalPrice,qt: wish.totalQty ,user:  (req.session.user === undefined ? "" : req.session.user) });
   }
   else
   {
     console.log("done");
-    res.render('pages/cart',{ products: undefined ,subtotal : cart.totalPrice , qt: cart.totalQty , user:  (req.session.user === undefined ? "" : req.session.user) });
+    res.render('pages/wishlist',{ products: undefined ,subtotal : wish.totalPrice , qt: wish.totalQty , user:  (req.session.user === undefined ? "" : req.session.user) });
   }
 };
 
 
-  export {addCart,getCart} ;
+  export {addWishlist,getWishlist} ;
