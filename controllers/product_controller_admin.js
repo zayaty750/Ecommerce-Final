@@ -74,7 +74,6 @@ const updateProductForm = async (req, res, next) => {
 
     
     const product = await Product.findById(id);
-    console.log(product);
     if (product) {
       //return res.status(200).json(product);
       return res.render("pages/edit-product", {  product: product ,  user: (req.session.user === undefined ? "" : req.session.user)});
@@ -88,26 +87,27 @@ const updateProductForm = async (req, res, next) => {
 
 // Update a product
 const updateProduct = async (req, res, next) => {
-    try {
-      const id = req.params.id;
-      if (!mongo.ObjectId.isValid(id)) {
-        return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
-      }
-
-      const product = await Product.findOneAndUpdate({ _id: id }, req.body, {
-        new: true,
-        runValidators: true,
-      });
-      console.log(product);
-      if (product) {
-
-      } else {
-        res.status(404).json({ message: "Product not found" });
-      }
-
-    } catch (err) {
-      next(err);
+  try {
+    const id = req.params.id;
+    console.log(req.body);
+    if (!mongo.ObjectId.isValid(id) ) {
+      return res.status(400).json({ message: `Error: Invalid product ID ${id}` });
     }
+    const product = await Product.findOneAndUpdate({ _id: id }, req.body, {
+      new: true,
+      runValidators: true,
+      });
+
+    if (product) {
+      console.log("edited");
+        return res.redirect("pages/edit-product");
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+
+  } catch (err) {
+    next(err);
+  }
   
 };
 
