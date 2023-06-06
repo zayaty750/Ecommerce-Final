@@ -139,7 +139,7 @@ const payment = (req,res)=>{
     .then((customer) => {
       return Stripe.charges.create({
         amount:  cart.totalPrice * 100,
-        description: 'Web Development Product',
+        description: 'Product',
         currency: 'EGP',
         customer: customer.id
     })
@@ -158,8 +158,7 @@ const payment = (req,res)=>{
           latit: req.body.latit,
           longit :req.body.longit
         };
-        req.session.cart.destroy();
-        
+        // cart.delete_All function 
         Orders.create(orders);
         res.redirect('/');
     })
