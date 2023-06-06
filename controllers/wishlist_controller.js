@@ -1,10 +1,9 @@
 import {mongo} from 'mongoose';
 import Product from '../models/products_model.js';
-import {Cart}
- from  "../models/cart-model.js";
+import { wishlist } from '../models/wishlist-model.js';
 
 
-const addCart = async (req, res, next) => {
+const addWishlist = async (req, res, next) => {
 
     const product_id = req.params.id;
     
@@ -25,9 +24,9 @@ const addCart = async (req, res, next) => {
   };
 
 
-const getCart = async (req, res,next) =>
+const getWishlist = async (req, res,next) =>
 {
-  let cart = new Cart(req.session.cart ? req.session.cart : {});
+  let wish = new wishlist(req.session.cart ? req.session.cart : {});
   if(cart.totalQty != 0)
   {
     console.log(cart);
