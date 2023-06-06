@@ -88,7 +88,7 @@ router.get('/checkout', (req, res)=> {
   let cart = new Cart(req.session.cart ? req.session.cart : {});
   if(req.session.user)
   {
-    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user),key: process.env.PUBLISHABLE_KEY,pr: cart.totalPrice});
+    res.render('pages/checkout',{user: (req.session.user === undefined ? "" : req.session.user),key: process.env.PUBLISHABLE_KEY, products: cart.generateArray() , subtotal : cart.totalPrice , qt: cart.totalQty});
   }
   else
   {
