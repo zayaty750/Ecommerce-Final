@@ -100,7 +100,7 @@ const updateProduct = async (req, res, next) => {
       });
       console.log(product);
       if (product) {
-        res.redirect("/view-products");
+
       } else {
         res.status(404).json({ message: "Product not found" });
       }
