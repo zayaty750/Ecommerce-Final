@@ -187,7 +187,22 @@ router.post("/search",async (req,res)=>{
           ]
       }
   )
-  res.send(data);
+  // let cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  // let page = req.query.page || 1;
+  // const limit = 3;
+
+  // const skip = (page-1) * limit;
+  // const products = await Product.find().skip(skip).limit(limit);
+
+  // const All_products = await Product.find();
+  // const numberofResults = All_products.length;
+  // const numberofPages = Math.ceil(numberofResults / limit );
+  
+  // let iterator = 1;
+  // let endingLink = numberofPages;
+
+  res.render("pages/search",{products:data, user:  (req.session.user === undefined ? "" : req.session.user)});
 
 })
 

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/Head.ejs") %>
+    </head>
+    <body>
+        <%- include("../partials/Nav.ejs") %>
+      
+        <section class=" choose container-fluid  mt-5 mb-5">
+         
+          
+      
+          <!-- products -->
+        <div class="row">
+          <% products.forEach((product) => { %>
+            <%- include('../partials/product_card_client', { product: product }) %>
+        <% }); %>
+        </div>
+        </section>
+
+        
+        <%- include("../partials/Top_Function.ejs") %>
+        <%- include("../partials/Footer.ejs") %>
+      
+      
+      </body>
+</html>
