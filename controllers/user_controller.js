@@ -8,9 +8,13 @@ import
    from  "../models/cart-model.js";
    import Orders
    from  "../models/order-model.js";
-
+   
+   const Sec_Key = "sk_test_51NDnX0IM9uJqn7pbilZ45xIT5eUVlcGo7CicfcD1z03s4J6WJo2A6aQbD7DGljVXeqNxSK3g9h8fRWKoF24g8zkt00wzT9E7S0"
    import stripe from 'stripe';
-   const Stripe = new stripe(process.env.SECRET_KEY);
+import session from "express-session";
+   const Stripe = new stripe(Sec_Key);
+
+  // const stripe = require('stripe')(SECRET_KEY)
 
 // Get all clients
 const getclients = async (req, res, next) => {
@@ -118,6 +122,7 @@ const GetUser = (req, res) => {
 };
 
 const payment = (req,res)=>{
+
   let cart = new Cart(req.session.cart ? req.session.cart : {});
   Stripe.customers.create({
     email: req.body.stripeEmail,
@@ -132,14 +137,15 @@ const payment = (req,res)=>{
     }
 })
     .then((customer) => {
-        return stripe.charges.create({
-            amount:  cart.totalPrice * 100,
-            description: 'Web Development Product',
-            currency: 'EGP',
-            customer: customer.id
-        })
+      return Stripe.charges.create({
+        amount:  cart.totalPrice * 100,
+        description: 'Web Development Product',
+        currency: 'EGP',
+        customer: customer.id
+    })
     })
     .then((charge) => {
+        console.log(charge)
         const orders = 
         {
           client_id: req.session.user,
@@ -152,13 +158,17 @@ const payment = (req,res)=>{
           latit: req.body.latit,
           longit :req.body.longit
         };
+        req.session.cart.destroy();
+        
         Orders.create(orders);
-        res.redirect("/");
+        res.redirect('/');
     })
     .catch((err) => {
         res.send(err)
+        console.log(err);
     })
-}
+
+};
 
 
 export { addUser, getclients,GetUser, payment,edituserprofile,updateprofile };

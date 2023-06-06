@@ -34,6 +34,7 @@
 <body>
     <%- include("../partials/Nav.ejs") %>
     <section class=" container mt-5 mb-5">
+        <form action="/payment" method="post">
         <div class="row mb-5">
 
             <!-- left row -->
@@ -46,21 +47,21 @@
                     <!-- map -->
                     <div class="container">
                         <div id="map">
-                            <div class="form-group d-none">
-                                <input id="" type="text" required="" placeholder="longit" name="longit" id="longit" class="form-control  border-0 shadow-sm  text-black">
-                            </div>
-                            <div class="form-group d-none">
-                                <input id="" type="text" required="" placeholder="latit" name="latit" id="latit" class="form-control  border-0 shadow-sm  text-black">
-                            </div>
+
                         </div>
                     </div>
                     <!-- info -->
+
                     <div class="row mb-3">
                         <div class="col-6 mt-4">
                             <div class="form-group">
                                 <input id="" type="text" required="" placeholder="Address" name="Address" class="form-control  border-0 shadow-sm  text-black">
                             </div>
                         </div>
+                
+                            <input  type="text" required="" placeholder="longit" name="longit" id="longit" class="form-control  border-0 shadow-sm  text-black d-none">
+                            <input type="text" required="" placeholder="latit" name="latit" id="latit" class="form-control  border-0 shadow-sm  text-black d-none">
+
 
                         <div class="col-6 mt-4">
                             <div class="form-group">
@@ -135,7 +136,7 @@
 
                 </div>
                 <div>
-                    <form action="/payment" method="post">
+      
                         <script
                         src="//checkout.stripe.com/v2/checkout.js"
                         class="stripe-button"
@@ -146,17 +147,15 @@
                         data-description="Buy Blankoo Product"
                         data-locale="auto">
                     </script>
-                    </form>
                 </div>
             </div>
         </div>
 
+    </form>
 
     </section>
     <script>
         // Map initialization 
-        let latit ;
-        let longit;
         navigator.geolocation.getCurrentPosition(function (position) 
         {
             console.log('--- Your Position: ---');
@@ -167,6 +166,10 @@
             console.log('Long: ' + position.coords.longitude);
             longit = position.coords.longitude;
             
+
+            document.getElementById('latit').value = latit;
+           
+            document.getElementById('longit').value = longit;
             // map //
             var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 13);
             // map style //
@@ -176,8 +179,8 @@
             // locator control //
             L.control.locate().addTo(map);
         });
-    
         
+
     
     </script>
 
