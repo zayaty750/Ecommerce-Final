@@ -1,12 +1,12 @@
-import HttpError from "http-errors";
+// import HttpError from "http-errors";
 import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import session, { Cookie } from "express-session";
 import MongoStore from 'connect-mongo';
-import logger from "morgan";
+// import logger from "morgan";
 import { fileURLToPath } from "url";
-import fs from "fs";
+// import fs from "fs";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -14,9 +14,9 @@ dotenv.config();
 
 //import routes
 import index_router from "./routes/index.js";
-import { error } from "console";
+// import { error } from "console";
 import admin_router from "./routes/Admin.js";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
 //Read the current directory name
 export const __filename = fileURLToPath(import.meta.url);
@@ -91,8 +91,6 @@ app.use(function (err, req, res, next) {
   res.send("Error");
 });
 
-//connect to mongodb
-//mongoose.connect(app.get('ATLAS_URI'));
 
 console.log("ENV: ", app.get("env"));
 
