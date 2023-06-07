@@ -31,10 +31,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(session({
   secret: "xa",
   saveUninitialized: false,
-  resave: false,
-  store: MongoStore.create({ 
-    mongoUrl: "mongodb+srv://zayaty:9H3jdMZ3ntLDcowq@cluster0.33tbygn.mongodb.net/?retryWrites=true&w=majority"}),
-  Cookie: { maxAge: 180 * 60 * 1000 }
+  resave: false
   // 180min in cookies
 } ));
 app.set("view engine", "ejs");
