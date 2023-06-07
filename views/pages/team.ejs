@@ -28,6 +28,27 @@
             </div>
           </div>
       </div>
+      <script>
+        //el saf7a dy
+      $(document).ready(function() {
+          //l id bta3 l button
+          $('#delete').click(function() {
+              console.log('Delete button clicked');
+              const productId = $(this).data('id');
+              $.ajax({
+                  url: `/admin/delete-admin/${productId}`,
+                  method: 'DELETE',
+                  success: function(response) {
+                      // Reload the page to show updated product list
+                      window.location.reload();
+                  },
+                  error: function(err) {
+                      console.log(err);
+                  }
+              });
+          });
+      });
+  </script>
 </body>
 
 </html>

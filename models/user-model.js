@@ -1,13 +1,13 @@
 import mongoose, { Schema } from "mongoose";
 import passwordComplexity  from "joi-password-complexity";
-import Joi from 'joi';
-import jwt from "jsonwebtoken" ; 
+import Joi from "joi";
+import jwt from "jsonwebtoken";
 // User Schema
 
 const UserSchema = new mongoose.Schema({
     email:{
         type:String,
-         required:true,
+        required:true,
         trim:true,
         minlength:5,
         maxlength:100,
@@ -33,7 +33,7 @@ const UserSchema = new mongoose.Schema({
     },
     isAdmin:{
         type:Boolean,
-        default:false,
+        default:false
     },
 },{timestamps:true});
 

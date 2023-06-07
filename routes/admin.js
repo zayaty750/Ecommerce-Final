@@ -12,7 +12,8 @@ import {
   getUsers,
   addAdmin,
   getAdmin,
-  getOrders
+  getOrders,
+  deleteAdmin
 } from "../controllers/admin_controller.js";
 
 
@@ -48,6 +49,9 @@ router.get("/Clients", getUsers);
 
 // get clients page
 router.get("/orders/:id", getOrders);
+
+// get Team page
+router.delete("/delete-admin/:id", deleteAdmin);
 
 // get Team page
 router.get("/team", getAdmin);
