@@ -8,25 +8,9 @@
         <%- include("../partials/Nav.ejs") %>
       
         <section class=" choose container-fluid  mt-5 mb-5">
-         
-          <!-- control pages -->
-          <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
-            <a href="/products">
-              <li>All</li>
-            </a>
-            <a href="/products1">
-              <li class="active rounded-pill">Shirts</li>
-            </a>
-            <a href="/products2">
-              <li>Pants</li>
-            </a>
-            <a href="/products3">
-              <li>Shoes</li>
-            </a>
-          </ul>
       
           <!-- products -->
-          <div class="row">
+
             <div class="col-12 col-md-4">
                <div class="card shadow">
                    <div class="card-body">
@@ -35,7 +19,7 @@
                        
                        <ul class="list-group text-gray">
                            <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
-                               <a href="/user/search-filter/<%=uniqueCat[index]%>" class="text-decoration-none"><%=uniqueCat[index]%> </a>
+                               <a href="/user/search-filter/<%=uniqueCat[index]%>" class="btn btn-outline-secondary"><%=uniqueCat[index]%> </a>
                                <span class="badge bg-gray badge-pill">123</span>
                            </li>
                        </ul>
@@ -44,7 +28,7 @@
                    </div>
                </div>
            </div>
-       </div>
+
         <div class="row">
           <% products.forEach((product) => { %>
             <%- include('../partials/product_card_client', { product: product }) %>
