@@ -3,36 +3,42 @@
 
 <head>
     <%- include("../partials/Head.ejs") %>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-
+<style>
+    body
+    {
+        overflow: hidden;
+    }
+</style>
 <body>
     <%- include("../partials/Nav.ejs") %>
 
 
         <!-- carousel  -->
-        <section class="container-fluid d-none d-sm-block">
+        <section class="container-fluid d-none d-sm-block" data-aos="fade">
             <video src="../images/D_slide_man_novedades_-1.mp4" alt="" class="w-100" autoplay loop muted>
         </section>
         <!-- end -->
         <!-- category -->
-        <section class="container-fluid">
-            <div class="row pb-1 ">
+        <section class="container-fluid"  >
+            <div class="row pb-1 " data-aos="fade">
                 <div class="col  advertising" style="background-image: url(../images/photo1.jpg);">
                 </div>
             </div>
             <div class="row pb-1">
-                <div class=" col-sm col-12 pb-1  ">
+                <div class=" col-sm col-12 pb-1  "  data-aos="fade">
                     <div class="img-hover-zoom img-hover-zoom--quick-zoom">
                         <img src="../images/photo3.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
                     </div>
                 </div>
-                <div class=" col-sm col-12 pb-1">
+                <div class=" col-sm col-12 pb-1"  data-aos="fade">
                     <div class="img-hover-zoom img-hover-zoom--quick-zoom">
                         <img src="../images/photo4.jpg" alt="" srcset="" class="w-100 img-fluid h-auto">
                     </div>
                 </div>
             </div>
-            <div class="row pb-1">
+            <div class="row pb-1" data-aos="fade-right" data-aos="fade">
                 <div class="col advertising" style="background-image: url(../images/photo2.jpg);">
                 </div>
             </div>
@@ -41,7 +47,7 @@
 
         <!-- quick selection -->
         <section class="container-fluid mb-5 mt-5">
-            <div class="d-flex container-fluid justify-content-center ">
+            <div class="d-flex container-fluid justify-content-center " data-aos="fade-up">
                 <h5 class="display-6  ">Viral now</h5>
             </div>
             <div class="d-flex pe-5 ps-5 pb-4 pt-4 flex-sm-row flex-column border-bottom  border-top ">
@@ -49,7 +55,7 @@
                 <div class="rounded border me-2 mb-2">
                     <div class="img-hover-zoom img-hover-zoom--quick-zoom">
                         <a href="products.html">
-                            <img src="../images/D_slide_man_tshirts_-1.jpg" class="img-fluid" alt="">
+                            <img src="/images/D_slide_man_jeans_-1 (1).jpg" class="img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -57,7 +63,7 @@
                 <div class="rounded border me-2 mb-2 ">
                     <div class=" img-hover-zoom img-hover-zoom--quick-zoom">
                         <a href="product.html">
-                            <img src="../images/D_slide_man_jeans_-1.jpg" class="img-fluid" alt="">
+                            <img src="/images/D_slide_man_shirts_-1 (1).jpg" class="img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -65,7 +71,7 @@
                 <div class=" rounded border me-2 mb-2">
                     <div class=" img-hover-zoom img-hover-zoom--quick-zoom">
                         <a href="product.html">
-                            <img src="../images/D_slide_man_shirts_-1.jpg" class="img-fluid" alt="">
+                            <img src="/images/D_slide_man_tshirts_-1 (1).jpg" class="img-fluid" alt="">
                         </a>
                     </div>
 
@@ -74,7 +80,7 @@
                 <div class=" rounded border me-2 mb-2">
                     <div class=" img-hover-zoom img-hover-zoom--quick-zoom">
                         <a href="product.html">
-                            <img src="../images/D_slide_man_suit_-1.jpg" class="img-fluid" alt="">
+                            <img src="/images/D_slide_man_shoes_-1.jpg" class="img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -82,7 +88,7 @@
                 <div class="rounded border me-2 mb-2">
                     <div class="img-hover-zoom img-hover-zoom--quick-zoom">
                         <a href="product.html">
-                            <img src="/images/D_slide_man_trousers_-1-1685030709062.jpeg" class="img-fluid" alt="">
+                            <img src="/images/D_slide_man_shorts_-1.jpg" class="img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -95,13 +101,13 @@
         <section class="d-none d-lg-block mt-5 mb-5">
             <div class="container-fluid   mb-1 mt-2 ">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-2" data-aos="fade-up">
                         <h2 class="display-6 text-black text-center">Best Selling</h2>
                     </div>
                 </div>
             </div>
 
-            <div id="pc_carousel" class="carousel slide carousel-dark">
+            <div id="pc_carousel" class="carousel slide carousel-dark" data-aos="fade-right">
 
                 
                 <div class="carousel-inner ">
@@ -162,16 +168,16 @@
         </section>
 
         <!-- carousel product slider for mobile -->
-        <section class=" d-block d-sm-none mt-3 mb-3">
+        <section class=" d-block d-sm-none mt-3 mb-3 " >
             <div class="container-fluid  text-center text-black mb-1 mt-2">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12" data-aos="fade-up">
                         <h2>Best Selling</h2>
                     </div>
                 </div>
             </div>
 
-            <div id="mobile_carsouel" class="carousel slide">
+            <div id="mobile_carsouel" class="carousel slide" data-aos="fade-right">
                 <div class="carousel-inner">
                     <!-- carousel 1 -->
                     <div class="carousel-item active">
@@ -434,7 +440,7 @@
         </section>
 
         <!-- Contact Us section -->
-        <section class="container-fluid mb-5 ">
+        <section class="container-fluid mb-5 " data-aos="fade-up">
             <div class=" p-2">
                 <div class="d-flex flex-column flex-md-row shadow">
                     <div class="container">
@@ -470,6 +476,12 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            AOS.init({
+              duration: 1500,
+                         });
+          </script>
         <!-- end -->
         <%- include("../partials/Top_Function.ejs") %>
         <%- include("../partials/Footer.ejs") %>
