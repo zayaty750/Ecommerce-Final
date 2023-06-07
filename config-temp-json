@@ -1,0 +1,6 @@
+
+{
+    "port": 5000,
+    "dbURI" : "mongodb+srv://zayaty:9H3jdMZ3ntLDcowq@cluster0.33tbygn.mongodb.net/?retryWrites=true&w=majority"
+}
+  

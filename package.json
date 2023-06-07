@@ -4,8 +4,7 @@
   "description": "Express-app\r Initial Project Setup For NodeJs+Express project",
   "main": "Server.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "start": "nodemon Server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -40,5 +39,6 @@
   },
   "bin": {
     "final-project": "bin/www.js"
-  }
+  },
+  "keywords": []
 }
