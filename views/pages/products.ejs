@@ -26,6 +26,7 @@
           </ul>
       
           <!-- products -->
+          <%= uniqueCat %>
         <div class="row">
           <% products.forEach((product) => { %>
             <%- include('../partials/product_card_client', { product: product }) %>

@@ -32,7 +32,6 @@
 </style>
 
 <body>
-    <%- include("../partials/Top_Function.ejs") %>
 
             <div class="page d-flex">
                 <%- include("../partials/sidebar_admin.ejs") %>
@@ -145,10 +144,12 @@
                                             </h5>
 
                                             <h5 class="text-muted pe-3">
+                                                <% let total_price = 0 %>
                                                 <% products.items.forEach((product)=> { %>
-                                                    <%= product.Price %>
-                                                        <% }); %>
-
+                                     
+                                                    <%total_price += product.Price %>
+                                                <% }); %>
+                                                    <%= total_price  %>
                                             </h5>
                                         </div>
                                     </div>
@@ -177,13 +178,7 @@
                     .openPopup();
                 // locator control //
             });
-
-
-
         </script>
-
-        <%- include("../partials/Top_Function.ejs") %>
-
             <!-- leaflet js  -->
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
