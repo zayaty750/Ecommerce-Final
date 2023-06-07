@@ -15,8 +15,10 @@
         <h1 class="p-relative">Blankoo Clients</h1>
         <div class="friends-page d-grid m-20 gap-20">
           <% user.forEach((User)=> { %>
+            <% if(User.isAdmin === false) {%>
             <%- include('../partials/user_card', { User: User }) %>
-              <% }); %>
+            <% } %>
+          <% }); %>
         </div>
       </div>
   </div>

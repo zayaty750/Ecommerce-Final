@@ -26,6 +26,26 @@
           </ul>
       
           <!-- products -->
+          <div class="row">
+            <div class="col-12 col-md-4">
+               <div class="card shadow">
+                   <div class="card-body">
+                       <h3 class="h5 card-title">Product type</h3>
+                       <%for (let index = 0; index < uniqueCat.length; index++) {%>
+                       
+                       <ul class="list-group text-gray">
+                           <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                               <a href="/user/search" class="text-decoration-none"><%=uniqueCat[index]%> </a>
+                               <span class="badge bg-gray badge-pill">123</span>
+                           </li>
+                       </ul>
+                       <%}%>
+                       
+                   </div>
+               </div>
+           </div>
+       </div>
+          <%= uniqueCat %>
         <div class="row">
           <% products.forEach((product) => { %>
             <%- include('../partials/product_card_client', { product: product }) %>

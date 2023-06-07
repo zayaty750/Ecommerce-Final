@@ -27,13 +27,12 @@ import
   import {Cart}
  from  "../models/cart-model.js";
 
-import {payment,updateprofile} from '../controllers/user_controller.js'
+import {payment,updateprofile,getcategory} from '../controllers/user_controller.js'
 
 import Product from "../models/products_model.js";
 
 
 const router = Router();
-
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -82,7 +81,7 @@ router.post('/payment',payment)
 
 // product page
 
-router.get('/products', getProducts);
+router.get('/products', getcategory);
 
 //  add to cart 
 router.get('/add-to-cart/:id',addCart);
