@@ -33,7 +33,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   store: MongoStore.create({ 
-    mongoUrl: process.env.dbURI}),
+    mongoUrl: "mongodb+srv://zayaty:9H3jdMZ3ntLDcowq@cluster0.33tbygn.mongodb.net/?retryWrites=true&w=majority"}),
   Cookie: { maxAge: 180 * 60 * 1000 }
   // 180min in cookies
 } ));
