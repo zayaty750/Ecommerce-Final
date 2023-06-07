@@ -186,7 +186,10 @@ router.post("/search",async (req,res)=>{
           ]
       }
   )
-    })
+
+  res.render("pages/search",{products:data, user:  (req.session.user === undefined ? "" : req.session.user)});
+});
+
   // let cart = new Cart(req.session.cart ? req.session.cart : {});
 
   // let page = req.query.page || 1;

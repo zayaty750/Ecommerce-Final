@@ -7,30 +7,25 @@ import Orders from "../models/order-model.js";
 import {Cart}
  from  "../models/cart-model.js";
 
-const getOrders = async (req,res)=>{
+const getOrders = async (req,res)=>
+{
   let cart;
   let data = await Orders.find({client_id:req.params.id});
 
-  data.forEach((products) => {
+  if(data)
+  {
+    data.forEach((products) => {
 
     cart = new Cart(products.product_id);
     products.items = cart.generateArray();
-    console.log(products.items)
 
+    res.render("pages/orders" ,{products:products , user: (req.session.user === undefined ? "" : req.session.user),message: undefined });
+    });
+  }
+  else
+  {
     res.render("pages/orders" ,{products:products , user: (req.session.user === undefined ? "" : req.session.user) });
-
-    // const t = products.items;
-    // t.forEach((products) => {
-   
-    //    console.log(products.Price)
-    //  });
-  });
-
-
-
-
-  
-
+  }
 }
 
 
