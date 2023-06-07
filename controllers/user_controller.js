@@ -145,7 +145,6 @@ const payment = (req,res)=>{
     })
     })
     .then((charge) => {
-        console.log(charge)
         const orders = 
         {
           client_id: req.session.user,
@@ -156,19 +155,20 @@ const payment = (req,res)=>{
           Floor: req.body.Floor,
           Apartment :req.body.Apartment,
           latit: req.body.latit,
-          longit :req.body.longit
+          longit :req.body.longit,
+          Charge_id: charge.id
         };
-        // cart.delete_All function 
-        //cart.removeItem(productId);
-        cart.deleteAllItems();
+        console.log("items send to the db")
         Orders.create(orders);
+        
+        req.session.cart = {};
         res.redirect('/');
     })
     .catch((err) => {
         res.send(err)
         console.log(err);
     })
-
+   
 };
 
 

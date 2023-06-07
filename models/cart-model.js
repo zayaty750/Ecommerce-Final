@@ -30,6 +30,8 @@ export class Cart {
         //delete all items
         this.deleteAllItems=function(){
             delete this.items;
+            this.totalPrice = 0;
+            this.totalQty = 0;
         }
         // delete
         this.removeItem = function(id){

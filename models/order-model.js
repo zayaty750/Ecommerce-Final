@@ -38,6 +38,9 @@ const orderSchema = new Schema({
     longit:{
         type: Number,
     },
+    Charge_id:{
+        type: String,
+    },
 }, {timestamps: true});
 
 const Orders = mongoose.model('Orders', orderSchema);
