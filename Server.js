@@ -4,12 +4,19 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import session, { Cookie } from "express-session";
 import MongoStore from 'connect-mongo';
+import mongoose from "mongoose";
+import http from "http" 
 // import logger from "morgan";
 import { fileURLToPath } from "url";
 // import fs from "fs";
-import dotenv from "dotenv";
 
-dotenv.config();
+const dbURI = "mongodb+srv://zayaty:9H3jdMZ3ntLDcowq@cluster0.33tbygn.mongodb.net/?retryWrites=true&w=majority"
+const port = 3000;
+
+
+mongoose.connect(dbURI)
+    .then(() => console.log(`[MONGO] Connected to MongoDB`))
+    .catch((err) => console.log(`[MONGO] Error connecting to MongoDB: ${err}`));
 
 
 //import routes
@@ -33,7 +40,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
   store: MongoStore.create({ 
-    mongoUrl: process.env.dbURI}),
+    mongoUrl: dbURI}),
   Cookie: { maxAge: 180 * 60 * 1000 }
   // 180min in cookies
 } ));
@@ -96,5 +103,13 @@ app.use(function (err, req, res, next) {
 
 
 console.log("ENV: ", app.get("env"));
+
+
+const s = http.createServer(app)
+s.listen(port, () => {
+    console.log(`[API] Server listening on http://localhost:${port}`);
+});
+
+
 
 export default app;
