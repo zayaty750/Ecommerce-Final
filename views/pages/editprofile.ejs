@@ -1,83 +1,107 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%- include("../partials/Head.ejs") %>
-</head>
+  <%- include("../partials/Head.ejs") %>
+   
 
-<body>
-    <section class="container-fluid ">
-        <div class="row ">
-            <div class="bottom-0 col-3 flex-shrink-0 p-3 text-white bg-black" style="width: 280px;">
-                <a href="/" class="d-flex align-items-center mb-5 me-md-auto text-white text-decoration-none">
-                  <svg class="bi me-2" width="40" height="32"></svg>
-                  <span class="fs-4">Profile</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-auto">
-                  <li class="nav-item ">
-                    <a href="/Home" class="nav-link active" aria-current="page">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white">Orders</a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link text-white"> Customers</a>
-                  </li>
-                </ul>
-                <hr>
-              </div>
+  <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css"
+rel="stylesheet"
+/>
  
-              <div class="col-6 p-3">
-                <div >
-                    <!-- Profile picture card-->
-                    <div class="card mb-4 mb-xl-0" style="width: 1100px;">
-                        <div class="card-header">edit you account</div>
-                        <div class="card-body text-center">
-                            <img class="img-account-profile  circle mb-2"
-                                src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                        </div>
-                    </div>
-                </div>
+   <style>
+        .alert {
+            display: none;
+        }
+    </style>
+ 
+</head>
+<body class="bg-light">
+  <%- include("../partials/Nav.ejs") %>
+  <div class="container" >
+    <div class="row d-flex justify-content-center shadow ">
+      <div class="col-md-10- mt-5 pt-5">
+        <div class="row z-depth-3 ">
+          <div class="col-sm-4 bg-info rounded-left ">
+            <div class="card-block text-center text-white">
+              <i class="fas fa-user-tie fa-7x mt-5"></i>
+<h2 class="font-weigh-bold mt-4">Blankoo</h2>
+<p>welcome to our website</p>
+<i class="far fa-edit fa-2x mt-4"></i>
 
-                <div >
-                    <!-- Account details card-->
-                    <div class="card mb-4 " style="width: 1100px;">
-                        <div class="card-header">Account Details</div>
-                        <div class="card-body">
-                    
-                            <!--   ( name )-->
-                            <div class="mb-3">
-                                <label class="small mb-1 p-1" for="inputUsername">New Username </label>
-                                <input class="form-control" name="name" type="text" value="<%= user.username%>" id="username">
-                            </div>
-                        </div>
-                        <!--   (email address)-->
-                        <div class="mb-3 p-3">
-                            <label class="small mb-1" for="inputEmailAddress">New Email address</label>
-                            <input class="form-control" type="email" placeholder="name@gmail.com"
-                                name="email" value="<%=user.email %>" id="email">
-                        </div>
-                        <!--   ( password)-->
-                        <div class="col-md-6 p-3">
-                            <label class="small mb-1" for="inputpassword">New password</label>
-                            <input class="form-control" type="password" name="password"
-                            value="<%= user.password %>" name="password" id="password">
-                        </div>
-                    </div>
-                    <!-- Save changes -->
-                    <button class="btn btn-primary" id="editBtn">Update Data</button>
-                </div>
-              </div>
+            </div>
+          </div>
+          <div class="col-sm-8 bg-white rounded-right" >
+            <h3 class="mt-3 text-center"> Edit Your Informations</h3>
+
+            <hr class="badge-primary mt-10 w-100">  
+          <div class="row">
+ 
+
+
+ 
+  <div class="card-body">
+      <div class="mb-3 p-3">
+          <label class="small mb-1 p-1" for="inputUsername">New Username </label>
+          <input class="form-control" name="name" type="text" value="<%= user.username%>" id="username">
+      </div>
+      <div class="mb-3 p-3">
+        <label class="small mb-1" for="inputEmailAddress">New Email Address</label>
+        <input class="form-control" id="inputEmailAddress" type="email" placeholder="name@gmail.com"
+            name="email" value="<%= user.email %>" id="email">
+    </div>
+
+    <div class="col-md-6 p-3">
+      <label class="small mb-1" for="inputpassword">Your New Password</label>
+      <input class="form-control" id="inputpassword" type="password" name="password"
+      value="<%= user.password %>" name="password" id="password">
+  </div>
+  <!-- <div class="col-md-6 p-3">  <a class="btn btn-primary"  id="editBtn"> Update data</a> -->
+    
+
+    <button class="btn btn-primary" id="editBtn">update</button>
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            your data updated successfully...
         </div>
-    </section>
-    <script>
-        $(document).ready(function() {
+
+
+  </div>
+  </div>
+
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="mb-3 p-3">
+  <%- include("../partials/Top_Function.ejs") %>
+  <%- include("../partials/Footer.ejs") %>
+</div>
+<script>
+   $(document).ready(function() {
             $('#editBtn').click(function() {
               console.log('Edit button clicked');
                 $.ajax({
-                    url: `/editprofile/<%=user._id%>`,
+                    url: `/user/editprofile/<%=user._id%>`,
                     method: 'PATCH',
                     data: {
                       username: $('#username').val(),
@@ -95,10 +119,18 @@
                 });
             });
         });
-        </script>
-    <!-- end -->
-    <%- include("../partials/Top_Function.ejs") %>
 
+</script>
+<script>
+  $(document).ready(function () {
+      $('button').click(function () {
+          $('.alert').show()
+      })
+  });
+</script>
+ <!-- end -->
+ <%- include("../partials/Top_Function.ejs") %>
 </body>
-
 </html>
+
+ 
